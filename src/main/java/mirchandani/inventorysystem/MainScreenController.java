@@ -8,19 +8,13 @@ import javafx.scene.control.Label;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class HelloController implements Initializable {
+public class MainScreenController implements Initializable {
 
-
-    public Label TheLabel;
-    public int count = 1;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         System.out.println("System initialized");
     }
 
-    public void OnButtonClicked(ActionEvent actionEvent) {
-        System.out.println("I am clicked!");
-        TheLabel.setText("You clicked the button: " + count++ + " times.");
-    }
+
 }

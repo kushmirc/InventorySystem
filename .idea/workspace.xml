@@ -5,8 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bf559191-ef79-4b23-850b-633dde92b12f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/mirchandani/inventorysystem/AddPartController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/mirchandani/inventorysystem/AddPart.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/mirchandani/inventorysystem/AddProductController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/mirchandani/inventorysystem/AddProduct.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,7 +66,7 @@
       <workItem from="1664042335040" duration="1968000" />
       <workItem from="1664044345383" duration="484000" />
       <workItem from="1664045024041" duration="117000" />
-      <workItem from="1664045226894" duration="6104000" />
+      <workItem from="1664045226894" duration="6609000" />
     </task>
     <task id="LOCAL-00001" summary="Add model package with classes: Inventory, Part, Product, InHouse, Outsourced">
       <created>1664043332593</created>
@@ -89,7 +89,21 @@
       <option name="project" value="LOCAL" />
       <updated>1664063923856</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Add AddPart.fxml &amp; AddPartController class.">
+      <created>1664064128125</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1664064128125</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Add ModifyPart.fxml &amp; ModifyPartController class.">
+      <created>1664064256334</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1664064256334</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -110,6 +124,8 @@
     <MESSAGE value="Add model package with classes: Inventory, Part, Product, InHouse, Outsourced" />
     <MESSAGE value="Add Main package with Main class &amp; add Configuration - Application." />
     <MESSAGE value="Add MainScreen.fxml &amp; MainScreenController class." />
-    <option name="LAST_COMMIT_MESSAGE" value="Add MainScreen.fxml &amp; MainScreenController class." />
+    <MESSAGE value="Add AddPart.fxml &amp; AddPartController class." />
+    <MESSAGE value="Add ModifyPart.fxml &amp; ModifyPartController class." />
+    <option name="LAST_COMMIT_MESSAGE" value="Add ModifyPart.fxml &amp; ModifyPartController class." />
   </component>
 </project>

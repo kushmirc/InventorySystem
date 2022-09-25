@@ -5,8 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bf559191-ef79-4b23-850b-633dde92b12f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/mirchandani/inventorysystem/AddProductController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/mirchandani/inventorysystem/AddProduct.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mirchandani/inventorysystem/AddPart.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mirchandani/inventorysystem/AddPart.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mirchandani/inventorysystem/MainScreen.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mirchandani/inventorysystem/MainScreen.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mirchandani/inventorysystem/hello-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mirchandani/inventorysystem/hello-view.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,7 +69,9 @@
       <workItem from="1664042335040" duration="1968000" />
       <workItem from="1664044345383" duration="484000" />
       <workItem from="1664045024041" duration="117000" />
-      <workItem from="1664045226894" duration="6609000" />
+      <workItem from="1664045226894" duration="11950000" />
+      <workItem from="1664127281994" duration="4036000" />
+      <workItem from="1664142360683" duration="4235000" />
     </task>
     <task id="LOCAL-00001" summary="Add model package with classes: Inventory, Part, Product, InHouse, Outsourced">
       <created>1664043332593</created>
@@ -103,7 +108,21 @@
       <option name="project" value="LOCAL" />
       <updated>1664064256334</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Add AddProduct.fxml &amp; AddProductController class.">
+      <created>1664064645166</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1664064645166</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Add ModifyProduct.fxml &amp; ModifyProductController class.">
+      <created>1664064740998</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1664064740998</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -126,6 +145,8 @@
     <MESSAGE value="Add MainScreen.fxml &amp; MainScreenController class." />
     <MESSAGE value="Add AddPart.fxml &amp; AddPartController class." />
     <MESSAGE value="Add ModifyPart.fxml &amp; ModifyPartController class." />
-    <option name="LAST_COMMIT_MESSAGE" value="Add ModifyPart.fxml &amp; ModifyPartController class." />
+    <MESSAGE value="Add AddProduct.fxml &amp; AddProductController class." />
+    <MESSAGE value="Add ModifyProduct.fxml &amp; ModifyProductController class." />
+    <option name="LAST_COMMIT_MESSAGE" value="Add ModifyProduct.fxml &amp; ModifyProductController class." />
   </component>
 </project>

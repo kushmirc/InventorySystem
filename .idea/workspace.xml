@@ -5,7 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bf559191-ef79-4b23-850b-633dde92b12f" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/mirchandani/inventorysystem/AddProduct.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mirchandani/inventorysystem/AddProduct.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -69,7 +68,7 @@
       <workItem from="1664045226894" duration="11950000" />
       <workItem from="1664127281994" duration="4036000" />
       <workItem from="1664142360683" duration="8166000" />
-      <workItem from="1664214127119" duration="4374000" />
+      <workItem from="1664214127119" duration="5034000" />
     </task>
     <task id="LOCAL-00001" summary="Add model package with classes: Inventory, Part, Product, InHouse, Outsourced">
       <created>1664043332593</created>
@@ -134,7 +133,14 @@
       <option name="project" value="LOCAL" />
       <updated>1664215659053</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Update update AddProduct.fxml">
+      <created>1664221716872</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1664221716872</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -161,6 +167,7 @@
     <MESSAGE value="Add ModifyProduct.fxml &amp; ModifyProductController class." />
     <MESSAGE value="Update layouts for AddPart.fxml" />
     <MESSAGE value="Update MainScreen.fxml, update AddProduct.fxml" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update MainScreen.fxml, update AddProduct.fxml" />
+    <MESSAGE value="Update update AddProduct.fxml" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update update AddProduct.fxml" />
   </component>
 </project>

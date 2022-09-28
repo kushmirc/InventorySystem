@@ -56,16 +56,19 @@ public class MainScreenController implements Initializable {
 
     @FXML
     void onActionAddPart(ActionEvent event) throws IOException {
-
+        //get the stage from the event's source widget
         stage = (Stage)((Button)event.getSource()).getScene().getWindow();
-        scene = FXMLLoader.load(getClass().getResource("/resources/AddPart.fxml"));
+        scene = FXMLLoader.load(getClass().getResource("AddPart.fxml"));
         stage.setScene(new Scene(scene));
         stage.show();
     }
 
     @FXML
-    void onActionAddProduct(ActionEvent event) {
-        System.out.println("Add Product button clicked!");
+    void onActionAddProduct(ActionEvent event) throws IOException {
+        stage = (Stage)((Button)event.getSource()).getScene().getWindow();
+        scene = FXMLLoader.load(getClass().getResource("AddProduct.fxml"));
+        stage.setScene(new Scene(scene));
+        stage.show();
     }
 
     @FXML
@@ -80,7 +83,7 @@ public class MainScreenController implements Initializable {
 
     @FXML
     void onActionExit(ActionEvent event) {
-        System.out.println("Exit button clicked!");
+        System.exit(0);
     }
 
     @FXML

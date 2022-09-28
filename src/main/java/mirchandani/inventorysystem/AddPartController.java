@@ -41,12 +41,12 @@ public class AddPartController implements Initializable {
 
     @FXML
     void onActionDisplayMainScreen(ActionEvent event) {
-
+        System.out.println("Cancel button clicked!");
     }
 
     @FXML
     void onActionSavePart(ActionEvent event) {
-
+        System.out.println("Save button clicked!");
     }
 
     @Override

@@ -13,6 +13,10 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+/**
+ *
+ * @author Kush Mirchandani
+ */
 public class AddProductController implements Initializable {
 
     Stage stage;

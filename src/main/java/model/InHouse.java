@@ -1,5 +1,9 @@
 package model;
 
+/**
+ *
+ * @author Kush Mirchandani
+ */
 public class InHouse extends Part {
 
     private int machineId;

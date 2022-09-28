@@ -8,6 +8,10 @@ import javafx.scene.control.Label;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+/**
+ *
+ * @author Kush Mirchandani
+ */
 public class ModifyProductController implements Initializable {
 
 

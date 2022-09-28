@@ -10,7 +10,10 @@ import java.util.ResourceBundle;
 
 public class ModifyPartController implements Initializable {
 
-
+    /**
+     *
+     * @author Kush Mirchandani
+     */
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         System.out.println("System initialized");

@@ -5,7 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bf559191-ef79-4b23-850b-633dde92b12f" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/InHouse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/InHouse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/Outsourced.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Outsourced.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,7 +71,7 @@
       <workItem from="1664214127119" duration="6303000" />
       <workItem from="1664318878566" duration="3318000" />
       <workItem from="1664325661714" duration="812000" />
-      <workItem from="1664332354547" duration="16946000" />
+      <workItem from="1664332354547" duration="17252000" />
     </task>
     <task id="LOCAL-00001" summary="Add model package with classes: Inventory, Part, Product, InHouse, Outsourced">
       <created>1664043332593</created>
@@ -206,7 +206,21 @@
       <option name="project" value="LOCAL" />
       <updated>1664407192862</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Add getters and setters to InHouse and Outsourced classes.">
+      <created>1664407438756</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1664407438756</updated>
+    </task>
+    <task id="LOCAL-00021" summary="Updated constructors in InHouse and Outsourced classes.">
+      <created>1664407570791</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1664407570791</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -242,7 +256,9 @@
     <MESSAGE value="Update onAction event in AddPartController and AddProductController cancel buttons." />
     <MESSAGE value="Add constructor methods and class variables to InHouse and Outsourced classes." />
     <MESSAGE value="Update constructor methods in InHouse and Outsourced classes." />
-    <option name="LAST_COMMIT_MESSAGE" value="Update constructor methods in InHouse and Outsourced classes." />
+    <MESSAGE value="Add getters and setters to InHouse and Outsourced classes." />
+    <MESSAGE value="Updated constructors in InHouse and Outsourced classes." />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated constructors in InHouse and Outsourced classes." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

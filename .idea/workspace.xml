@@ -5,7 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bf559191-ef79-4b23-850b-633dde92b12f" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/mirchandani/inventorysystem/AddPartController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mirchandani/inventorysystem/AddPartController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mirchandani/inventorysystem/MainScreenController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mirchandani/inventorysystem/MainScreenController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mirchandani/inventorysystem/AddPart.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mirchandani/inventorysystem/AddPart.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,7 +73,7 @@
       <workItem from="1664214127119" duration="6303000" />
       <workItem from="1664318878566" duration="3318000" />
       <workItem from="1664325661714" duration="812000" />
-      <workItem from="1664332354547" duration="4667000" />
+      <workItem from="1664332354547" duration="8074000" />
     </task>
     <task id="LOCAL-00001" summary="Add model package with classes: Inventory, Part, Product, InHouse, Outsourced">
       <created>1664043332593</created>
@@ -164,7 +166,14 @@
       <option name="project" value="LOCAL" />
       <updated>1664379948674</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Add button messages to Main Screen controller to test onActionEvents.">
+      <created>1664380419967</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1664380419967</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -194,6 +203,7 @@
     <MESSAGE value="Update update AddProduct.fxml" />
     <MESSAGE value="Add fxid's to fields in AddPart.fxml, AddProduct.fxml and MainScreen.fxml." />
     <MESSAGE value="Define onActionEvents for all buttons, and copy @FXML statements to Controller classes." />
-    <option name="LAST_COMMIT_MESSAGE" value="Define onActionEvents for all buttons, and copy @FXML statements to Controller classes." />
+    <MESSAGE value="Add button messages to Main Screen controller to test onActionEvents." />
+    <option name="LAST_COMMIT_MESSAGE" value="Add button messages to Main Screen controller to test onActionEvents." />
   </component>
 </project>

@@ -5,6 +5,7 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
@@ -28,8 +29,11 @@
                <children>
                   <HBox prefHeight="100.0" prefWidth="200.0" spacing="60.0" GridPane.columnIndex="1">
                      <children>
-                        <RadioButton fx:id="partInHouseRBtn" mnemonicParsing="false" text="In-House" />
-                        <RadioButton fx:id="partOutsourcedRBtn" mnemonicParsing="false" text="Outsourced" />
+                        <RadioButton fx:id="partInHouseRBtn" mnemonicParsing="false" text="In-House">
+                           <toggleGroup>
+                              <ToggleGroup fx:id="addPartTG" />
+                           </toggleGroup></RadioButton>
+                        <RadioButton fx:id="partOutsourcedRBtn" mnemonicParsing="false" text="Outsourced" toggleGroup="$addPartTG" />
                      </children>
                      <GridPane.margin>
                         <Insets left="30.0" top="5.0" />

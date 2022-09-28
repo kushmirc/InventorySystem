@@ -20,8 +20,8 @@
                <children>
                   <HBox prefHeight="100.0" prefWidth="200.0" spacing="60.0" GridPane.columnIndex="1">
                      <children>
-                        <RadioButton mnemonicParsing="false" text="In-House" />
-                        <RadioButton mnemonicParsing="false" text="Outsourced" />
+                        <RadioButton fx:id="partInHouseRBtn" mnemonicParsing="false" text="In-House" />
+                        <RadioButton fx:id="partOutsourcedRBtn" mnemonicParsing="false" text="Outsourced" />
                      </children>
                      <GridPane.margin>
                         <Insets left="30.0" top="5.0" />
@@ -80,13 +80,13 @@
                      <GridPane.margin>
                         <Insets left="20.0" />
                      </GridPane.margin></Label>
-                  <TextField GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                  <TextField GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                  <TextField GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                  <TextField GridPane.columnIndex="1" GridPane.rowIndex="4" />
-                  <TextField GridPane.columnIndex="1" GridPane.rowIndex="5" />
-                  <TextField GridPane.columnIndex="1" GridPane.rowIndex="6" />
-                  <TextField GridPane.columnIndex="3" GridPane.rowIndex="5" />
+                  <TextField fx:id="partIDTxt" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <TextField fx:id="partNameTxt" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <TextField fx:id="partInvTxt" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                  <TextField fx:id="partPriceCostTxt" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                  <TextField fx:id="partMaxTxt" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                  <TextField fx:id="partMachineIDTxt" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                  <TextField fx:id="partMinTxt" GridPane.columnIndex="3" GridPane.rowIndex="5" />
                   <Label text="Min" GridPane.columnIndex="2" GridPane.rowIndex="5">
                      <padding>
                         <Insets left="20.0" />

@@ -33,23 +33,31 @@
                <children>
                   <VBox prefHeight="250.0" prefWidth="475.0" style="-fx-border-color: black; -fx-border-radius: 10;">
                      <children>
-                        <HBox alignment="BOTTOM_LEFT" prefHeight="80.0" prefWidth="200.0">
+                        <HBox alignment="CENTER_LEFT" prefHeight="80.0" prefWidth="200.0">
                            <children>
                               <Label style="-fx-font-weight: bold; -fx-font-weight: 700; -fx-font-family: arial;" text="Parts">
                                  <opaqueInsets>
                                     <Insets />
                                  </opaqueInsets>
                                  <padding>
-                                    <Insets bottom="5.0" left="10.0" />
+                                    <Insets left="10.0" top="10.0" />
                                  </padding>
                               </Label>
-                           </children></HBox>
-                        <TableView prefHeight="210.0" prefWidth="200.0">
+                              <TextField fx:id="partsSearchTxt">
+                                 <HBox.margin>
+                                    <Insets left="225.0" />
+                                 </HBox.margin>
+                              </TextField>
+                           </children>
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets></HBox>
+                        <TableView fx:id="partsTableView" prefHeight="210.0" prefWidth="200.0">
                           <columns>
-                            <TableColumn prefWidth="75.0" text="Part ID" />
-                            <TableColumn prefWidth="125.0" text="Part Name" />
-                              <TableColumn prefWidth="100.0" text="Inventory Level" />
-                              <TableColumn prefWidth="125.0" text="Price/ Cost per Unit" />
+                            <TableColumn fx:id="partIDCol" prefWidth="75.0" text="Part ID" />
+                            <TableColumn fx:id="partNameCol" prefWidth="125.0" text="Part Name" />
+                              <TableColumn fx:id="partInventoryLevelCol" prefWidth="100.0" text="Inventory Level" />
+                              <TableColumn fx:id="partPriceCostPerUnitCol" prefWidth="125.0" text="Price/ Cost per Unit" />
                           </columns>
                         </TableView>
                         <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
@@ -68,24 +76,28 @@
                   </VBox>
                   <VBox layoutX="60.0" layoutY="10.0" prefHeight="250.0" prefWidth="475.0" style="-fx-border-color: black; -fx-border-radius: 10;">
                      <children>
-                        <HBox alignment="BOTTOM_LEFT" prefHeight="80.0" prefWidth="200.0">
+                        <HBox alignment="CENTER_LEFT" prefHeight="80.0" prefWidth="200.0">
                            <children>
                               <Label style="-fx-font-weight: bold; -fx-font-weight: 700; -fx-font-family: arial;" text="Products">
                                  <opaqueInsets>
                                     <Insets />
                                  </opaqueInsets>
                                  <padding>
-                                    <Insets bottom="5.0" left="10.0" />
+                                    <Insets left="10.0" top="10.0" />
                                  </padding>
                               </Label>
+                              <TextField fx:id="productsSearchTxt">
+                                 <HBox.margin>
+                                    <Insets left="200.0" />
+                                 </HBox.margin></TextField>
                            </children>
                         </HBox>
-                        <TableView prefHeight="210.0" prefWidth="200.0">
+                        <TableView fx:id="productsTableView" prefHeight="210.0" prefWidth="200.0">
                            <columns>
-                              <TableColumn prefWidth="75.0" text="Product ID" />
-                              <TableColumn prefWidth="125.0" text="Product Name" />
-                              <TableColumn prefWidth="100.0" text="Inventory Level" />
-                              <TableColumn prefWidth="125.0" text="Price/ Cost per Unit" />
+                              <TableColumn fx:id="productsProductIDCol" prefWidth="75.0" text="Product ID" />
+                              <TableColumn fx:id="productsProductNameCol" prefWidth="125.0" text="Product Name" />
+                              <TableColumn fx:id="productsInventoryLevelCol" prefWidth="100.0" text="Inventory Level" />
+                              <TableColumn fx:id="productsPriceCostPerUnitCol" prefWidth="125.0" text="Price/ Cost per Unit" />
                            </columns>
                         </TableView>
                         <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" spacing="10.0">

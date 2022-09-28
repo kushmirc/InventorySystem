@@ -93,7 +93,7 @@
                   </TableView>
                   <HBox alignment="CENTER_RIGHT" prefHeight="60.0" prefWidth="200.0">
                      <children>
-                        <Button mnemonicParsing="false" text="Add" />
+                        <Button mnemonicParsing="false" onAction="#onActionAddPart" text="Add" />
                      </children>
                      <opaqueInsets>
                         <Insets />
@@ -111,15 +111,15 @@
                   </TableView>
                   <HBox alignment="BOTTOM_RIGHT" prefHeight="40.0" prefWidth="200.0">
                      <children>
-                        <Button mnemonicParsing="false" text="Remove Associated Part" />
+                        <Button mnemonicParsing="false" onAction="#onActionRemovePart" text="Remove Associated Part" />
                      </children>
                      <padding>
                         <Insets right="20.0" />
                      </padding></HBox>
                   <HBox alignment="CENTER_RIGHT" prefHeight="50.0" prefWidth="200.0" spacing="40.0">
                      <children>
-                        <Button mnemonicParsing="false" text="Save" />
-                        <Button mnemonicParsing="false" text="Cancel" />
+                        <Button mnemonicParsing="false" onAction="#onActionSaveProduct" text="Save" />
+                        <Button mnemonicParsing="false" onAction="#onActionDisplayMainScreen" text="Cancel" />
                      </children>
                      <opaqueInsets>
                         <Insets />

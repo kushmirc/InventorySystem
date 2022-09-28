@@ -62,9 +62,9 @@
                         </TableView>
                         <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
                            <children>
-                              <Button mnemonicParsing="false" text="Add" />
-                              <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" text="Modify" />
-                              <Button layoutX="65.0" layoutY="10.0" mnemonicParsing="false" text="Delete" />
+                              <Button mnemonicParsing="false" onAction="#onActionAddPart" text="Add" />
+                              <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#onActionModifyPart" text="Modify" />
+                              <Button layoutX="65.0" layoutY="10.0" mnemonicParsing="false" onAction="#onActionDeletePart" text="Delete" />
                            </children>
                            <padding>
                               <Insets right="20.0" />
@@ -102,9 +102,9 @@
                         </TableView>
                         <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
                            <children>
-                              <Button mnemonicParsing="false" text="Add" />
-                              <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" text="Modify" />
-                              <Button layoutX="65.0" layoutY="10.0" mnemonicParsing="false" text="Delete" />
+                              <Button mnemonicParsing="false" onAction="#onActionAddProduct" text="Add" />
+                              <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#onActionModifyProduct" text="Modify" />
+                              <Button layoutX="65.0" layoutY="10.0" mnemonicParsing="false" onAction="#onActionDeleteProduct" text="Delete" />
                            </children>
                            <padding>
                               <Insets right="20.0" />
@@ -122,7 +122,7 @@
             </HBox>
             <HBox alignment="CENTER_RIGHT" prefHeight="50.0" prefWidth="1100.0">
                <children>
-                  <Button mnemonicParsing="false" text="Exit" />
+                  <Button mnemonicParsing="false" onAction="#onActionExit" text="Exit" />
                </children>
                <opaqueInsets>
                   <Insets />

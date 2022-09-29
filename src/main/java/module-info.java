@@ -4,5 +4,8 @@ module mirchandani.inventorysystem {
 
 
     opens mirchandani.inventorysystem to javafx.fxml;
+    opens model to javafx.fxml;
     exports mirchandani.inventorysystem;
+    exports model;
+
 }

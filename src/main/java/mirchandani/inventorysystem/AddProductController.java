@@ -7,7 +7,10 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
+import model.Inventory;
+import model.Part;
 
 import java.io.IOException;
 import java.net.URL;
@@ -22,31 +25,34 @@ public class AddProductController implements Initializable {
     Stage stage;
     Parent scene;
     @FXML
-    private TableColumn<?, ?> inventoryLevelCol1;
+    private TableColumn<Part, Integer> inventoryLevelCol1;
 
     @FXML
-    private TableColumn<?, ?> inventoryLevelCol2;
+    private TableColumn<Part, Integer> inventoryLevelCol2;
 
     @FXML
-    private TableColumn<?, ?> partIDCol1;
+    private TableColumn<Part, Integer> partIDCol1;
 
     @FXML
-    private TableView<?> partIDTableView1;
+    private TableColumn<Part, Integer> partIDCol2;
 
     @FXML
-    private TableView<?> partIDTableView2;
+    private TableView<Part> partsTableView1;
 
     @FXML
-    private TableColumn<?, ?> partNameCol1;
+    private TableView<Part> partsTableView2;
 
     @FXML
-    private TableColumn<?, ?> partNameCol2;
+    private TableColumn<Part, String> partNameCol1;
 
     @FXML
-    private TableColumn<?, ?> priceCostPerUnitCol1;
+    private TableColumn<Part, String> partNameCol2;
 
     @FXML
-    private TableColumn<?, ?> priceCostPerUnitCol2;
+    private TableColumn<Part, Double> priceCostPerUnitCol1;
+
+    @FXML
+    private TableColumn<Part, Double> priceCostPerUnitCol2;
 
     @FXML
     private TextField productIDTxt;
@@ -94,7 +100,13 @@ public class AddProductController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        System.out.println("System initialized");
+
+        partsTableView1.setItems(Inventory.getAllParts());
+
+        partIDCol1.setCellValueFactory(new PropertyValueFactory<>("id"));
+        partNameCol1.setCellValueFactory(new PropertyValueFactory<>("name"));
+        inventoryLevelCol1.setCellValueFactory(new PropertyValueFactory<>("stock"));
+        priceCostPerUnitCol1.setCellValueFactory(new PropertyValueFactory<>("price"));
     }
 
 

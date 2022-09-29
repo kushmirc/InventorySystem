@@ -25,11 +25,21 @@ public class Main extends Application {
 
         InHouse part1 = new InHouse(1, "flipper", 8.00, 23, 5, 50, 1);
         InHouse part2 = new InHouse(2, "bumper", 15.00, 16, 3, 25, 2);
-        Outsourced part3 = new Outsourced(3, "ramp", 35.00, 8, 2, 15, RampsRUs);
+        Outsourced part3 = new Outsourced(3, "ramp", 35.00, 8, 2, 15, "RampsRUs");
+
+        Inventory.addPart(part1);
+        Inventory.addPart(part2);
+        Inventory.addPart(part3);
+        System.out.println(part1.getId() + part1.getName());
+
 
         Product product1 = new Product(1000, "The Addams Family", 3000, 6, 2, 10);
         Product product2 = new Product(1001, "Terminator 2", 2000, 3, 1, 5);
         Product product3 = new Product(1002, "Who Dunnit", 2500, 4, 3, 12);
+
+        Inventory.addProduct(product1);
+        Inventory.addProduct(product2);
+        Inventory.addProduct(product3);
 
         launch();
     }

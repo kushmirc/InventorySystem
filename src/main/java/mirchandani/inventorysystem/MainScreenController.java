@@ -8,6 +8,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
+import model.Inventory;
 import model.Part;
 import model.Product;
 
@@ -25,16 +26,16 @@ public class MainScreenController implements Initializable {
     Parent scene;
 
     @FXML
-    private TableColumn<?, ?> partIDCol;
+    private TableColumn<Part, Integer> partIDCol;
 
     @FXML
-    private TableColumn<?, ?> partInventoryLevelCol;
+    private TableColumn<Part, Integer> partInventoryLevelCol;
 
     @FXML
-    private TableColumn<?, ?> partNameCol;
+    private TableColumn<Part, String> partNameCol;
 
     @FXML
-    private TableColumn<?, ?> partPriceCostPerUnitCol;
+    private TableColumn<Part, Double> partPriceCostPerUnitCol;
 
     @FXML
     private TextField partsSearchTxt;
@@ -43,16 +44,16 @@ public class MainScreenController implements Initializable {
     private TableView<Part> partsTableView;
 
     @FXML
-    private TableColumn<?, ?> productsInventoryLevelCol;
+    private TableColumn<Product, Integer> productsInventoryLevelCol;
 
     @FXML
-    private TableColumn<?, ?> productsPriceCostPerUnitCol;
+    private TableColumn<Product, Double> productsPriceCostPerUnitCol;
 
     @FXML
-    private TableColumn<?, ?> productsProductIDCol;
+    private TableColumn<Product, Integer> productsProductIDCol;
 
     @FXML
-    private TableColumn<?, ?> productsProductNameCol;
+    private TableColumn<Product, String> productsProductNameCol;
 
     @FXML
     private TextField productsSearchTxt;
@@ -104,7 +105,10 @@ public class MainScreenController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        System.out.println("System initialized");
+
+        partsTableView.setItems(Inventory.getAllParts());
+        productsTableView.setItems(Inventory.getAllProducts());
+
     }
 
 

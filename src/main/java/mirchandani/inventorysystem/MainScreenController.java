@@ -7,6 +7,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 import model.Inventory;
 import model.Part;
@@ -107,7 +108,19 @@ public class MainScreenController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
         partsTableView.setItems(Inventory.getAllParts());
+
+        partIDCol.setCellValueFactory(new PropertyValueFactory<>("id"));
+        partNameCol.setCellValueFactory(new PropertyValueFactory<>("name"));
+        partInventoryLevelCol.setCellValueFactory(new PropertyValueFactory<>("stock"));
+        partPriceCostPerUnitCol.setCellValueFactory(new PropertyValueFactory<>("price"));
+
+
         productsTableView.setItems(Inventory.getAllProducts());
+
+        productsProductIDCol.setCellValueFactory(new PropertyValueFactory<>("id"));
+        productsProductNameCol.setCellValueFactory(new PropertyValueFactory<>("name"));
+        productsInventoryLevelCol.setCellValueFactory(new PropertyValueFactory<>("stock"));
+        productsPriceCostPerUnitCol.setCellValueFactory(new PropertyValueFactory<>("price"));
 
     }
 

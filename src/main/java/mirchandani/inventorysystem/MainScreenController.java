@@ -8,6 +8,8 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
+import model.Part;
+import model.Product;
 
 import java.io.IOException;
 import java.net.URL;
@@ -38,7 +40,7 @@ public class MainScreenController implements Initializable {
     private TextField partsSearchTxt;
 
     @FXML
-    private TableView<?> partsTableView;
+    private TableView<Part> partsTableView;
 
     @FXML
     private TableColumn<?, ?> productsInventoryLevelCol;
@@ -56,7 +58,7 @@ public class MainScreenController implements Initializable {
     private TextField productsSearchTxt;
 
     @FXML
-    private TableView<?> productsTableView;
+    private TableView<Product> productsTableView;
 
     @FXML
     void onActionAddPart(ActionEvent event) throws IOException {

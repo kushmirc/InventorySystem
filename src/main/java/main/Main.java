@@ -30,8 +30,6 @@ public class Main extends Application {
         Inventory.addPart(part1);
         Inventory.addPart(part2);
         Inventory.addPart(part3);
-        System.out.println(part1.getId() + part1.getName());
-
 
         Product product1 = new Product(1000, "The Addams Family", 3000, 6, 2, 10);
         Product product2 = new Product(1001, "Terminator 2", 2000, 3, 1, 5);

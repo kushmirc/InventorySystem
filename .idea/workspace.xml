@@ -72,7 +72,7 @@
       <workItem from="1664214127119" duration="6303000" />
       <workItem from="1664318878566" duration="3318000" />
       <workItem from="1664325661714" duration="812000" />
-      <workItem from="1664332354547" duration="48930000" />
+      <workItem from="1664332354547" duration="49801000" />
     </task>
     <task id="LOCAL-00001" summary="Add model package with classes: Inventory, Part, Product, InHouse, Outsourced">
       <created>1664043332593</created>
@@ -284,7 +284,14 @@
       <option name="project" value="LOCAL" />
       <updated>1664495174183</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="Update onActionSavePart method.">
+      <created>1664548537211</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1664548537211</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -302,7 +309,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Add AddPart.fxml &amp; AddPartController class." />
     <MESSAGE value="Add ModifyPart.fxml &amp; ModifyPartController class." />
     <MESSAGE value="Add AddProduct.fxml &amp; AddProductController class." />
     <MESSAGE value="Add ModifyProduct.fxml &amp; ModifyProductController class." />
@@ -327,7 +333,8 @@
     <MESSAGE value="Add setCellValueFactory methods to partsTableView and productsTableView in MainScreenController.java." />
     <MESSAGE value="Add test data, 3 Part objects and 3 Product objects by calling constructors in Main.java." />
     <MESSAGE value="Update module-info.java to resolve runtime error." />
-    <option name="LAST_COMMIT_MESSAGE" value="Update module-info.java to resolve runtime error." />
+    <MESSAGE value="Update onActionSavePart method." />
+    <option name="LAST_COMMIT_MESSAGE" value="Update onActionSavePart method." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

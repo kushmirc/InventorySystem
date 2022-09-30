@@ -83,12 +83,23 @@ public class MainScreenController implements Initializable {
 
     @FXML
     void onActionDeletePart(ActionEvent event) {
-        System.out.println("Delete Part button clicked!");
+
+        Part selectedPart = (Part) partsTableView.getSelectionModel().getSelectedItem();
+        if(selectedPart == null)
+            return;
+        else
+            Inventory.getAllParts().remove(selectedPart);
+        //associatedParts.add(selectedPart)
     }
 
     @FXML
     void onActionDeleteProduct(ActionEvent event) {
-        System.out.println("Delete Product button clicked!");
+
+        Product selectedProduct = (Product) productsTableView.getSelectionModel().getSelectedItem();
+        if(selectedProduct == null)
+            return;
+        else
+            Inventory.getAllProducts().remove(selectedProduct);
     }
 
     @FXML
@@ -195,6 +206,7 @@ public class MainScreenController implements Initializable {
             System.out.println("No match!");*/
 
         //partsTableView.getSelectionModel().select(selectPart(2));
+
 
 
 

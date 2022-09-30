@@ -115,7 +115,7 @@ public class MainScreenController implements Initializable {
         return false;
     }
 
-    public boolean update (int id, Part part) {
+ /*   public boolean update (int id, Part part) {
         int index = -1;
 
         for(Part inHouse : Inventory.getAllParts()) {
@@ -125,6 +125,14 @@ public class MainScreenController implements Initializable {
             Inventory.getAllParts().set(index, part);
             return true;
             }
+        }
+        return false;
+    }*/
+
+    public boolean delete(int id) {
+        for(Part part : Inventory.getAllParts()) {
+            if (part.getId() == id)
+                return Inventory.getAllParts().remove(part);
         }
         return false;
     }
@@ -148,7 +156,7 @@ public class MainScreenController implements Initializable {
         productsInventoryLevelCol.setCellValueFactory(new PropertyValueFactory<>("stock"));
         productsPriceCostPerUnitCol.setCellValueFactory(new PropertyValueFactory<>("price"));
 
-        if(search(3))
+        /*if(search(3))
             System.out.println("Match!");
         else
             System.out.println("No match!");
@@ -156,8 +164,12 @@ public class MainScreenController implements Initializable {
         if (update(3, new InHouse(3, "spinner", 18.00, 7, 2, 20, 4)))
             System.out.println("Update successful!");
         else
-            System.out.println("Update failed!");
+            System.out.println("Update failed!");*/
 
+        if(delete(3))
+            System.out.println("Deleted!");
+        else
+            System.out.println("No match!");
     }
 
 

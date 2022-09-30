@@ -1,5 +1,6 @@
 package mirchandani.inventorysystem;
 
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -145,10 +146,25 @@ public class MainScreenController implements Initializable {
         return null;
     }
 
+    public ObservableList<Part> filter(String name) {
+        if(!(Inventory.getAllFilteredParts().isEmpty()))
+            Inventory.getAllFilteredParts().clear();
+
+      for(Part part: Inventory.getAllParts()) {
+          if (part.getName().contains(name))
+              Inventory.getAllFilteredParts().add(part);
+      }
+      if(Inventory.getAllFilteredParts().isEmpty())
+          return Inventory.getAllParts();
+      else
+          return Inventory.getAllFilteredParts();
+    }
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
-        partsTableView.setItems(Inventory.getAllParts());
+        //partsTableView.setItems(Inventory.getAllParts());
+        partsTableView.setItems(filter("x"));
 
         partIDCol.setCellValueFactory(new PropertyValueFactory<>("id"));
         partNameCol.setCellValueFactory(new PropertyValueFactory<>("name"));
@@ -178,7 +194,9 @@ public class MainScreenController implements Initializable {
         else
             System.out.println("No match!");*/
 
-        partsTableView.getSelectionModel().select(selectPart(2));
+        //partsTableView.getSelectionModel().select(selectPart(2));
+
+
 
 
     }

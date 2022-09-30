@@ -137,6 +137,13 @@ public class MainScreenController implements Initializable {
         return false;
     }
 
+    public Part selectPart(int id) {
+        for(Part part: Inventory.getAllParts()) {
+            if(part.getId() == id)
+                return part;
+        }
+        return null;
+    }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -164,12 +171,16 @@ public class MainScreenController implements Initializable {
         if (update(3, new InHouse(3, "spinner", 18.00, 7, 2, 20, 4)))
             System.out.println("Update successful!");
         else
-            System.out.println("Update failed!");*/
+            System.out.println("Update failed!");
 
         if(delete(3))
             System.out.println("Deleted!");
         else
-            System.out.println("No match!");
+            System.out.println("No match!");*/
+
+        partsTableView.getSelectionModel().select(selectPart(2));
+
+
     }
 
 

@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bf559191-ef79-4b23-850b-633dde92b12f" name="Changes" comment="Update onActionSavePart method.">
+    <list default="true" id="bf559191-ef79-4b23-850b-633dde92b12f" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mirchandani/inventorysystem/AddPartController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mirchandani/inventorysystem/AddPartController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mirchandani/inventorysystem/AddProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mirchandani/inventorysystem/AddProductController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/mirchandani/inventorysystem/MainScreenController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mirchandani/inventorysystem/MainScreenController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -74,7 +72,7 @@
       <workItem from="1664214127119" duration="6303000" />
       <workItem from="1664318878566" duration="3318000" />
       <workItem from="1664325661714" duration="812000" />
-      <workItem from="1664332354547" duration="53363000" />
+      <workItem from="1664332354547" duration="57606000" />
     </task>
     <task id="LOCAL-00001" summary="Add model package with classes: Inventory, Part, Product, InHouse, Outsourced">
       <created>1664043332593</created>
@@ -300,7 +298,14 @@
       <option name="project" value="LOCAL" />
       <updated>1664549394260</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="Update onActionSaveProduct method.">
+      <created>1664557461369</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1664557461369</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -318,7 +323,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Add ModifyPart.fxml &amp; ModifyPartController class." />
     <MESSAGE value="Add AddProduct.fxml &amp; AddProductController class." />
     <MESSAGE value="Add ModifyProduct.fxml &amp; ModifyProductController class." />
     <MESSAGE value="Update layouts for AddPart.fxml" />
@@ -343,7 +347,8 @@
     <MESSAGE value="Add test data, 3 Part objects and 3 Product objects by calling constructors in Main.java." />
     <MESSAGE value="Update module-info.java to resolve runtime error." />
     <MESSAGE value="Update onActionSavePart method." />
-    <option name="LAST_COMMIT_MESSAGE" value="Update onActionSavePart method." />
+    <MESSAGE value="Update onActionSaveProduct method." />
+    <option name="LAST_COMMIT_MESSAGE" value="Update onActionSaveProduct method." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

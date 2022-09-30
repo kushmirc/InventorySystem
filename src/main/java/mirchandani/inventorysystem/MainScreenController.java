@@ -9,6 +9,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
+import model.InHouse;
 import model.Inventory;
 import model.Part;
 import model.Product;
@@ -105,7 +106,28 @@ public class MainScreenController implements Initializable {
     }
 
 
-    //public boolean search(int id) {}
+    public boolean search(int id) {
+
+        for(Part part : Inventory.getAllParts()) {
+            if (part.getId() == id)
+                return true;
+        }
+        return false;
+    }
+
+    public boolean update (int id, Part part) {
+        int index = -1;
+
+        for(Part inHouse : Inventory.getAllParts()) {
+            index++;
+
+            if (inHouse.getId() == id) {
+            Inventory.getAllParts().set(index, part);
+            return true;
+            }
+        }
+        return false;
+    }
 
 
     @Override
@@ -125,6 +147,16 @@ public class MainScreenController implements Initializable {
         productsProductNameCol.setCellValueFactory(new PropertyValueFactory<>("name"));
         productsInventoryLevelCol.setCellValueFactory(new PropertyValueFactory<>("stock"));
         productsPriceCostPerUnitCol.setCellValueFactory(new PropertyValueFactory<>("price"));
+
+        if(search(3))
+            System.out.println("Match!");
+        else
+            System.out.println("No match!");
+
+        if (update(3, new InHouse(3, "spinner", 18.00, 7, 2, 20, 4)))
+            System.out.println("Update successful!");
+        else
+            System.out.println("Update failed!");
 
     }
 

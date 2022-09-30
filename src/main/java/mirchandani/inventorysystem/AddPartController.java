@@ -59,7 +59,7 @@ public class AddPartController implements Initializable {
     }
 
     @FXML
-    void onActionSavePart(ActionEvent event) {
+    void onActionSavePart(ActionEvent event) throws IOException {
 
         int id = Integer.parseInt(partIDTxt.getText());
         String name = partNameTxt.getText();
@@ -77,6 +77,10 @@ public class AddPartController implements Initializable {
 
         Inventory.addPart(new InHouse(id, name, price, stock, min, max, machineId));
 
+        stage = (Stage)((Button)event.getSource()).getScene().getWindow();
+        scene = FXMLLoader.load(getClass().getResource("MainScreen.fxml"));
+        stage.setScene(new Scene(scene));
+        stage.show();
     }
 
     @Override

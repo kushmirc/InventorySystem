@@ -104,6 +104,10 @@ public class MainScreenController implements Initializable {
         System.out.println("Modify Product button clicked!");
     }
 
+
+    //public boolean search(int id) {}
+
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 

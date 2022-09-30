@@ -11,6 +11,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 import model.Inventory;
 import model.Part;
+import model.Product;
 
 import java.io.IOException;
 import java.net.URL;
@@ -94,8 +95,21 @@ public class AddProductController implements Initializable {
     }
 
     @FXML
-    void onActionSaveProduct(ActionEvent event) {
+    void onActionSaveProduct(ActionEvent event) throws IOException {
 
+        int id = Integer.parseInt(productIDTxt.getText());
+        String name = productNameTxt.getText();
+        int stock = Integer.parseInt(productInvTxt.getText());
+        double price = Double.parseDouble(productPriceTxt.getText());
+        int max = Integer.parseInt(productMaxTxt.getText());
+        int min = Integer.parseInt(productMinTxt.getText());
+
+        Inventory.addProduct(new Product(id, name, price, stock, min, max));
+
+        stage = (Stage)((Button)event.getSource()).getScene().getWindow();
+        scene = FXMLLoader.load(getClass().getResource("MainScreen.fxml"));
+        stage.setScene(new Scene(scene));
+        stage.show();
     }
 
     @Override

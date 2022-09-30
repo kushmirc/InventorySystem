@@ -24,17 +24,20 @@ public class AddPartController implements Initializable {
 
     Stage stage;
     Parent scene;
-    @FXML
-    private TextField partIDTxt;
 
     @FXML
     private RadioButton partInHouseRBtn;
+    @FXML
+    private RadioButton partOutsourcedRBtn;
+    @FXML
+    private TextField partIDTxt;
+    @FXML
+    private TextField partNameTxt;
 
     @FXML
     private TextField partInvTxt;
-
     @FXML
-    private TextField partMachineIDTxt;
+    private TextField partPriceCostTxt;
 
     @FXML
     private TextField partMaxTxt;
@@ -43,13 +46,7 @@ public class AddPartController implements Initializable {
     private TextField partMinTxt;
 
     @FXML
-    private TextField partNameTxt;
-
-    @FXML
-    private RadioButton partOutsourcedRBtn;
-
-    @FXML
-    private TextField partPriceCostTxt;
+    private TextField partMachineIDTxt;
 
     @FXML
     void onActionDisplayMainScreen(ActionEvent event) throws IOException {
@@ -61,7 +58,15 @@ public class AddPartController implements Initializable {
 
     @FXML
     void onActionSavePart(ActionEvent event) {
-        System.out.println("Save button clicked!");
+
+        int id = Integer.parseInt(partIDTxt.getText());
+        String name = partNameTxt.getText();
+        int stock = Integer.parseInt(partInvTxt.getText());
+        double price = Double.parseDouble(partPriceCostTxt.getText());
+        boolean inHouse;
+        String machineID = partMachineIDTxt.getText();
+
+
     }
 
     @Override

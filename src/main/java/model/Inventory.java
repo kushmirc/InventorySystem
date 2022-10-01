@@ -50,4 +50,25 @@ public class Inventory {
     public static void addProduct(Product newProduct) {allProducts.add(newProduct);}
     //Create getAllProducts method to populate all products into the observable list of products:
     public static ObservableList<Product> getAllProducts() { return allProducts;}
+
+    public static ObservableList<Product> lookupProduct(String productName) {
+        ObservableList<Product> namedProducts = FXCollections.observableArrayList();
+
+        for(Product product : allProducts)
+            if(product.getName().contains(productName)){
+                namedProducts.add(product);
+            }
+        return namedProducts;
+
+    }
+
+    public static Product lookupProduct(int productId) {
+
+        for(Product product : allProducts)
+            if(product.getId() == productId){
+                return product;}
+        return null;
+    }
+
 }
+

@@ -92,7 +92,7 @@
                                     <Insets left="10.0" top="10.0" />
                                  </padding>
                               </Label>
-                              <TextField fx:id="productsSearchTxt">
+                              <TextField fx:id="productsSearchTxt" onKeyTyped="#onActionLoopUpProduct">
                                  <HBox.margin>
                                     <Insets left="200.0" />
                                  </HBox.margin></TextField>

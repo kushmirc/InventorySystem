@@ -121,6 +121,19 @@ public class MainScreenController implements Initializable {
         partsTableView.setItems(searchedParts);
     }
 
+    @FXML
+    void onActionLoopUpProduct(KeyEvent event) {
+        ObservableList<Product> searchedProducts = Inventory.lookupProduct(partsSearchTxt.getText());
+
+        if(searchedParts.size() == 0) {
+            int searchedPartId = Integer.parseInt(partsSearchTxt.getText());
+            Part part = Inventory.lookupPart(searchedPartId);
+            searchedParts.add(part);
+        }
+
+        partsTableView.setItems(searchedParts);
+    }
+
  /*   public boolean search(int id) {
 
         for(Part part : Inventory.getAllParts()) {

@@ -79,6 +79,14 @@ public class Product {
         associatedParts.add(part);
     }
 
+    public static boolean deleteAssociatedPart(Part selectedAssociatedPart) {
+        //selectedAssociatedPart = (Part) partsTableView2.getSelectionModel().getSelectedItem();
+        if (selectedAssociatedPart == null)
+            return false;
+        else
+            return associatedParts.remove(selectedAssociatedPart);
+    }
+
     private static ObservableList<Part> associatedParts = FXCollections.observableArrayList();
     public static ObservableList<Part> getAllAssociatedParts() {
         return associatedParts;

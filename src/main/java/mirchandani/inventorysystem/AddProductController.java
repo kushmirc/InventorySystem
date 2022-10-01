@@ -17,6 +17,8 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import static model.Product.addAssociatedPart;
+
 /**
  *
  * @author Kush Mirchandani
@@ -78,7 +80,11 @@ public class AddProductController implements Initializable {
 
     @FXML
     void onActionAddPart(ActionEvent event) {
-
+    addToAssociatedPartsTable((Part) partsTableView1.getSelectionModel().getSelectedItem());
+    }
+    @FXML
+    void onActionRemoveAssociatedPart(ActionEvent event) {
+    Product.deleteAssociatedPart((Part) partsTableView2.getSelectionModel().getSelectedItem());
     }
 
     @FXML
@@ -87,11 +93,6 @@ public class AddProductController implements Initializable {
         scene = FXMLLoader.load(getClass().getResource("MainScreen.fxml"));
         stage.setScene(new Scene(scene));
         stage.show();
-    }
-
-    @FXML
-    void onActionRemoveAssociatedPart(ActionEvent event) {
-
     }
 
     @FXML
@@ -112,6 +113,25 @@ public class AddProductController implements Initializable {
         stage.show();
     }
 
+    public void addToAssociatedPartsTable(Part part) {
+        part = (Part) partsTableView1.getSelectionModel().getSelectedItem();
+        if (part == null)
+            System.out.println("Please select a part!");
+        else
+            addAssociatedPart(part);
+
+        partsTableView2.setItems(Product.getAllAssociatedParts());
+        partIDCol2.setCellValueFactory(new PropertyValueFactory<>("id"));
+        partNameCol2.setCellValueFactory(new PropertyValueFactory<>("name"));
+        inventoryLevelCol2.setCellValueFactory(new PropertyValueFactory<>("stock"));
+        priceCostPerUnitCol2.setCellValueFactory(new PropertyValueFactory<>("price"));
+    }
+
+    /*public boolean deleteFromAssociatedPartsTable(Part selectedAssociatedPart){
+
+    }*/
+
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
@@ -121,7 +141,19 @@ public class AddProductController implements Initializable {
         partNameCol1.setCellValueFactory(new PropertyValueFactory<>("name"));
         inventoryLevelCol1.setCellValueFactory(new PropertyValueFactory<>("stock"));
         priceCostPerUnitCol1.setCellValueFactory(new PropertyValueFactory<>("price"));
+
+
+        partsTableView2.setItems(Product.getAllAssociatedParts());
+
+        partIDCol2.setCellValueFactory(new PropertyValueFactory<>("id"));
+        partNameCol2.setCellValueFactory(new PropertyValueFactory<>("name"));
+        inventoryLevelCol2.setCellValueFactory(new PropertyValueFactory<>("stock"));
+        priceCostPerUnitCol2.setCellValueFactory(new PropertyValueFactory<>("price"));
     }
+
+
+
+
 
 
 }

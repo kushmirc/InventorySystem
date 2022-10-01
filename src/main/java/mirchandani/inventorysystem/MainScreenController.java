@@ -180,8 +180,8 @@ public class MainScreenController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
-        //partsTableView.setItems(Inventory.getAllParts());
-        partsTableView.setItems(filter("x"));
+        partsTableView.setItems(Inventory.getAllParts());
+        //partsTableView.setItems(filter("x"));
 
         partIDCol.setCellValueFactory(new PropertyValueFactory<>("id"));
         partNameCol.setCellValueFactory(new PropertyValueFactory<>("name"));

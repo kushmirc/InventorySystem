@@ -9,6 +9,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.KeyEvent;
 import javafx.stage.Stage;
 import model.InHouse;
 import model.Inventory;
@@ -107,7 +108,12 @@ public class MainScreenController implements Initializable {
         System.out.println("Modify Product button clicked!");
     }
 
+    @FXML
+    void onActionLoopUpPart(KeyEvent event) {
+        ObservableList<Part> searchedParts = Inventory.lookupPart(partsSearchTxt.getText());
 
+        partsTableView.setItems(searchedParts);
+    }
 
  /*   public boolean search(int id) {
 

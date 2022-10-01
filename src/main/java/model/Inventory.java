@@ -25,15 +25,16 @@ public class Inventory {
         return filteredParts;
     }*/
 
-    public ObservableList<Part> lookupPart(String partName) {
+    public static ObservableList<Part> lookupPart(String partName) {
         ObservableList<Part> namedParts = FXCollections.observableArrayList();
 
         for(Part part : allParts)
             if(part.getName().contains(partName)){
                 namedParts.add(part);
             }
-
+        System.out.println(namedParts);
         return namedParts;
+
     }
 
 

@@ -4,13 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bf559191-ef79-4b23-850b-633dde92b12f" name="Changes" comment="Update onActionDeletePart, and onActionDeleteProduct.">
+    <list default="true" id="bf559191-ef79-4b23-850b-633dde92b12f" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mirchandani/inventorysystem/AddProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mirchandani/inventorysystem/AddProductController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/mirchandani/inventorysystem/MainScreenController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mirchandani/inventorysystem/MainScreenController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Product.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mirchandani/inventorysystem/AddProduct.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mirchandani/inventorysystem/AddProduct.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/Inventory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Inventory.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,7 +74,7 @@
       <workItem from="1664318878566" duration="3318000" />
       <workItem from="1664325661714" duration="812000" />
       <workItem from="1664332354547" duration="67720000" />
-      <workItem from="1664573736750" duration="14359000" />
+      <workItem from="1664573736750" duration="17527000" />
     </task>
     <task id="LOCAL-00001" summary="Add model package with classes: Inventory, Part, Product, InHouse, Outsourced">
       <created>1664043332593</created>
@@ -352,7 +349,14 @@
       <option name="project" value="LOCAL" />
       <updated>1664588271947</updated>
     </task>
-    <option name="localTasksCounter" value="40" />
+    <task id="LOCAL-00040" summary="Add addToAssociatedPartsTable and deleteFromAssociatedPartsTable methods in AddProduct Controller, and Add deleteAssociatedPart method in Product.java.">
+      <created>1664633173964</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1664633173964</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -370,7 +374,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Add fxid's to fields in AddPart.fxml, AddProduct.fxml and MainScreen.fxml." />
     <MESSAGE value="Define onActionEvents for all buttons, and copy @FXML statements to Controller classes." />
     <MESSAGE value="Add button messages to Main Screen controller to test onActionEvents." />
     <MESSAGE value="Update onActionAddPart event in MainScreenController." />
@@ -395,7 +398,8 @@
     <MESSAGE value="Add selectPart and getSelectionModel methods for Part." />
     <MESSAGE value="Add filter method for Part." />
     <MESSAGE value="Update onActionDeletePart, and onActionDeleteProduct." />
-    <option name="LAST_COMMIT_MESSAGE" value="Update onActionDeletePart, and onActionDeleteProduct." />
+    <MESSAGE value="Add addToAssociatedPartsTable and deleteFromAssociatedPartsTable methods in AddProduct Controller, and Add deleteAssociatedPart method in Product.java." />
+    <option name="LAST_COMMIT_MESSAGE" value="Add addToAssociatedPartsTable and deleteFromAssociatedPartsTable methods in AddProduct Controller, and Add deleteAssociatedPart method in Product.java." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

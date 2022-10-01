@@ -108,14 +108,15 @@ public class MainScreenController implements Initializable {
     }
 
 
-    public boolean search(int id) {
+
+ /*   public boolean search(int id) {
 
         for(Part part : Inventory.getAllParts()) {
             if (part.getId() == id)
                 return true;
         }
         return false;
-    }
+    }*/
 
  /*   public boolean update (int id, Part part) {
         int index = -1;
@@ -147,7 +148,7 @@ public class MainScreenController implements Initializable {
             return Inventory.getAllProducts().remove(selectedProduct);
     }
 
-    public boolean delete(int id) {
+   /* public boolean delete(int id) {
         for(Part part : Inventory.getAllParts()) {
             if (part.getId() == id)
                 return Inventory.getAllParts().remove(part);
@@ -175,7 +176,7 @@ public class MainScreenController implements Initializable {
           return Inventory.getAllParts();
       else
           return Inventory.getAllFilteredParts();
-    }
+    }*/
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {

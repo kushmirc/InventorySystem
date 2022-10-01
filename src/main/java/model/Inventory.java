@@ -20,10 +20,20 @@ public class Inventory {
         return allParts;
     }
     //Declare and initialize filtered observable list for parts:
-    private static ObservableList<Part> filteredParts = FXCollections.observableArrayList();
-
+   /* private static ObservableList<Part> filteredParts = FXCollections.observableArrayList();
     public static ObservableList<Part> getAllFilteredParts() {
         return filteredParts;
+    }*/
+
+    public ObservableList<Part> lookupPart(String partName) {
+        ObservableList<Part> namedParts = FXCollections.observableArrayList();
+
+        for(Part part : allParts)
+            if(part.getName().contains(partName)){
+                namedParts.add(part);
+            }
+
+        return namedParts;
     }
 
 

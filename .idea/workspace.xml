@@ -6,8 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="bf559191-ef79-4b23-850b-633dde92b12f" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mirchandani/inventorysystem/MainScreenController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mirchandani/inventorysystem/MainScreenController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/Inventory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Inventory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mirchandani/inventorysystem/AddProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mirchandani/inventorysystem/AddProductController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mirchandani/inventorysystem/AddProduct.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mirchandani/inventorysystem/AddProduct.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,7 +74,7 @@
       <workItem from="1664318878566" duration="3318000" />
       <workItem from="1664325661714" duration="812000" />
       <workItem from="1664332354547" duration="67720000" />
-      <workItem from="1664573736750" duration="22556000" />
+      <workItem from="1664573736750" duration="25585000" />
     </task>
     <task id="LOCAL-00001" summary="Add model package with classes: Inventory, Part, Product, InHouse, Outsourced">
       <created>1664043332593</created>
@@ -370,7 +370,14 @@
       <option name="project" value="LOCAL" />
       <updated>1664641535280</updated>
     </task>
-    <option name="localTasksCounter" value="43" />
+    <task id="LOCAL-00043" summary="Add lookupPart int method for ID search, and Update onActionLoopUpPart event handler.">
+      <created>1664644761728</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1664644761728</updated>
+    </task>
+    <option name="localTasksCounter" value="44" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -388,7 +395,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Update onActionAddPart event in MainScreenController." />
     <MESSAGE value="Update onActionAddProduct event in MainScreenController." />
     <MESSAGE value="Update onAction event in AddPartController and AddProductController cancel buttons." />
     <MESSAGE value="Add constructor methods and class variables to InHouse and Outsourced classes." />
@@ -413,7 +419,8 @@
     <MESSAGE value="Add addToAssociatedPartsTable and deleteFromAssociatedPartsTable methods in AddProduct Controller, and Add deleteAssociatedPart method in Product.java." />
     <MESSAGE value="Add lookupPart method to Inventory.java." />
     <MESSAGE value="Add onActionLoopUpPart event handler." />
-    <option name="LAST_COMMIT_MESSAGE" value="Add onActionLoopUpPart event handler." />
+    <MESSAGE value="Add lookupPart int method for ID search, and Update onActionLoopUpPart event handler." />
+    <option name="LAST_COMMIT_MESSAGE" value="Add lookupPart int method for ID search, and Update onActionLoopUpPart event handler." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

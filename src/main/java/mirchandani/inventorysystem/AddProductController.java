@@ -1,5 +1,6 @@
 package mirchandani.inventorysystem;
 
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -8,6 +9,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.KeyEvent;
 import javafx.stage.Stage;
 import model.Inventory;
 import model.Part;
@@ -77,6 +79,19 @@ public class AddProductController implements Initializable {
 
     @FXML
     private TextField productSearchTxt;
+
+    @FXML
+    void onActionLookUpPart(KeyEvent event) {
+        ObservableList<Part> searchedParts = Inventory.lookupPart(productSearchTxt.getText());
+
+        if(searchedParts.size() == 0) {
+            int searchedPartId = Integer.parseInt(productSearchTxt.getText());
+            Part part = Inventory.lookupPart(searchedPartId);
+            searchedParts.add(part);
+        }
+
+        partsTableView1.setItems(searchedParts);
+    }
 
     @FXML
     void onActionAddPart(ActionEvent event) {

@@ -123,15 +123,15 @@ public class MainScreenController implements Initializable {
 
     @FXML
     void onActionLoopUpProduct(KeyEvent event) {
-        ObservableList<Product> searchedProducts = Inventory.lookupProduct(partsSearchTxt.getText());
+        ObservableList<Product> searchedProducts = Inventory.lookupProduct(productsSearchTxt.getText());
 
-        if(searchedParts.size() == 0) {
-            int searchedPartId = Integer.parseInt(partsSearchTxt.getText());
-            Part part = Inventory.lookupPart(searchedPartId);
-            searchedParts.add(part);
+        if(searchedProducts.size() == 0) {
+            int searchedProductId = Integer.parseInt(productsSearchTxt.getText());
+            Product product = Inventory.lookupProduct(searchedProductId);
+            searchedProducts.add(product);
         }
 
-        partsTableView.setItems(searchedParts);
+        productsTableView.setItems(searchedProducts);
     }
 
  /*   public boolean search(int id) {

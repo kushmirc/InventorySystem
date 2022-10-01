@@ -3,6 +3,8 @@ package model;
 import javafx.beans.Observable;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.scene.control.cell.PropertyValueFactory;
+import mirchandani.inventorysystem.AddPartController;
 
 /**
  *

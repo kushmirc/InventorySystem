@@ -133,7 +133,7 @@ public class AddProductController implements Initializable {
         if (part == null)
             System.out.println("Please select a part!");
         else
-            addAssociatedPart(part);
+            Product.addAssociatedPart(part);
 
         partsTableView2.setItems(Product.getAllAssociatedParts());
         partIDCol2.setCellValueFactory(new PropertyValueFactory<>("id"));
@@ -142,9 +142,13 @@ public class AddProductController implements Initializable {
         priceCostPerUnitCol2.setCellValueFactory(new PropertyValueFactory<>("price"));
     }
 
-    /*public boolean deleteFromAssociatedPartsTable(Part selectedAssociatedPart){
-
-    }*/
+    public void deleteFromAssociatedPartsTable(Part selectedAssociatedPart){
+        selectedAssociatedPart = (Part) partsTableView2.getSelectionModel().getSelectedItem();
+        if (selectedAssociatedPart == null)
+            System.out.println("Please select a part!");
+        else
+            Product.deleteAssociatedPart(selectedAssociatedPart);
+    }
 
 
     @Override
@@ -158,12 +162,15 @@ public class AddProductController implements Initializable {
         priceCostPerUnitCol1.setCellValueFactory(new PropertyValueFactory<>("price"));
 
 
-        partsTableView2.setItems(Product.getAllAssociatedParts());
+        /*partsTableView2.setItems(Product.getAllAssociatedParts());
 
         partIDCol2.setCellValueFactory(new PropertyValueFactory<>("id"));
         partNameCol2.setCellValueFactory(new PropertyValueFactory<>("name"));
         inventoryLevelCol2.setCellValueFactory(new PropertyValueFactory<>("stock"));
-        priceCostPerUnitCol2.setCellValueFactory(new PropertyValueFactory<>("price"));
+        priceCostPerUnitCol2.setCellValueFactory(new PropertyValueFactory<>("price"));*/
+
+
+
     }
 
 

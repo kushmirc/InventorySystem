@@ -8,7 +8,7 @@ import mirchandani.inventorysystem.AddPartController;
 
 /**
  *
- * @author Kush Mirchandani
+ * @author Kush Mirchandani blah
  */
 public class Product {
     private int id;

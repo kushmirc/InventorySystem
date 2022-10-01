@@ -120,7 +120,9 @@ public class AddProductController implements Initializable {
         int max = Integer.parseInt(productMaxTxt.getText());
         int min = Integer.parseInt(productMinTxt.getText());
 
-        Inventory.addProduct(new Product(id, name, price, stock, min, max));
+        Product newProduct = new Product(id, name, price, stock, min, max);
+        newProduct.setAssociatedParts(newProduct.getAssociatedParts());
+        Inventory.addProduct(newProduct);
 
         stage = (Stage)((Button)event.getSource()).getScene().getWindow();
         scene = FXMLLoader.load(getClass().getResource("MainScreen.fxml"));

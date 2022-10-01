@@ -28,7 +28,7 @@ public class Product {
         this.min = min;
         this.max = max;
 
-        this.associatedParts = getAllAssociatedParts();
+        //this.associatedParts = getAllAssociatedParts();
     }
 
     //Getters and setters:
@@ -80,21 +80,29 @@ public class Product {
         this.max = max;
     }
 
-    public static void addAssociatedPart(Part part) {
-        associatedParts.add(part);
+    public ObservableList<Part> getAssociatedParts() {
+        return associatedParts;
     }
 
-    public static boolean deleteAssociatedPart(Part selectedAssociatedPart) {
+    public void setAssociatedParts(ObservableList<Part> associatedParts) {
+        this.associatedParts = associatedParts;
+    }
+
+    public void addAssociatedPart(Part part) {
+        this.associatedParts.add(part);
+    }
+
+    public boolean deleteAssociatedPart(Part selectedAssociatedPart) {
         //selectedAssociatedPart = (Part) partsTableView2.getSelectionModel().getSelectedItem();
         if (selectedAssociatedPart == null)
             return false;
         else
-            return associatedParts.remove(selectedAssociatedPart);
+            return this.associatedParts.remove(selectedAssociatedPart);
     }
 
 
-    public static ObservableList<Part> getAllAssociatedParts() {
-        return associatedParts;
+    public ObservableList<Part> getAllAssociatedParts() {
+        return this.associatedParts;
     }
 
 }

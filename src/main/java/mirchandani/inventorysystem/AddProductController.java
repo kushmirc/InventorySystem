@@ -90,7 +90,7 @@ public class AddProductController implements Initializable {
     }
 
     @FXML
-    void onActionRemovePart(ActionEvent event) {
+    void onActionRemoveAssociatedPart(ActionEvent event) {
 
     }
 

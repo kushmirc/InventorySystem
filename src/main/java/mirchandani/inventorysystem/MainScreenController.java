@@ -83,23 +83,13 @@ public class MainScreenController implements Initializable {
 
     @FXML
     void onActionDeletePart(ActionEvent event) {
-
-        Part selectedPart = (Part) partsTableView.getSelectionModel().getSelectedItem();
-        if(selectedPart == null)
-            return;
-        else
-            Inventory.getAllParts().remove(selectedPart);
-        //associatedParts.add(selectedPart)
+        deletePart((Part) partsTableView.getSelectionModel().getSelectedItem());
     }
 
     @FXML
     void onActionDeleteProduct(ActionEvent event) {
 
-        Product selectedProduct = (Product) productsTableView.getSelectionModel().getSelectedItem();
-        if(selectedProduct == null)
-            return;
-        else
-            Inventory.getAllProducts().remove(selectedProduct);
+        deleteProduct((Product) productsTableView.getSelectionModel().getSelectedItem());
     }
 
     @FXML
@@ -140,6 +130,22 @@ public class MainScreenController implements Initializable {
         }
         return false;
     }*/
+
+    public boolean deletePart(Part selectedPart) {
+        selectedPart = (Part) partsTableView.getSelectionModel().getSelectedItem();
+        if (selectedPart == null)
+            return false;
+        else
+            return Inventory.getAllParts().remove(selectedPart);
+    }
+
+    public boolean deleteProduct(Product selectedProduct) {
+        selectedProduct = (Product) productsTableView.getSelectionModel().getSelectedItem();
+        if (selectedProduct == null)
+            return false;
+        else
+            return Inventory.getAllProducts().remove(selectedProduct);
+    }
 
     public boolean delete(int id) {
         for(Part part : Inventory.getAllParts()) {

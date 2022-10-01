@@ -32,11 +32,17 @@ public class Inventory {
             if(part.getName().contains(partName)){
                 namedParts.add(part);
             }
-        System.out.println(namedParts);
         return namedParts;
 
     }
 
+    public static Part lookupPart(int partId) {
+
+        for(Part part : allParts)
+            if(part.getId() == partId){
+                return part;}
+        return null;
+    }
 
     //Declare and initialize observable list for products:
     private static ObservableList<Product> allProducts = FXCollections.observableArrayList();

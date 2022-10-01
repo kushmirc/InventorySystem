@@ -112,6 +112,12 @@ public class MainScreenController implements Initializable {
     void onActionLoopUpPart(KeyEvent event) {
         ObservableList<Part> searchedParts = Inventory.lookupPart(partsSearchTxt.getText());
 
+        if(searchedParts.size() == 0) {
+            int searchedPartId = Integer.parseInt(partsSearchTxt.getText());
+            Part part = Inventory.lookupPart(searchedPartId);
+            searchedParts.add(part);
+        }
+
         partsTableView.setItems(searchedParts);
     }
 

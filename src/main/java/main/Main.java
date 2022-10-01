@@ -40,6 +40,7 @@ public class Main extends Application {
         Inventory.addProduct(product2);
         Inventory.addProduct(product3);
 
+
         launch();
     }
 }

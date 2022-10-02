@@ -7,10 +7,7 @@
     <list default="true" id="bf559191-ef79-4b23-850b-633dde92b12f" name="Changes" comment="Update AddProductController.java and Product.java.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/mirchandani/inventorysystem/AddPartController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mirchandani/inventorysystem/AddPartController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/Part.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Part.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/mirchandani/inventorysystem/AddPart.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mirchandani/inventorysystem/AddPart.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mirchandani/inventorysystem/AddProduct.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mirchandani/inventorysystem/AddProduct.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mirchandani/inventorysystem/MainScreen.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mirchandani/inventorysystem/MainScreen.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,7 +25,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main" />
+        <entry key="$PROJECT_DIR$" value="uniqueIDs" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -86,6 +83,7 @@
       <workItem from="1664325661714" duration="812000" />
       <workItem from="1664332354547" duration="67720000" />
       <workItem from="1664573736750" duration="36840000" />
+      <workItem from="1664750608512" duration="1068000" />
     </task>
     <task id="LOCAL-00001" summary="Add model package with classes: Inventory, Part, Product, InHouse, Outsourced">
       <created>1664043332593</created>
@@ -416,7 +414,14 @@
       <option name="project" value="LOCAL" />
       <updated>1664658056489</updated>
     </task>
-    <option name="localTasksCounter" value="48" />
+    <task id="LOCAL-00048" summary="Add unique ID increment.">
+      <created>1664745803989</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1664745803989</updated>
+    </task>
+    <option name="localTasksCounter" value="49" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -434,7 +439,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Add getters and setters to InHouse and Outsourced classes." />
     <MESSAGE value="Updated constructors in InHouse and Outsourced classes." />
     <MESSAGE value="Add comment outline to all class files." />
     <MESSAGE value="Add instance variables, constructor, and getters and setters to Product.java." />
@@ -459,7 +463,8 @@
     <MESSAGE value="Add lookupProduct methods to search my name and ID." />
     <MESSAGE value="Add onActionLoopUpProduct event handler." />
     <MESSAGE value="Update AddProductController.java and Product.java." />
-    <option name="LAST_COMMIT_MESSAGE" value="Update AddProductController.java and Product.java." />
+    <MESSAGE value="Add unique ID increment." />
+    <option name="LAST_COMMIT_MESSAGE" value="Add unique ID increment." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

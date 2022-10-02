@@ -28,7 +28,7 @@ public class AddPartController implements Initializable {
     Stage stage;
     Parent scene;
 
-    int id = 1;
+    int id;
 
 
 
@@ -36,6 +36,8 @@ public class AddPartController implements Initializable {
     private RadioButton partInHouseRBtn;
     @FXML
     private RadioButton partOutsourcedRBtn;
+    @FXML
+    public Label partMachineIDLbl;
     @FXML
     private TextField partIDTxt;
     @FXML
@@ -54,6 +56,14 @@ public class AddPartController implements Initializable {
 
     @FXML
     private TextField partMachineIDTxt;
+
+    public void onInHouse(ActionEvent actionEvent) {
+        partMachineIDLbl.setText("Machine ID");
+    }
+
+    public void onOutsourced(ActionEvent actionEvent) {
+        partMachineIDLbl.setText("Company Name");
+    }
 
     @FXML
     void onActionDisplayMainScreen(ActionEvent event) throws IOException {
@@ -92,6 +102,7 @@ public class AddPartController implements Initializable {
         stage.show();
     }
 
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
@@ -104,6 +115,7 @@ public class AddPartController implements Initializable {
 
 
     }
+
 
 
 }

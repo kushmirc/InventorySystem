@@ -6,8 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="bf559191-ef79-4b23-850b-633dde92b12f" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/mirchandani/inventorysystem/AddProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mirchandani/inventorysystem/AddProductController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Product.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,6 +32,9 @@
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectId" id="2FE1GL3bcJS54KJ8uPzfJDUDi08" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />

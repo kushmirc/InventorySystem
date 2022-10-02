@@ -1,17 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TableColumn?>
-<?import javafx.scene.control.TableView?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.VBox?>
-<?import javafx.scene.text.Font?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="400.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mirchandani.inventorysystem.MainScreenController">
+<AnchorPane prefHeight="400.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mirchandani.inventorysystem.MainScreenController">
    <children>
       <VBox prefHeight="400.0" prefWidth="1100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
@@ -49,7 +43,7 @@
                                     <Insets left="10.0" top="10.0" />
                                  </padding>
                               </Label>
-                              <TextField fx:id="partsSearchTxt" onKeyTyped="#onActionLoopUpPart">
+                              <TextField fx:id="partsSearchTxt" onKeyTyped="#onActionLoopUpPart" promptText="Search by Part ID or Name">
                                  <HBox.margin>
                                     <Insets left="225.0" />
                                  </HBox.margin>
@@ -92,7 +86,7 @@
                                     <Insets left="10.0" top="10.0" />
                                  </padding>
                               </Label>
-                              <TextField fx:id="productsSearchTxt" onKeyTyped="#onActionLoopUpProduct">
+                              <TextField fx:id="productsSearchTxt" onKeyTyped="#onActionLoopUpProduct" promptText="Search by Product ID or Name">
                                  <HBox.margin>
                                     <Insets left="200.0" />
                                  </HBox.margin></TextField>

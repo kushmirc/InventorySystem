@@ -1,20 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.RadioButton?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.control.ToggleGroup?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.ColumnConstraints?>
-<?import javafx.scene.layout.GridPane?>
-<?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.RowConstraints?>
-<?import javafx.scene.layout.VBox?>
-<?import javafx.scene.text.Font?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="600.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mirchandani.inventorysystem.AddPartController">
+<AnchorPane prefHeight="600.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mirchandani.inventorysystem.AddPartController">
    <children>
       <VBox prefHeight="600.0" prefWidth="500.0">
          <children>
@@ -92,7 +83,7 @@
                      <GridPane.margin>
                         <Insets left="20.0" />
                      </GridPane.margin></Label>
-                  <TextField fx:id="partIDTxt" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <TextField fx:id="partIDTxt" disable="true" promptText="Auto Gen - Disabled" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                   <TextField fx:id="partNameTxt" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                   <TextField fx:id="partInvTxt" GridPane.columnIndex="1" GridPane.rowIndex="3" />
                   <TextField fx:id="partPriceCostTxt" GridPane.columnIndex="1" GridPane.rowIndex="4" />

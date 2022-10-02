@@ -13,6 +13,7 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import model.InHouse;
 import model.Inventory;
+import model.Part;
 
 import java.io.IOException;
 import java.net.URL;
@@ -26,6 +27,10 @@ public class AddPartController implements Initializable {
 
     Stage stage;
     Parent scene;
+
+    int id = 1;
+
+
 
     @FXML
     private RadioButton partInHouseRBtn;
@@ -61,7 +66,8 @@ public class AddPartController implements Initializable {
     @FXML
     void onActionSavePart(ActionEvent event) throws IOException {
 
-        int id = Integer.parseInt(partIDTxt.getText());
+        //id =Part.getId() + 1;
+        //id = Integer.parseInt(partIDTxt.getText());
         String name = partNameTxt.getText();
         int stock = Integer.parseInt(partInvTxt.getText());
         double price = Double.parseDouble(partPriceCostTxt.getText());
@@ -75,7 +81,10 @@ public class AddPartController implements Initializable {
         else
             inHouse = false;
 
-        Inventory.addPart(new InHouse(id, name, price, stock, min, max, machineId));
+        InHouse newpart = new InHouse(id, name, price, stock, min, max, machineId);
+        Inventory.addPart(newpart);
+        //id = id + 1;
+        //System.out.println(id);
 
         stage = (Stage)((Button)event.getSource()).getScene().getWindow();
         scene = FXMLLoader.load(getClass().getResource("MainScreen.fxml"));
@@ -85,7 +94,15 @@ public class AddPartController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        System.out.println("System initialized");
+
+        id = Inventory.getAllParts().size() + 1;
+        /*InHouse newPart = new InHouse(1, "coolpart", 1,3,1,4,1);
+        newPart.setId(id++);*/
+        //partIDTxt.setText(String.valueOf(id));
+        //id = id + 1;
+        // System.out.println(id);
+
+
     }
 
 

@@ -19,14 +19,14 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-import static model.Product.addAssociatedPart;
+
 
 /**
  *
  * @author Kush Mirchandani
  */
 public class AddProductController implements Initializable {
-
+Product newProduct = new Product(5, "coolthing", 1000, 10, 2, 40);
     Stage stage;
     Parent scene;
     @FXML
@@ -99,7 +99,7 @@ public class AddProductController implements Initializable {
     }
     @FXML
     void onActionRemoveAssociatedPart(ActionEvent event) {
-    Product.deleteAssociatedPart((Part) partsTableView2.getSelectionModel().getSelectedItem());
+    newProduct.deleteAssociatedPart((Part) partsTableView2.getSelectionModel().getSelectedItem());
     }
 
     @FXML
@@ -120,7 +120,9 @@ public class AddProductController implements Initializable {
         int max = Integer.parseInt(productMaxTxt.getText());
         int min = Integer.parseInt(productMinTxt.getText());
 
-        Inventory.addProduct(new Product(id, name, price, stock, min, max));
+        Product newProduct = new Product(id, name, price, stock, min, max);
+        newProduct.setAssociatedParts(newProduct.getAssociatedParts());
+        Inventory.addProduct(newProduct);
 
         stage = (Stage)((Button)event.getSource()).getScene().getWindow();
         scene = FXMLLoader.load(getClass().getResource("MainScreen.fxml"));
@@ -133,9 +135,9 @@ public class AddProductController implements Initializable {
         if (part == null)
             System.out.println("Please select a part!");
         else
-            Product.addAssociatedPart(part);
+            newProduct.addAssociatedPart(part);
 
-        partsTableView2.setItems(Product.getAllAssociatedParts());
+        partsTableView2.setItems(newProduct.getAllAssociatedParts());
         partIDCol2.setCellValueFactory(new PropertyValueFactory<>("id"));
         partNameCol2.setCellValueFactory(new PropertyValueFactory<>("name"));
         inventoryLevelCol2.setCellValueFactory(new PropertyValueFactory<>("stock"));
@@ -147,7 +149,7 @@ public class AddProductController implements Initializable {
         if (selectedAssociatedPart == null)
             System.out.println("Please select a part!");
         else
-            Product.deleteAssociatedPart(selectedAssociatedPart);
+            newProduct.deleteAssociatedPart(selectedAssociatedPart);
     }
 
 

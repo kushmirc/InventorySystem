@@ -13,6 +13,7 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import model.InHouse;
 import model.Inventory;
+import model.Outsourced;
 import model.Part;
 
 import java.io.IOException;
@@ -29,8 +30,6 @@ public class AddPartController implements Initializable {
     Parent scene;
 
     int id;
-
-
 
     @FXML
     private RadioButton partInHouseRBtn;
@@ -83,16 +82,24 @@ public class AddPartController implements Initializable {
         double price = Double.parseDouble(partPriceCostTxt.getText());
         int max = Integer.parseInt(partMaxTxt.getText());
         int min = Integer.parseInt(partMinTxt.getText());
-        boolean inHouse;
-        int machineId = Integer.parseInt(partMachineIDTxt.getText());
+        //boolean inHouse;
+        //int machineId = Integer.parseInt(partMachineIDTxt.getText());
 
-        if(partInHouseRBtn.isSelected())
+       /* if(partInHouseRBtn.isSelected())
             inHouse = true;
         else
-            inHouse = false;
+            inHouse = false;*/
+        if(partInHouseRBtn.isSelected()) {
+            int machineId = Integer.parseInt(partMachineIDTxt.getText());
+            InHouse newpart = new InHouse(id, name, price, stock, min, max, machineId);
+            Inventory.addPart(newpart);
+        }
+        else {
+            String companyName = partMachineIDTxt.getText();
+            Outsourced newpart = new Outsourced(id, name, price, stock, min, max, companyName);
+            Inventory.addPart((newpart));
+        }
 
-        InHouse newpart = new InHouse(id, name, price, stock, min, max, machineId);
-        Inventory.addPart(newpart);
         //id = id + 1;
         //System.out.println(id);
 

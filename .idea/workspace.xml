@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bf559191-ef79-4b23-850b-633dde92b12f" name="Changes" comment="Update AddProductController.java and Product.java.">
+    <list default="true" id="bf559191-ef79-4b23-850b-633dde92b12f" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/mirchandani/inventorysystem/AddPartController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mirchandani/inventorysystem/AddPartController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mirchandani/inventorysystem/AddPart.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mirchandani/inventorysystem/AddPart.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,7 +82,7 @@
       <workItem from="1664325661714" duration="812000" />
       <workItem from="1664332354547" duration="67720000" />
       <workItem from="1664573736750" duration="36840000" />
-      <workItem from="1664750608512" duration="1068000" />
+      <workItem from="1664750608512" duration="2982000" />
     </task>
     <task id="LOCAL-00001" summary="Add model package with classes: Inventory, Part, Product, InHouse, Outsourced">
       <created>1664043332593</created>
@@ -421,7 +420,14 @@
       <option name="project" value="LOCAL" />
       <updated>1664745803989</updated>
     </task>
-    <option name="localTasksCounter" value="49" />
+    <task id="LOCAL-00049" summary="Add toggle action to inHouse radio button.">
+      <created>1664751728769</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1664751728769</updated>
+    </task>
+    <option name="localTasksCounter" value="50" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -439,7 +445,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Updated constructors in InHouse and Outsourced classes." />
     <MESSAGE value="Add comment outline to all class files." />
     <MESSAGE value="Add instance variables, constructor, and getters and setters to Product.java." />
     <MESSAGE value="Add Observable list definitions and getters to Product.java and Inventory.java." />
@@ -464,7 +469,8 @@
     <MESSAGE value="Add onActionLoopUpProduct event handler." />
     <MESSAGE value="Update AddProductController.java and Product.java." />
     <MESSAGE value="Add unique ID increment." />
-    <option name="LAST_COMMIT_MESSAGE" value="Add unique ID increment." />
+    <MESSAGE value="Add toggle action to inHouse radio button." />
+    <option name="LAST_COMMIT_MESSAGE" value="Add toggle action to inHouse radio button." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

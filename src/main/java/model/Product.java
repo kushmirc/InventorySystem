@@ -27,8 +27,6 @@ public class Product {
         this.stock = stock;
         this.min = min;
         this.max = max;
-
-        //this.associatedParts = getAllAssociatedParts();
     }
 
     //Getters and setters:
@@ -99,7 +97,6 @@ public class Product {
         else
             return this.associatedParts.remove(selectedAssociatedPart);
     }
-
 
     public ObservableList<Part> getAllAssociatedParts() {
         return this.associatedParts;

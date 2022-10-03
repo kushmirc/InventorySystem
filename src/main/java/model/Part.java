@@ -19,8 +19,6 @@ public abstract class Part {
         this.stock = stock;
         this.min = min;
         this.max = max;
-
-        //id = id + 1;
     }
 
     /**

@@ -1,5 +1,6 @@
 package mirchandani.inventorysystem;
 
+import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -82,13 +83,22 @@ Product newProduct = new Product(5, "coolthing", 1000, 10, 2, 40);
 
     @FXML
     void onActionLookUpPart(KeyEvent event) {
-        ObservableList<Part> searchedParts = Inventory.lookupPart(productSearchTxt.getText());
+        ObservableList<Part> searchedParts = FXCollections.observableArrayList(); //= Inventory.lookupPart(partsSearchTxt.getText());
 
-        if(searchedParts.size() == 0) {
+        try {
             int searchedPartId = Integer.parseInt(productSearchTxt.getText());
             Part part = Inventory.lookupPart(searchedPartId);
             searchedParts.add(part);
         }
+        catch(NumberFormatException err){
+            searchedParts = Inventory.lookupPart(productSearchTxt.getText());
+
+        }
+      /*  if(searchedParts.size() == 0) {
+            int searchedPartId = Integer.parseInt(partsSearchTxt.getText());
+            Part part = Inventory.lookupPart(searchedPartId);
+            searchedParts.add(part);
+        }*/
 
         partsTableView1.setItems(searchedParts);
     }

@@ -133,14 +133,17 @@ public class MainScreenController implements Initializable {
 
     @FXML
     void onActionLoopUpProduct(KeyEvent event) {
-        ObservableList<Product> searchedProducts = Inventory.lookupProduct(productsSearchTxt.getText());
+        ObservableList<Product> searchedProducts = FXCollections.observableArrayList();
 
-        if(searchedProducts.size() == 0) {
+        try {
             int searchedProductId = Integer.parseInt(productsSearchTxt.getText());
             Product product = Inventory.lookupProduct(searchedProductId);
             searchedProducts.add(product);
         }
+        catch(NumberFormatException err){
+            searchedProducts = Inventory.lookupProduct(productsSearchTxt.getText());
 
+        }
         productsTableView.setItems(searchedProducts);
     }
 

@@ -1,5 +1,6 @@
 package mirchandani.inventorysystem;
 
+import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -110,13 +111,22 @@ public class MainScreenController implements Initializable {
 
     @FXML
     void onActionLoopUpPart(KeyEvent event) {
-        ObservableList<Part> searchedParts = Inventory.lookupPart(partsSearchTxt.getText());
+        ObservableList<Part> searchedParts = FXCollections.observableArrayList(); //= Inventory.lookupPart(partsSearchTxt.getText());
 
-        if(searchedParts.size() == 0) {
+        try {
             int searchedPartId = Integer.parseInt(partsSearchTxt.getText());
             Part part = Inventory.lookupPart(searchedPartId);
             searchedParts.add(part);
         }
+        catch(NumberFormatException err){
+            searchedParts = Inventory.lookupPart(partsSearchTxt.getText());
+
+        }
+      /*  if(searchedParts.size() == 0) {
+            int searchedPartId = Integer.parseInt(partsSearchTxt.getText());
+            Part part = Inventory.lookupPart(searchedPartId);
+            searchedParts.add(part);
+        }*/
 
         partsTableView.setItems(searchedParts);
     }

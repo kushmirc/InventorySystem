@@ -252,6 +252,9 @@ public class MainScreenController implements Initializable {
 
         //partsTableView.getSelectionModel().select(selectPart(2));
 
+        //Loading part data
+        Part selectedPart = (Part) partsTableView.getSelectionModel().getSelectedItem();
+
 
 
 

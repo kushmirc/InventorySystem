@@ -4,13 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bf559191-ef79-4b23-850b-633dde92b12f" name="Changes" comment="Add if statment to add either an inHouse or Outsourced part.">
+    <list default="true" id="bf559191-ef79-4b23-850b-633dde92b12f" name="Changes" comment="Update search for Product search on MainScreenController.java, and part search on AddProductController.java.">
+      <change afterPath="$PROJECT_DIR$/src/main/java/mirchandani/inventorysystem/ModifyPartControllerOld.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/mirchandani/inventorysystem/ModifyPartOld.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/mirchandani/inventorysystem/ModifyProductOld.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mirchandani/inventorysystem/AddProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mirchandani/inventorysystem/AddProductController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/mirchandani/inventorysystem/MainScreenController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mirchandani/inventorysystem/MainScreenController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/Inventory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Inventory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/Part.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Part.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Product.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mirchandani/inventorysystem/ModifyPartController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mirchandani/inventorysystem/ModifyPartController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mirchandani/inventorysystem/ModifyProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mirchandani/inventorysystem/ModifyProductControllerOld.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mirchandani/inventorysystem/ModifyPart.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mirchandani/inventorysystem/ModifyPart.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mirchandani/inventorysystem/ModifyProduct.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mirchandani/inventorysystem/ModifyProduct.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,7 +31,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="uniqueIDs" />
+        <entry key="$PROJECT_DIR$" value="main" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -45,19 +48,28 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Project.color&quot;: &quot;104836&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.sourceCode.Java&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Project.color": "104836",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "/Users/kushmirchandani/IdeaProjects/InventorySystem/src/main/resources/mirchandani/inventorysystem",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "settings.editor.selected.configurable": "preferences.sourceCode.Java"
   }
-}</component>
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/resources/mirchandani/inventorysystem" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="mirchandani.inventorysystem" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="mirchandani.inventorysystem.Main" />
@@ -87,14 +99,7 @@
       <workItem from="1664332354547" duration="67720000" />
       <workItem from="1664573736750" duration="36840000" />
       <workItem from="1664750608512" duration="8917000" />
-      <workItem from="1664820917238" duration="4881000" />
-    </task>
-    <task id="LOCAL-00002" summary="Add Main package with Main class &amp; add Configuration - Application.">
-      <created>1664044116477</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1664044116477</updated>
+      <workItem from="1664820917238" duration="12079000" />
     </task>
     <task id="LOCAL-00003" summary="Add MainScreen.fxml &amp; MainScreenController class.">
       <created>1664063923856</created>
@@ -432,7 +437,14 @@
       <option name="project" value="LOCAL" />
       <updated>1664753687183</updated>
     </task>
-    <option name="localTasksCounter" value="51" />
+    <task id="LOCAL-00051" summary="Update search for Product search on MainScreenController.java, and part search on AddProductController.java.">
+      <created>1664828721118</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1664828721118</updated>
+    </task>
+    <option name="localTasksCounter" value="52" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -450,7 +462,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Add instance variables, constructor, and getters and setters to Product.java." />
     <MESSAGE value="Add Observable list definitions and getters to Product.java and Inventory.java." />
     <MESSAGE value="Specified Part and Product table views in MainScreenController.java." />
     <MESSAGE value="Add setItems method for partsTableView and productsTableView in MainScreenController.java." />
@@ -475,7 +486,8 @@
     <MESSAGE value="Add unique ID increment." />
     <MESSAGE value="Add toggle action to inHouse radio button." />
     <MESSAGE value="Add if statment to add either an inHouse or Outsourced part." />
-    <option name="LAST_COMMIT_MESSAGE" value="Add if statment to add either an inHouse or Outsourced part." />
+    <MESSAGE value="Update search for Product search on MainScreenController.java, and part search on AddProductController.java." />
+    <option name="LAST_COMMIT_MESSAGE" value="Update search for Product search on MainScreenController.java, and part search on AddProductController.java." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

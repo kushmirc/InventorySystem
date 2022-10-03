@@ -1,9 +1,6 @@
 package mirchandani.inventorysystem;
 
-import javafx.event.ActionEvent;
-import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Label;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -12,7 +9,7 @@ import java.util.ResourceBundle;
  *
  * @author Kush Mirchandani
  */
-public class ModifyProductController implements Initializable {
+public class ModifyProductControllerOld implements Initializable {
 
 
     @Override

@@ -31,7 +31,7 @@ public class ModifyPartController implements Initializable {
 
     int id;
 
-    private static Part selectedPart = null;
+    private static Part loadedPart;
 
     @FXML
     private RadioButton partInHouseRBtn;
@@ -117,7 +117,7 @@ public class ModifyPartController implements Initializable {
         String idString = String.valueOf(idInt);
         System.out.println(idString);
         partIDTxt.setText(idString);*/
-        selectedPart = part;
+        loadedPart = part;
 
        /* partIDTxt.setText(String.valueOf(part.getId()));
         partNameTxt.setText(String.valueOf(part.getName()));
@@ -137,20 +137,20 @@ public class ModifyPartController implements Initializable {
         //id = id + 1;
         // System.out.println(id);
 
-        partIDTxt.setText(String.valueOf(selectedPart.getId()));
-        partNameTxt.setText(String.valueOf(selectedPart.getName()));
-        partInvTxt.setText(String.valueOf(selectedPart.getStock()));
-        partPriceCostTxt.setText(String.valueOf(selectedPart.getPrice()));
-        partMaxTxt.setText(String.valueOf(selectedPart.getMax()));
-        partMinTxt.setText(String.valueOf(selectedPart.getMin()));
-        partOutsourcedRBtn.fire();
+        partIDTxt.setText(String.valueOf(loadedPart.getId()));
+        partNameTxt.setText(String.valueOf(loadedPart.getName()));
+        partInvTxt.setText(String.valueOf(loadedPart.getStock()));
+        partPriceCostTxt.setText(String.valueOf(loadedPart.getPrice()));
+        partMaxTxt.setText(String.valueOf(loadedPart.getMax()));
+        partMinTxt.setText(String.valueOf(loadedPart.getMin()));
+        //partOutsourcedRBtn.fire();
 
-       /* try {
-            partMachineIDLbl.setText(String.valueOf(selectedPart.getMachineId));
+        try {
+            partMachineIDLbl.setText(String.valueOf(loadedPart.getMachineId));
         }
         catch(Exception err) {
-            partMachineIDLbl.setText(selectedPart.getCompanyName);
-        }*/
+            partMachineIDLbl.setText(loadedPart.getCompanyName);
+        }
 
     }
 

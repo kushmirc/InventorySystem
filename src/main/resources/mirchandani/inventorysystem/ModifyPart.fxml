@@ -29,7 +29,7 @@
                <children>
                   <HBox prefHeight="100.0" prefWidth="200.0" spacing="60.0" GridPane.columnIndex="1">
                      <children>
-                        <RadioButton fx:id="partInHouseRBtn" mnemonicParsing="false" onAction="#onInHouse" selected="true" text="In-House">
+                        <RadioButton fx:id="partInHouseRBtn" mnemonicParsing="false" onAction="#onInHouse" text="In-House">
                            <toggleGroup>
                               <ToggleGroup fx:id="addPartTG" />
                            </toggleGroup></RadioButton>
@@ -38,7 +38,7 @@
                      <GridPane.margin>
                         <Insets left="30.0" top="5.0" />
                      </GridPane.margin></HBox>
-                  <Label text="Add Part">
+                  <Label text="Modify Part">
                      <padding>
                         <Insets left="40.0" />
                      </padding>
@@ -92,7 +92,7 @@
                      <GridPane.margin>
                         <Insets left="20.0" />
                      </GridPane.margin></Label>
-                  <TextField fx:id="partIDTxt" disable="true" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <TextField fx:id="partIDTxt" disable="true" text="1" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                   <TextField fx:id="partNameTxt" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                   <TextField fx:id="partInvTxt" GridPane.columnIndex="1" GridPane.rowIndex="3" />
                   <TextField fx:id="partPriceCostTxt" GridPane.columnIndex="1" GridPane.rowIndex="4" />

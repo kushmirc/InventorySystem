@@ -102,6 +102,10 @@ public class MainScreenController implements Initializable {
     @FXML
     void onActionModifyPart(ActionEvent event) throws IOException {
 
+        Part selectedPart = partsTableView.getSelectionModel().getSelectedItem();
+
+        ModifyPartController.loadPart(selectedPart);
+
         stage = (Stage)((Button)event.getSource()).getScene().getWindow();
         scene = FXMLLoader.load(getClass().getResource("ModifyPart.fxml"));
         stage.setScene(new Scene(scene));
@@ -262,9 +266,11 @@ public class MainScreenController implements Initializable {
         //partsTableView.getSelectionModel().select(selectPart(2));
 
         //Loading part data
-        Part selectedPart = (Part) partsTableView.getSelectionModel().getSelectedItem();
+        //Part selectedPart = (Part) partsTableView.getSelectionModel().getSelectedItem();
 
-
+        int myint = 10;
+        String mystring = String.valueOf(myint);
+        System.out.println(mystring);
 
 
 

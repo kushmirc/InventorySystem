@@ -31,6 +31,8 @@ public class ModifyPartController implements Initializable {
 
     int id;
 
+    private static Part selectedPart = null;
+
     @FXML
     private RadioButton partInHouseRBtn;
     @FXML
@@ -77,6 +79,7 @@ public class ModifyPartController implements Initializable {
 
         //id =Part.getId() + 1;
         //id = Integer.parseInt(partIDTxt.getText());
+
         String name = partNameTxt.getText();
         int stock = Integer.parseInt(partInvTxt.getText());
         double price = Double.parseDouble(partPriceCostTxt.getText());
@@ -109,21 +112,45 @@ public class ModifyPartController implements Initializable {
         stage.show();
     }
 
-    public void loadPart(Part part) {
-        partIDTxt.setText(String.valueOf(part.getId()));
-        partNameTxt.setText(String.valueOf(part.getId()));
+    public static void loadPart(Part part) {
+       /* int idInt = part.getId();
+        String idString = String.valueOf(idInt);
+        System.out.println(idString);
+        partIDTxt.setText(idString);*/
+        selectedPart = part;
+
+       /* partIDTxt.setText(String.valueOf(part.getId()));
+        partNameTxt.setText(String.valueOf(part.getName()));
+        partInvTxt.setText(String.valueOf(part.getStock()));
+        partPriceCostTxt.setText(String.valueOf(part.getPrice()));
+        partMaxTxt.setText(String.valueOf(part.getMax()));
+        partMinTxt.setText(String.valueOf(part.getMin()));*/
     }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
-        id = Inventory.getAllParts().size() + 1;
+        //id = Inventory.getAllParts().size() + 1;
         /*InHouse newPart = new InHouse(1, "coolpart", 1,3,1,4,1);
         newPart.setId(id++);*/
         //partIDTxt.setText(String.valueOf(id));
         //id = id + 1;
         // System.out.println(id);
 
+        partIDTxt.setText(String.valueOf(selectedPart.getId()));
+        partNameTxt.setText(String.valueOf(selectedPart.getName()));
+        partInvTxt.setText(String.valueOf(selectedPart.getStock()));
+        partPriceCostTxt.setText(String.valueOf(selectedPart.getPrice()));
+        partMaxTxt.setText(String.valueOf(selectedPart.getMax()));
+        partMinTxt.setText(String.valueOf(selectedPart.getMin()));
+        partOutsourcedRBtn.fire();
+
+       /* try {
+            partMachineIDLbl.setText(String.valueOf(selectedPart.getMachineId));
+        }
+        catch(Exception err) {
+            partMachineIDLbl.setText(selectedPart.getCompanyName);
+        }*/
 
     }
 

@@ -15,6 +15,8 @@ import model.InHouse;
 import model.Inventory;
 import model.Outsourced;
 import model.Part;
+import model.InHouse;
+import model.Outsourced;
 
 import java.io.IOException;
 import java.net.URL;
@@ -145,12 +147,20 @@ public class ModifyPartController implements Initializable {
         partMinTxt.setText(String.valueOf(loadedPart.getMin()));
         //partOutsourcedRBtn.fire();
 
-        try {
+        if(loadedPart instanceof InHouse) {
+            InHouse inh = (InHouse) loadedPart;
+            partMachineIDTxt.setText(String.valueOf(inh.getMachineId()));
+        }
+        else {
+            Outsourced op = (Outsourced) loadedPart;
+            partMachineIDTxt.setText(op.getCompanyName());
+        }
+       /* try {
             partMachineIDLbl.setText(String.valueOf(loadedPart.getMachineId));
         }
         catch(Exception err) {
             partMachineIDLbl.setText(loadedPart.getCompanyName);
-        }
+        }*/
 
     }
 

@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bf559191-ef79-4b23-850b-633dde92b12f" name="Changes" comment="Updated onActionModifyPart and onActionModifyProduct.">
+    <list default="true" id="bf559191-ef79-4b23-850b-633dde92b12f" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/mirchandani/inventorysystem/ModifyPartController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mirchandani/inventorysystem/ModifyPartController.java" afterDir="false" />
     </list>
@@ -93,13 +93,6 @@
       <workItem from="1664573736750" duration="36840000" />
       <workItem from="1664750608512" duration="8917000" />
       <workItem from="1664820917238" duration="25620000" />
-    </task>
-    <task id="LOCAL-00005" summary="Add ModifyPart.fxml &amp; ModifyPartController class.">
-      <created>1664064256334</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1664064256334</updated>
     </task>
     <task id="LOCAL-00006" summary="Add AddProduct.fxml &amp; AddProductController class.">
       <created>1664064645166</created>
@@ -437,7 +430,14 @@
       <option name="project" value="LOCAL" />
       <updated>1664838344791</updated>
     </task>
-    <option name="localTasksCounter" value="54" />
+    <task id="LOCAL-00054" summary="Updated ModifyPartController.">
+      <created>1664906219028</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1664906219028</updated>
+    </task>
+    <option name="localTasksCounter" value="55" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -455,7 +455,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Add setItems method for partsTableView and productsTableView in MainScreenController.java." />
     <MESSAGE value="Add setCellValueFactory methods to partsTableView and productsTableView in MainScreenController.java." />
     <MESSAGE value="Add test data, 3 Part objects and 3 Product objects by calling constructors in Main.java." />
     <MESSAGE value="Update module-info.java to resolve runtime error." />
@@ -480,7 +479,8 @@
     <MESSAGE value="Update search for Product search on MainScreenController.java, and part search on AddProductController.java." />
     <MESSAGE value="Create new ModifyPart and ModifyProduct controllers and .fxml files.  Add loadPart method." />
     <MESSAGE value="Updated onActionModifyPart and onActionModifyProduct." />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated onActionModifyPart and onActionModifyProduct." />
+    <MESSAGE value="Updated ModifyPartController." />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated ModifyPartController." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

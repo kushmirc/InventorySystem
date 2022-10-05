@@ -5,9 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bf559191-ef79-4b23-850b-633dde92b12f" name="Changes" comment="Updated ModifyPartController.">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mirchandani/inventorysystem/AddPartController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mirchandani/inventorysystem/AddPartController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mirchandani/inventorysystem/AddProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mirchandani/inventorysystem/AddProductController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/mirchandani/inventorysystem/ModifyProductController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,7 +23,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main" />
+        <entry key="$PROJECT_DIR$" value="addProductController_updates" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />

@@ -78,9 +78,9 @@ public class Product {
         this.max = max;
     }
 
-    public ObservableList<Part> getAssociatedParts() {
+   /* public ObservableList<Part> getAssociatedParts() {
         return associatedParts;
-    }
+    }*/
 
     public void setAssociatedParts(ObservableList<Part> associatedParts) {
         this.associatedParts = associatedParts;
@@ -99,7 +99,7 @@ public class Product {
     }
 
     public ObservableList<Part> getAllAssociatedParts() {
-        return this.associatedParts;
+        return associatedParts;
     }
 
 }

@@ -4,8 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bf559191-ef79-4b23-850b-633dde92b12f" name="Changes" comment="Updated ModifyPartController.">
-      <change afterPath="$PROJECT_DIR$/src/main/java/mirchandani/inventorysystem/ModifyProductController.java" afterDir="false" />
+    <list default="true" id="bf559191-ef79-4b23-850b-633dde92b12f" name="Changes" comment="Add ModifyPartController.">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mirchandani/inventorysystem/AddPartController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mirchandani/inventorysystem/AddPartController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mirchandani/inventorysystem/MainScreenController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mirchandani/inventorysystem/MainScreenController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mirchandani/inventorysystem/ModifyProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mirchandani/inventorysystem/ModifyProductController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Product.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mirchandani/inventorysystem/ModifyProduct.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mirchandani/inventorysystem/ModifyProduct.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,7 +28,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="addProductController_updates" />
+        <entry key="$PROJECT_DIR$" value="main" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -92,13 +97,6 @@
       <workItem from="1664573736750" duration="36840000" />
       <workItem from="1664750608512" duration="8917000" />
       <workItem from="1664820917238" duration="25620000" />
-    </task>
-    <task id="LOCAL-00010" summary="Update update AddProduct.fxml">
-      <created>1664221716872</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1664221716872</updated>
     </task>
     <task id="LOCAL-00011" summary="Update update AddProduct.fxml">
       <created>1664222077640</created>
@@ -436,7 +434,14 @@
       <option name="project" value="LOCAL" />
       <updated>1664935604199</updated>
     </task>
-    <option name="localTasksCounter" value="59" />
+    <task id="LOCAL-00059" summary="Add ModifyPartController.">
+      <created>1664984200248</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1664984200248</updated>
+    </task>
+    <option name="localTasksCounter" value="60" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -454,7 +459,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Add setCellValueFactory methods to partsTableView and productsTableView in MainScreenController.java." />
     <MESSAGE value="Add test data, 3 Part objects and 3 Product objects by calling constructors in Main.java." />
     <MESSAGE value="Update module-info.java to resolve runtime error." />
     <MESSAGE value="Update onActionSavePart method." />
@@ -479,7 +483,8 @@
     <MESSAGE value="Create new ModifyPart and ModifyProduct controllers and .fxml files.  Add loadPart method." />
     <MESSAGE value="Updated onActionModifyPart and onActionModifyProduct." />
     <MESSAGE value="Updated ModifyPartController." />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated ModifyPartController." />
+    <MESSAGE value="Add ModifyPartController." />
+    <option name="LAST_COMMIT_MESSAGE" value="Add ModifyPartController." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

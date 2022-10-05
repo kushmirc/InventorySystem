@@ -75,7 +75,6 @@ public class AddPartController implements Initializable {
     @FXML
     void onActionSavePart(ActionEvent event) throws IOException {
 
-
         //id = Integer.parseInt(partIDTxt.getText());
         String name = partNameTxt.getText();
         int stock = Integer.parseInt(partInvTxt.getText());

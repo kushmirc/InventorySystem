@@ -27,9 +27,14 @@ import java.util.ResourceBundle;
  * @author Kush Mirchandani
  */
 public class AddProductController implements Initializable {
-Product newProduct = new Product(5, "coolthing", 1000, 10, 2, 40);
+
     Stage stage;
     Parent scene;
+
+    int id;
+
+    Product newProduct;
+
     @FXML
     private TableColumn<Part, Integer> inventoryLevelCol1;
 
@@ -123,25 +128,34 @@ Product newProduct = new Product(5, "coolthing", 1000, 10, 2, 40);
     @FXML
     void onActionSaveProduct(ActionEvent event) throws IOException {
 
-        int id = Integer.parseInt(productIDTxt.getText());
-        String name = productNameTxt.getText();
+        //int id = Integer.parseInt(productIDTxt.getText());
+        /*String name = productNameTxt.getText();
         int stock = Integer.parseInt(productInvTxt.getText());
         double price = Double.parseDouble(productPriceTxt.getText());
         int max = Integer.parseInt(productMaxTxt.getText());
-        int min = Integer.parseInt(productMinTxt.getText());
+        int min = Integer.parseInt(productMinTxt.getText());*/
 
-        Product newProduct = new Product(id, name, price, stock, min, max);
-        newProduct.setAssociatedParts(newProduct.getAssociatedParts());
+        newProduct.setId(id);
+        newProduct.setName(productNameTxt.getText());
+        newProduct.setStock(Integer.parseInt(productInvTxt.getText()));
+        newProduct.setPrice(Double.parseDouble(productPriceTxt.getText()));
+        newProduct.setMax(Integer.parseInt(productMaxTxt.getText()));
+        newProduct.setMin(Integer.parseInt(productMinTxt.getText()));
+
+        //Product newProduct = new Product(id, name, price, stock, min, max);
+        //newProduct.setAssociatedParts(newProduct.getAssociatedParts());
         Inventory.addProduct(newProduct);
 
         stage = (Stage)((Button)event.getSource()).getScene().getWindow();
         scene = FXMLLoader.load(getClass().getResource("MainScreen.fxml"));
         stage.setScene(new Scene(scene));
         stage.show();
+
+
     }
 
     public void addToAssociatedPartsTable(Part part) {
-        part = (Part) partsTableView1.getSelectionModel().getSelectedItem();
+        part = partsTableView1.getSelectionModel().getSelectedItem();
         if (part == null)
             System.out.println("Please select a part!");
         else
@@ -166,6 +180,8 @@ Product newProduct = new Product(5, "coolthing", 1000, 10, 2, 40);
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
+        id = Inventory.getAllProducts().size() + 1000;
+
         partsTableView1.setItems(Inventory.getAllParts());
 
         partIDCol1.setCellValueFactory(new PropertyValueFactory<>("id"));
@@ -181,7 +197,7 @@ Product newProduct = new Product(5, "coolthing", 1000, 10, 2, 40);
         inventoryLevelCol2.setCellValueFactory(new PropertyValueFactory<>("stock"));
         priceCostPerUnitCol2.setCellValueFactory(new PropertyValueFactory<>("price"));*/
 
-
+        newProduct = new Product(1, "", 1, 1, 1, 1);
 
     }
 

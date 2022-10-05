@@ -75,20 +75,14 @@ public class AddPartController implements Initializable {
     @FXML
     void onActionSavePart(ActionEvent event) throws IOException {
 
-        //id =Part.getId() + 1;
+
         //id = Integer.parseInt(partIDTxt.getText());
         String name = partNameTxt.getText();
         int stock = Integer.parseInt(partInvTxt.getText());
         double price = Double.parseDouble(partPriceCostTxt.getText());
         int max = Integer.parseInt(partMaxTxt.getText());
         int min = Integer.parseInt(partMinTxt.getText());
-        //boolean inHouse;
-        //int machineId = Integer.parseInt(partMachineIDTxt.getText());
 
-       /* if(partInHouseRBtn.isSelected())
-            inHouse = true;
-        else
-            inHouse = false;*/
         if(partInHouseRBtn.isSelected()) {
             int machineId = Integer.parseInt(partMachineIDTxt.getText());
             InHouse newpart = new InHouse(id, name, price, stock, min, max, machineId);
@@ -99,9 +93,6 @@ public class AddPartController implements Initializable {
             Outsourced newpart = new Outsourced(id, name, price, stock, min, max, companyName);
             Inventory.addPart((newpart));
         }
-
-        //id = id + 1;
-        //System.out.println(id);
 
         stage = (Stage)((Button)event.getSource()).getScene().getWindow();
         scene = FXMLLoader.load(getClass().getResource("MainScreen.fxml"));

@@ -35,7 +35,7 @@ public class ModifyProductController implements Initializable {
 
     //int id;
 
-    Product newProduct;
+    private Product newProduct;
 
     private static Product loadedProduct;
 

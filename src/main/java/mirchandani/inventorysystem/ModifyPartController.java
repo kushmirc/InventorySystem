@@ -105,8 +105,7 @@ public class ModifyPartController implements Initializable {
             Inventory.addPart((newpart));
         }
 
-        //id = id + 1;
-        //System.out.println(id);
+
 
         stage = (Stage)((Button)event.getSource()).getScene().getWindow();
         scene = FXMLLoader.load(getClass().getResource("MainScreen.fxml"));
@@ -120,13 +119,6 @@ public class ModifyPartController implements Initializable {
         System.out.println(idString);
         partIDTxt.setText(idString);*/
         loadedPart = part;
-
-       /* partIDTxt.setText(String.valueOf(part.getId()));
-        partNameTxt.setText(String.valueOf(part.getName()));
-        partInvTxt.setText(String.valueOf(part.getStock()));
-        partPriceCostTxt.setText(String.valueOf(part.getPrice()));
-        partMaxTxt.setText(String.valueOf(part.getMax()));
-        partMinTxt.setText(String.valueOf(part.getMin()));*/
     }
 
     @Override
@@ -139,6 +131,19 @@ public class ModifyPartController implements Initializable {
         //id = id + 1;
         // System.out.println(id);
 
+        if(loadedPart instanceof InHouse) {
+            InHouse inh = (InHouse) loadedPart;
+            partMachineIDTxt.setText(String.valueOf(inh.getMachineId()));
+            partInHouseRBtn.fire();
+            partMachineIDLbl.setText("Machine ID");
+        }
+        else {
+            Outsourced op = (Outsourced) loadedPart;
+            partMachineIDTxt.setText(op.getCompanyName());
+            partOutsourcedRBtn.fire();
+            partMachineIDLbl.setText("Company Name");
+        }
+
         partIDTxt.setText(String.valueOf(loadedPart.getId()));
         partNameTxt.setText(String.valueOf(loadedPart.getName()));
         partInvTxt.setText(String.valueOf(loadedPart.getStock()));
@@ -147,14 +152,7 @@ public class ModifyPartController implements Initializable {
         partMinTxt.setText(String.valueOf(loadedPart.getMin()));
         //partOutsourcedRBtn.fire();
 
-        if(loadedPart instanceof InHouse) {
-            InHouse inh = (InHouse) loadedPart;
-            partMachineIDTxt.setText(String.valueOf(inh.getMachineId()));
-        }
-        else {
-            Outsourced op = (Outsourced) loadedPart;
-            partMachineIDTxt.setText(op.getCompanyName());
-        }
+
        /* try {
             partMachineIDLbl.setText(String.valueOf(loadedPart.getMachineId));
         }

@@ -94,13 +94,6 @@
       <workItem from="1664750608512" duration="8917000" />
       <workItem from="1664820917238" duration="25620000" />
     </task>
-    <task id="LOCAL-00006" summary="Add AddProduct.fxml &amp; AddProductController class.">
-      <created>1664064645166</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1664064645166</updated>
-    </task>
     <task id="LOCAL-00007" summary="Add ModifyProduct.fxml &amp; ModifyProductController class.">
       <created>1664064740998</created>
       <option name="number" value="00007" />
@@ -437,7 +430,14 @@
       <option name="project" value="LOCAL" />
       <updated>1664906219028</updated>
     </task>
-    <option name="localTasksCounter" value="55" />
+    <task id="LOCAL-00055" summary="Updated ModifyPartController.">
+      <created>1664917562595</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1664917562595</updated>
+    </task>
+    <option name="localTasksCounter" value="56" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

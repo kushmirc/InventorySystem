@@ -268,9 +268,9 @@ public class MainScreenController implements Initializable {
         //Loading part data
         //Part selectedPart = (Part) partsTableView.getSelectionModel().getSelectedItem();
 
-        int myint = 10;
+        /*int myint = 10;
         String mystring = String.valueOf(myint);
-        System.out.println(mystring);
+        System.out.println(mystring);*/
 
 
 

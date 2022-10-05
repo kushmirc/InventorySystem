@@ -31,8 +31,6 @@ public class ModifyPartController implements Initializable {
     Stage stage;
     Parent scene;
 
-    //int id;
-
     private static Part loadedPart;
 
     @FXML
@@ -100,7 +98,6 @@ public class ModifyPartController implements Initializable {
     }
 
     public static void loadPart(Part part) {
-
         loadedPart = part;
     }
 

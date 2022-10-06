@@ -66,7 +66,10 @@ public class AddPartController implements Initializable {
     private Label partPriceCostExLbl;
 
     @FXML
-    private Label partMaxMinExLbl;
+    private Label partMaxExLbl;
+
+    @FXML
+    private Label partMinExLbl;
 
     @FXML
     private Label partMachineIdExLbl;
@@ -90,6 +93,14 @@ public class AddPartController implements Initializable {
     @FXML
     void onActionSavePart(ActionEvent event) throws IOException {
 
+        //Clear exception message fields
+        partNameExLbl.setText("");
+        partInvExLbl.setText("");
+        partPriceCostExLbl.setText("");
+        partMaxExLbl.setText("");
+        partMinExLbl.setText("");
+        partMachineIdExLbl.setText("");
+
         //Check all input fields for exceptions and print applicable messages:
         if (partNameTxt.getText() == "") {
             partNameExLbl.setText("No data in name field");
@@ -104,32 +115,32 @@ public class AddPartController implements Initializable {
         try {
             Double.parseDouble(partPriceCostTxt.getText());
         } catch (NumberFormatException e) {
-            System.out.println("Price is not a double" + e.getMessage());
+            partPriceCostExLbl.setText("Price is not a double");
         }
 
         try {
             Integer.parseInt(partMaxTxt.getText());
         } catch (NumberFormatException e) {
-            System.out.println("Max is not an integer" + e.getMessage());
+            partMaxExLbl.setText("Max is not an integer");
         }
 
         try {
             Integer.parseInt(partMinTxt.getText());
         } catch (NumberFormatException e) {
-            System.out.println("Min is not an integer" + e.getMessage());
+            partMinExLbl.setText("Min is not an integer");
         }
 
         if (partInHouseRBtn.isSelected()) {
             try {
                 Integer.parseInt(partMachineIDTxt.getText());
             } catch (NumberFormatException e) {
-                System.out.println("Machine ID is not an integer" + e.getMessage());
+                partMachineIdExLbl.setText("Machine ID is not an integer");
             }
         }
 
         if (partOutsourcedRBtn.isSelected()) {
             if (partMachineIDTxt.getText() == "") {
-                System.out.println("Exception: No data in Company Name field");
+                partMachineIdExLbl.setText("Exception: No data in Company Name field");
             }
         }
 

@@ -7,7 +7,6 @@
     <list default="true" id="bf559191-ef79-4b23-850b-633dde92b12f" name="Changes" comment="Add ModifyPartController.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/mirchandani/inventorysystem/AddPartController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mirchandani/inventorysystem/AddPartController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mirchandani/inventorysystem/ModifyPartController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mirchandani/inventorysystem/ModifyPartController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/mirchandani/inventorysystem/AddPart.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mirchandani/inventorysystem/AddPart.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/mirchandani/inventorysystem/ModifyPart.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mirchandani/inventorysystem/ModifyPart.fxml" afterDir="false" />
     </list>
@@ -27,7 +26,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main" />
+        <entry key="$PROJECT_DIR$" value="exceptionHandling" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -458,7 +457,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Add test data, 3 Part objects and 3 Product objects by calling constructors in Main.java." />
     <MESSAGE value="Update module-info.java to resolve runtime error." />
     <MESSAGE value="Update onActionSavePart method." />
     <MESSAGE value="Update onActionSaveProduct method." />
@@ -483,7 +481,8 @@
     <MESSAGE value="Updated onActionModifyPart and onActionModifyProduct." />
     <MESSAGE value="Updated ModifyPartController." />
     <MESSAGE value="Add ModifyPartController." />
-    <option name="LAST_COMMIT_MESSAGE" value="Add ModifyPartController." />
+    <MESSAGE value="Add Exception processing to Save button in AddPartController." />
+    <option name="LAST_COMMIT_MESSAGE" value="Add Exception processing to Save button in AddPartController." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

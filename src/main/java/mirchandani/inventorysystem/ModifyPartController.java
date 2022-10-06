@@ -77,6 +77,7 @@ public class ModifyPartController implements Initializable {
     @FXML
     void onActionSavePart(ActionEvent event) throws IOException {
 
+
         loadedPart.setName(partNameTxt.getText());
         loadedPart.setStock(Integer.parseInt(partInvTxt.getText()));
         loadedPart.setPrice(Double.parseDouble(partPriceCostTxt.getText()));

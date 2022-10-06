@@ -111,6 +111,31 @@
                <padding>
                   <Insets right="60.0" />
                </padding></HBox>
+            <Label fx:id="partNameExLbl">
+               <padding>
+                  <Insets left="30.0" />
+               </padding>
+            </Label>
+            <Label fx:id="partInvExLbl" layoutX="10.0" layoutY="449.0">
+               <padding>
+                  <Insets left="30.0" />
+               </padding>
+            </Label>
+            <Label fx:id="partPriceCostExLbl" layoutX="10.0" layoutY="466.0">
+               <padding>
+                  <Insets left="30.0" />
+               </padding>
+            </Label>
+            <Label fx:id="partMaxMinExLbl" layoutX="10.0" layoutY="483.0">
+               <padding>
+                  <Insets left="30.0" />
+               </padding>
+            </Label>
+            <Label fx:id="partMachineIdExLbl" layoutX="10.0" layoutY="500.0">
+               <padding>
+                  <Insets left="30.0" />
+               </padding>
+            </Label>
          </children>
          <padding>
             <Insets bottom="50.0" top="20.0" />

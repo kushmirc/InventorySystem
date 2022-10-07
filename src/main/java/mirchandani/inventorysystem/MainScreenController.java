@@ -73,6 +73,12 @@ public class MainScreenController implements Initializable {
     private Label productsExLbl;
 
     @FXML
+    private Label partSearchExLbl;
+
+    @FXML
+    private Label productSearchExLbl;
+
+    @FXML
     void onActionAddPart(ActionEvent event) throws IOException {
         //get the stage from the event's source widget
         stage = (Stage)((Button)event.getSource()).getScene().getWindow();
@@ -91,18 +97,28 @@ public class MainScreenController implements Initializable {
 
     @FXML
     void onActionDeletePart(ActionEvent event) {
+
+        if(partsTableView.getSelectionModel().getSelectedItem() == null) {
+            partsExLbl.setText("Please select a part");
+            return;}
+
         deletePart((Part) partsTableView.getSelectionModel().getSelectedItem());
+        partsExLbl.setText("");
     }
 
     @FXML
     void onActionDeleteProduct(ActionEvent event) {
 
+        if(productsTableView.getSelectionModel().getSelectedItem() == null) {
+            productsExLbl.setText("Please select a product");
+            return;}
+
         if(productsTableView.getSelectionModel().getSelectedItem().getAllAssociatedParts().size() >0 ) {
             productsExLbl.setText("This product has parts");
-            return;
-        }
+            return;}
 
         deleteProduct((Product) productsTableView.getSelectionModel().getSelectedItem());
+        productsExLbl.setText("");
     }
 
     @FXML
@@ -147,17 +163,23 @@ public class MainScreenController implements Initializable {
 
     @FXML
     void onActionLoopUpPart(KeyEvent event) {
+        partSearchExLbl.setText("");
         ObservableList<Part> searchedParts = FXCollections.observableArrayList(); //= Inventory.lookupPart(partsSearchTxt.getText());
+
 
         try {
             int searchedPartId = Integer.parseInt(partsSearchTxt.getText());
-            Part part = Inventory.lookupPart(searchedPartId);
-            searchedParts.add(part);
+            if(!(Inventory.lookupPart(searchedPartId) == null)){
+                Part part = Inventory.lookupPart(searchedPartId);
+                searchedParts.add(part);}
+            System.out.println(searchedParts.size());
         }
         catch(NumberFormatException err){
             searchedParts = Inventory.lookupPart(partsSearchTxt.getText());
-
+            System.out.println(searchedParts.size());
         }
+
+
       /*  if(searchedParts.size() == 0) {
             int searchedPartId = Integer.parseInt(partsSearchTxt.getText());
             Part part = Inventory.lookupPart(searchedPartId);
@@ -165,22 +187,31 @@ public class MainScreenController implements Initializable {
         }*/
 
         partsTableView.setItems(searchedParts);
+
+        if (searchedParts.size() == 0) {partSearchExLbl.setText("Part not found");}
+
     }
 
     @FXML
     void onActionLoopUpProduct(KeyEvent event) {
+        productSearchExLbl.setText("");
         ObservableList<Product> searchedProducts = FXCollections.observableArrayList();
 
         try {
             int searchedProductId = Integer.parseInt(productsSearchTxt.getText());
-            Product product = Inventory.lookupProduct(searchedProductId);
-            searchedProducts.add(product);
+            if(!(Inventory.lookupProduct(searchedProductId) == null)) {
+                Product product = Inventory.lookupProduct(searchedProductId);
+                searchedProducts.add(product);}
+            System.out.println(searchedProducts.size());
         }
         catch(NumberFormatException err){
             searchedProducts = Inventory.lookupProduct(productsSearchTxt.getText());
-
         }
+
+
+
         productsTableView.setItems(searchedProducts);
+        if (searchedProducts.size() == 0) {productSearchExLbl.setText("Product not found");}
     }
 
  /*   public boolean search(int id) {

@@ -49,9 +49,14 @@
                                     <Insets left="10.0" top="10.0" />
                                  </padding>
                               </Label>
+                              <Label fx:id="partSearchExLbl" prefWidth="80.0">
+                                 <HBox.margin>
+                                    <Insets left="150.0" />
+                                 </HBox.margin>
+                              </Label>
                               <TextField fx:id="partsSearchTxt" onKeyTyped="#onActionLoopUpPart" promptText="Search by Part ID or Name">
                                  <HBox.margin>
-                                    <Insets left="225.0" />
+                                    <Insets left="10.0" />
                                  </HBox.margin>
                               </TextField>
                            </children>
@@ -97,9 +102,14 @@
                                     <Insets left="10.0" top="10.0" />
                                  </padding>
                               </Label>
+                              <Label fx:id="productSearchExLbl" prefWidth="100.0">
+                                 <HBox.margin>
+                                    <Insets left="105.0" />
+                                 </HBox.margin>
+                              </Label>
                               <TextField fx:id="productsSearchTxt" onKeyTyped="#onActionLoopUpProduct" promptText="Search by Product ID or Name">
                                  <HBox.margin>
-                                    <Insets left="200.0" />
+                                    <Insets left="10.0" />
                                  </HBox.margin></TextField>
                            </children>
                         </HBox>

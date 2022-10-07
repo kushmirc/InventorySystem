@@ -58,6 +58,24 @@ public class ModifyPartController implements Initializable {
     @FXML
     private TextField partMachineIDTxt;
 
+    @FXML
+    private Label partNameExLbl;
+
+    @FXML
+    private Label partInvExLbl;
+
+    @FXML
+    private Label partPriceCostExLbl;
+
+    @FXML
+    private Label partMaxExLbl;
+
+    @FXML
+    private Label partMinExLbl;
+
+    @FXML
+    private Label partMachineIdExLbl;
+
     public void onInHouse(ActionEvent actionEvent) {
         partMachineIDLbl.setText("Machine ID");
     }
@@ -77,7 +95,114 @@ public class ModifyPartController implements Initializable {
     @FXML
     void onActionSavePart(ActionEvent event) throws IOException {
 
+        //Clear exception message fields
+        partNameExLbl.setText("");
+        partInvExLbl.setText("");
+        partPriceCostExLbl.setText("");
+        partMaxExLbl.setText("");
+        partMinExLbl.setText("");
+        partMachineIdExLbl.setText("");
 
+        //Check all input fields for exceptions and print applicable messages:
+        if (partNameTxt.getText() == "") {
+            partNameExLbl.setText("No data in name field");
+        }
+
+        try {
+            Integer.parseInt(partInvTxt.getText());
+        } catch (NumberFormatException e) {
+            partInvExLbl.setText("Inventory is not an integer");
+        }
+
+        try {
+            Double.parseDouble(partPriceCostTxt.getText());
+        } catch (NumberFormatException e) {
+            partPriceCostExLbl.setText("Price is not a double");
+        }
+
+        try {
+            Integer.parseInt(partMaxTxt.getText());
+        } catch (NumberFormatException e) {
+            partMaxExLbl.setText("Max is not an integer");
+        }
+
+        try {
+            Integer.parseInt(partMinTxt.getText());
+        } catch (NumberFormatException e) {
+            partMinExLbl.setText("Min is not an integer");
+        }
+
+        if (partInHouseRBtn.isSelected()) {
+            try {
+                Integer.parseInt(partMachineIDTxt.getText());
+            } catch (NumberFormatException e) {
+                partMachineIdExLbl.setText("Machine ID is not an integer");
+            }
+        }
+
+        if (partOutsourcedRBtn.isSelected()) {
+            if (partMachineIDTxt.getText() == "") {
+                partMachineIdExLbl.setText("Exception: No data in Company Name field");
+            }
+        }
+
+        //After printing applicable error messages, check all input fields for exceptions again and return; out of the method if any exceptions exist so the program doesn't crash:
+        if (partNameTxt.getText() == "") {
+            return;
+        }
+
+        try {
+            Integer.parseInt(partInvTxt.getText());
+        } catch (NumberFormatException e) {
+            return;
+        }
+
+        try {
+            Double.parseDouble(partPriceCostTxt.getText());
+        } catch (NumberFormatException e) {
+            return;
+        }
+
+        try {
+            Integer.parseInt(partMaxTxt.getText());
+        } catch (NumberFormatException e) {
+            return;
+        }
+
+        try {
+            Integer.parseInt(partMinTxt.getText());
+        } catch (NumberFormatException e) {
+            return;
+        }
+
+        if (partInHouseRBtn.isSelected()) {
+            try {
+                Integer.parseInt(partMachineIDTxt.getText());
+            } catch (NumberFormatException e) {
+                return;
+            }
+        }
+
+        if (partOutsourcedRBtn.isSelected()) {
+            if (partMachineIDTxt.getText() == "") {
+                return;
+            }
+        }
+
+        //If there are no errors for blank text fields, then check the logic on the Inv, Max & Min fields:
+        if (Integer.parseInt(partMinTxt.getText()) > Integer.parseInt(partMaxTxt.getText())) {
+            partMinExLbl.setText("Min must be less than Max");
+        } else if (Integer.parseInt(partInvTxt.getText()) > Integer.parseInt(partMaxTxt.getText()) || Integer.parseInt(partInvTxt.getText()) < Integer.parseInt(partMinTxt.getText())) {
+            partInvExLbl.setText("Inv must be between Min and Max");
+        }
+
+        //After printing applicable error messages, check Inventory fields for logical errors again and return; out of the method if any exceptions exist so the program doesn't crash:
+        if (Integer.parseInt(partMinTxt.getText()) > Integer.parseInt(partMaxTxt.getText())) {
+            return;
+        } else if (Integer.parseInt(partInvTxt.getText()) > Integer.parseInt(partMaxTxt.getText()) || Integer.parseInt(partInvTxt.getText()) < Integer.parseInt(partMinTxt.getText())) {
+            return; }
+
+        //If there are no errors, proceed with adding the part:
         loadedPart.setName(partNameTxt.getText());
         loadedPart.setStock(Integer.parseInt(partInvTxt.getText()));
         loadedPart.setPrice(Double.parseDouble(partPriceCostTxt.getText()));
@@ -136,6 +261,8 @@ public class ModifyPartController implements Initializable {
              System.out.println("loadedPart is Outsourced");
           else
              System.out.println("loadedPart is a Part again now");*/
+
+
 
     }
 

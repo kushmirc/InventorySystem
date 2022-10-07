@@ -139,7 +139,7 @@
                   <Insets left="30.0" />
                </padding>
             </Label>
-            <Label fx:id="partMinExLbl1" layoutX="10.0" layoutY="500.0">
+            <Label fx:id="partMinExLbl" layoutX="10.0" layoutY="500.0">
                <padding>
                   <Insets left="30.0" />
                </padding>

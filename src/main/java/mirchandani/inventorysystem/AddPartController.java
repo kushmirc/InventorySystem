@@ -189,9 +189,9 @@ public class AddPartController implements Initializable {
 
         //If there are no errors for blank text fields, then check the logic on the Inv, Max & Min fields:
         if (Integer.parseInt(partMinTxt.getText()) > Integer.parseInt(partMaxTxt.getText())) {
-            System.out.println("Min must be less than Max");
+            partMinExLbl.setText("Min must be less than Max");
         } else if (Integer.parseInt(partInvTxt.getText()) > Integer.parseInt(partMaxTxt.getText()) || Integer.parseInt(partInvTxt.getText()) < Integer.parseInt(partMinTxt.getText())) {
-            System.out.println("Inv must be between Min and Max");
+            partInvExLbl.setText("Inv must be between Min and Max");
         }
 
         //After printing applicable error messages, check Inventory fields for logical errors again and return; out of the method if any exceptions exist so the program doesn't crash:
@@ -200,6 +200,7 @@ public class AddPartController implements Initializable {
         } else if (Integer.parseInt(partInvTxt.getText()) > Integer.parseInt(partMaxTxt.getText()) || Integer.parseInt(partInvTxt.getText()) < Integer.parseInt(partMinTxt.getText())) {
             return; }
 
+        //If there are no errors, proceed with adding the part:
             String name = partNameTxt.getText();
             int stock = Integer.parseInt(partInvTxt.getText());
             double price = Double.parseDouble(partPriceCostTxt.getText());

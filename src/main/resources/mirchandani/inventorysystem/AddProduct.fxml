@@ -90,6 +90,11 @@
                <children>
                   <HBox alignment="CENTER_RIGHT" prefHeight="60.0" prefWidth="425.0">
                      <children>
+                        <Label fx:id="partSearchExLbl" prefWidth="80.0">
+                           <HBox.margin>
+                              <Insets right="10.0" />
+                           </HBox.margin>
+                        </Label>
                         <TextField fx:id="productSearchTxt" onKeyTyped="#onActionLookUpPart" promptText="Search by Part ID or Name" />
                      </children></HBox>
                   <TableView fx:id="partsTableView1" prefHeight="170.0" prefWidth="200.0">
@@ -120,6 +125,11 @@
                   </TableView>
                   <HBox alignment="BOTTOM_RIGHT" prefHeight="40.0" prefWidth="200.0">
                      <children>
+                        <Label fx:id="associatedPartExLbl" prefWidth="160.0">
+                           <HBox.margin>
+                              <Insets right="50.0" />
+                           </HBox.margin>
+                        </Label>
                         <Button mnemonicParsing="false" onAction="#onActionRemoveAssociatedPart" text="Remove Associated Part" />
                      </children>
                      <padding>

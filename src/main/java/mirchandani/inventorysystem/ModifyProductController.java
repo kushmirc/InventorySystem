@@ -8,10 +8,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.KeyEvent;
 import javafx.stage.Stage;
@@ -21,6 +18,7 @@ import model.Product;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.Optional;
 import java.util.ResourceBundle;
 
 
@@ -32,10 +30,6 @@ public class ModifyProductController implements Initializable {
 
     Stage stage;
     Parent scene;
-
-    //int id;
-
-    private Product newProduct;
 
     private static Product loadedProduct;
 
@@ -91,18 +85,28 @@ public class ModifyProductController implements Initializable {
     private TextField productSearchTxt;
 
     @FXML
+    private Label partSearchExLbl;
+
+    @FXML
+    private Label associatedPartExLbl;
+
+    @FXML
     void onActionLookUpPart(KeyEvent event) {
+        partSearchExLbl.setText("");
         ObservableList<Part> searchedParts = FXCollections.observableArrayList(); //= Inventory.lookupPart(partsSearchTxt.getText());
 
         try {
             int searchedPartId = Integer.parseInt(productSearchTxt.getText());
+            if(!(Inventory.lookupPart(searchedPartId) == null)){
             Part part = Inventory.lookupPart(searchedPartId);
-            searchedParts.add(part);
+            searchedParts.add(part); }
         }
         catch(NumberFormatException err){
             searchedParts = Inventory.lookupPart(productSearchTxt.getText());
-
         }
+
+        if (searchedParts.size() == 0) {partSearchExLbl.setText("Part not found");}
+
       /*  if(searchedParts.size() == 0) {
             int searchedPartId = Integer.parseInt(partsSearchTxt.getText());
             Part part = Inventory.lookupPart(searchedPartId);
@@ -118,7 +122,22 @@ public class ModifyProductController implements Initializable {
     }
     @FXML
     void onActionRemoveAssociatedPart(ActionEvent event) {
-    loadedProduct.deleteAssociatedPart(partsTableView2.getSelectionModel().getSelectedItem());
+
+        associatedPartExLbl.setText("");
+
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Associated parts");
+        alert.setHeaderText("Remove");
+        alert.setContentText("Are you sure you want to remove this associated part?");
+
+        Optional<ButtonType> result = alert.showAndWait();
+        if (result.get() == ButtonType.OK){
+            loadedProduct.deleteAssociatedPart(partsTableView2.getSelectionModel().getSelectedItem());
+            associatedPartExLbl.setText("Associated part removed");
+        } else {
+            associatedPartExLbl.setText("Associated part not removed");
+        }
+
     }
 
     @FXML
@@ -132,7 +151,6 @@ public class ModifyProductController implements Initializable {
     @FXML
     void onActionSaveProduct(ActionEvent event) throws IOException {
 
-        //newProduct.setId(id);
         loadedProduct.setName(productNameTxt.getText());
         loadedProduct.setStock(Integer.parseInt(productInvTxt.getText()));
         loadedProduct.setPrice(Double.parseDouble(productPriceTxt.getText()));
@@ -140,16 +158,10 @@ public class ModifyProductController implements Initializable {
         loadedProduct.setMin(Integer.parseInt(productMinTxt.getText()));
         loadedProduct.setAssociatedParts(loadedProduct.getAllAssociatedParts());
 
-        //Product newProduct = new Product(id, name, price, stock, min, max);
-        //newProduct.setAssociatedParts(newProduct.getAssociatedParts());
-        //Inventory.addProduct(newProduct);
-
         stage = (Stage)((Button)event.getSource()).getScene().getWindow();
         scene = FXMLLoader.load(getClass().getResource("MainScreen.fxml"));
         stage.setScene(new Scene(scene));
         stage.show();
-
-
     }
 
     public void addToAssociatedPartsTable(Part part) {
@@ -205,10 +217,6 @@ public class ModifyProductController implements Initializable {
         partNameCol2.setCellValueFactory(new PropertyValueFactory<>("name"));
         inventoryLevelCol2.setCellValueFactory(new PropertyValueFactory<>("stock"));
         priceCostPerUnitCol2.setCellValueFactory(new PropertyValueFactory<>("price"));
-
-
-
-        //newProduct = new Product(1, "", 1, 1, 1, 1);
 
     }
 

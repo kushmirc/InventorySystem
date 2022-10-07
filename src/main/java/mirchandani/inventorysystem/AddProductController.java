@@ -18,6 +18,7 @@ import model.Product;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.Optional;
 import java.util.ResourceBundle;
 
 
@@ -87,18 +88,29 @@ public class AddProductController implements Initializable {
     private TextField productSearchTxt;
 
     @FXML
+    private Label partSearchExLbl;
+
+    @FXML
+    private Label associatedPartExLbl;
+
+
+    @FXML
     void onActionLookUpPart(KeyEvent event) {
+        partSearchExLbl.setText("");
         ObservableList<Part> searchedParts = FXCollections.observableArrayList(); //= Inventory.lookupPart(partsSearchTxt.getText());
 
         try {
             int searchedPartId = Integer.parseInt(productSearchTxt.getText());
-            Part part = Inventory.lookupPart(searchedPartId);
-            searchedParts.add(part);
+            if(!(Inventory.lookupPart(searchedPartId) == null)) {
+                Part part = Inventory.lookupPart(searchedPartId);
+                searchedParts.add(part); }
         }
         catch(NumberFormatException err){
             searchedParts = Inventory.lookupPart(productSearchTxt.getText());
-
         }
+
+        if (searchedParts.size() == 0) {partSearchExLbl.setText("Part not found");}
+
       /*  if(searchedParts.size() == 0) {
             int searchedPartId = Integer.parseInt(partsSearchTxt.getText());
             Part part = Inventory.lookupPart(searchedPartId);
@@ -114,7 +126,21 @@ public class AddProductController implements Initializable {
     }
     @FXML
     void onActionRemoveAssociatedPart(ActionEvent event) {
-    newProduct.deleteAssociatedPart((Part) partsTableView2.getSelectionModel().getSelectedItem());
+
+        associatedPartExLbl.setText("");
+
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Associated parts");
+        alert.setHeaderText("Remove");
+        alert.setContentText("Are you sure you want to remove this associated part?");
+
+        Optional<ButtonType> result = alert.showAndWait();
+        if (result.get() == ButtonType.OK){
+            newProduct.deleteAssociatedPart(partsTableView2.getSelectionModel().getSelectedItem());
+            associatedPartExLbl.setText("Associated part removed");
+        } else {
+            associatedPartExLbl.setText("Associated part not removed");
+        }
     }
 
     @FXML

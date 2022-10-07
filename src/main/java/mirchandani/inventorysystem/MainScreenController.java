@@ -19,6 +19,7 @@ import model.Product;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.Optional;
 import java.util.ResourceBundle;
 
 /**
@@ -98,27 +99,51 @@ public class MainScreenController implements Initializable {
     @FXML
     void onActionDeletePart(ActionEvent event) {
 
+        partsExLbl.setText("");
+
         if(partsTableView.getSelectionModel().getSelectedItem() == null) {
             partsExLbl.setText("Please select a part");
             return;}
 
-        deletePart((Part) partsTableView.getSelectionModel().getSelectedItem());
-        partsExLbl.setText("");
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Parts");
+        alert.setHeaderText("Delete");
+        alert.setContentText("Are you sure you want to delete this part?");
+
+        Optional<ButtonType> result = alert.showAndWait();
+        if (result.get() == ButtonType.OK){
+            deletePart(partsTableView.getSelectionModel().getSelectedItem());
+            partsExLbl.setText("Part deleted");
+        } else {
+            partsExLbl.setText("Part not deleted");
+        }
+
     }
 
     @FXML
     void onActionDeleteProduct(ActionEvent event) {
 
+        productsExLbl.setText("");
+
         if(productsTableView.getSelectionModel().getSelectedItem() == null) {
             productsExLbl.setText("Please select a product");
             return;}
 
-        if(productsTableView.getSelectionModel().getSelectedItem().getAllAssociatedParts().size() >0 ) {
-            productsExLbl.setText("This product has parts");
-            return;}
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Products");
+        alert.setHeaderText("Delete");
+        alert.setContentText("Are you sure you want to delete this product?");
 
-        deleteProduct((Product) productsTableView.getSelectionModel().getSelectedItem());
-        productsExLbl.setText("");
+        Optional<ButtonType> result = alert.showAndWait();
+        if (result.get() == ButtonType.OK){
+            if(productsTableView.getSelectionModel().getSelectedItem().getAllAssociatedParts().size() >0 ) {
+                productsExLbl.setText("This product has parts");
+                return;}
+            deleteProduct(productsTableView.getSelectionModel().getSelectedItem());
+            productsExLbl.setText("Product deleted");
+        } else {
+            productsExLbl.setText("Product not deleted");
+        }
     }
 
     @FXML
@@ -175,15 +200,7 @@ public class MainScreenController implements Initializable {
         }
         catch(NumberFormatException err){
             searchedParts = Inventory.lookupPart(partsSearchTxt.getText());
-            System.out.println(searchedParts.size());
         }
-
-
-      /*  if(searchedParts.size() == 0) {
-            int searchedPartId = Integer.parseInt(partsSearchTxt.getText());
-            Part part = Inventory.lookupPart(searchedPartId);
-            searchedParts.add(part);
-        }*/
 
         partsTableView.setItems(searchedParts);
 
@@ -205,8 +222,6 @@ public class MainScreenController implements Initializable {
         catch(NumberFormatException err){
             searchedProducts = Inventory.lookupProduct(productsSearchTxt.getText());
         }
-
-
 
         productsTableView.setItems(searchedProducts);
         if (searchedProducts.size() == 0) {productSearchExLbl.setText("Product not found");}
@@ -236,7 +251,7 @@ public class MainScreenController implements Initializable {
     }*/
 
     public boolean deletePart(Part selectedPart) {
-        selectedPart = (Part) partsTableView.getSelectionModel().getSelectedItem();
+        selectedPart = partsTableView.getSelectionModel().getSelectedItem();
         if (selectedPart == null)
             return false;
         else

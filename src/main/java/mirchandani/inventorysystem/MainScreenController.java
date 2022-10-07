@@ -172,7 +172,6 @@ public class MainScreenController implements Initializable {
             if(!(Inventory.lookupPart(searchedPartId) == null)){
                 Part part = Inventory.lookupPart(searchedPartId);
                 searchedParts.add(part);}
-            System.out.println(searchedParts.size());
         }
         catch(NumberFormatException err){
             searchedParts = Inventory.lookupPart(partsSearchTxt.getText());
@@ -202,7 +201,6 @@ public class MainScreenController implements Initializable {
             if(!(Inventory.lookupProduct(searchedProductId) == null)) {
                 Product product = Inventory.lookupProduct(searchedProductId);
                 searchedProducts.add(product);}
-            System.out.println(searchedProducts.size());
         }
         catch(NumberFormatException err){
             searchedProducts = Inventory.lookupProduct(productsSearchTxt.getText());

@@ -11,6 +11,8 @@ import javafx.collections.ObservableList;
  * @author Kush Mirchandani
  */
 public class Inventory {
+
+
     //Declare and initialize observable list for parts:
     private static ObservableList<Part> allParts = FXCollections.observableArrayList();
 

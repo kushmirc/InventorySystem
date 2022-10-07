@@ -67,6 +67,12 @@ public class MainScreenController implements Initializable {
     private TableView<Product> productsTableView;
 
     @FXML
+    private Label partsExLbl;
+
+    @FXML
+    private Label productsExLbl;
+
+    @FXML
     void onActionAddPart(ActionEvent event) throws IOException {
         //get the stage from the event's source widget
         stage = (Stage)((Button)event.getSource()).getScene().getWindow();
@@ -91,6 +97,11 @@ public class MainScreenController implements Initializable {
     @FXML
     void onActionDeleteProduct(ActionEvent event) {
 
+        if(productsTableView.getSelectionModel().getSelectedItem().getAllAssociatedParts().size() >0 ) {
+            productsExLbl.setText("This product has parts");
+            return;
+        }
+
         deleteProduct((Product) productsTableView.getSelectionModel().getSelectedItem());
     }
 
@@ -101,6 +112,10 @@ public class MainScreenController implements Initializable {
 
     @FXML
     void onActionModifyPart(ActionEvent event) throws IOException {
+
+        if(partsTableView.getSelectionModel().getSelectedItem() == null) {
+            partsExLbl.setText("Please select a part");
+            return;}
 
         Part selectedPart = partsTableView.getSelectionModel().getSelectedItem();
 
@@ -115,6 +130,10 @@ public class MainScreenController implements Initializable {
 
     @FXML
     void onActionModifyProduct(ActionEvent event) throws IOException {
+
+        if(productsTableView.getSelectionModel().getSelectedItem() == null) {
+            productsExLbl.setText("Please select a product");
+            return;}
 
         Product selectedProduct = productsTableView.getSelectionModel().getSelectedItem();
 

@@ -31,7 +31,7 @@ public class ModifyPartController implements Initializable {
     Stage stage;
     Parent scene;
 
-    private static Part loadedPart;
+    //private static Part loadedPart;
 
     @FXML
     private RadioButton partInHouseRBtn;
@@ -203,17 +203,17 @@ public class ModifyPartController implements Initializable {
             return; }
 
         //If there are no errors, proceed with adding the part:
-        loadedPart.setName(partNameTxt.getText());
-        loadedPart.setStock(Integer.parseInt(partInvTxt.getText()));
-        loadedPart.setPrice(Double.parseDouble(partPriceCostTxt.getText()));
-        loadedPart.setMax(Integer.parseInt(partMaxTxt.getText()));
-        loadedPart.setMin(Integer.parseInt(partMinTxt.getText()));
+        Inventory.loadedPart.setName(partNameTxt.getText());
+        Inventory.loadedPart.setStock(Integer.parseInt(partInvTxt.getText()));
+        Inventory.loadedPart.setPrice(Double.parseDouble(partPriceCostTxt.getText()));
+        Inventory.loadedPart.setMax(Integer.parseInt(partMaxTxt.getText()));
+        Inventory.loadedPart.setMin(Integer.parseInt(partMinTxt.getText()));
 
         if(partInHouseRBtn.isSelected()) {
-            InHouse inh = (InHouse) loadedPart;
+            InHouse inh = (InHouse) Inventory.loadedPart;
             inh.setMachineId(Integer.parseInt(partMachineIDTxt.getText()));
         } else {
-            Outsourced op = (Outsourced) loadedPart;
+            Outsourced op = (Outsourced) Inventory.loadedPart;
             op.setCompanyName(partMachineIDTxt.getText());
         }
 
@@ -223,16 +223,16 @@ public class ModifyPartController implements Initializable {
         stage.show();
     }
 
-    public static void loadPart(Part part) {
+    /*public static void loadPart(Part part) {
         loadedPart = part;
-    }
+    }*/
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
 
-        if(loadedPart instanceof InHouse) {
-            InHouse in = (InHouse) loadedPart;
+        if(Inventory.loadedPart instanceof InHouse) {
+            InHouse in = (InHouse) Inventory.loadedPart;
             partMachineIDTxt.setText(String.valueOf(in.getMachineId()));
             partInHouseRBtn.setSelected(true);
             partInHouseRBtn.setDisable(true);
@@ -240,7 +240,7 @@ public class ModifyPartController implements Initializable {
             partMachineIDLbl.setText("Machine ID");
         }
         else {
-            Outsourced op = (Outsourced) loadedPart;
+            Outsourced op = (Outsourced) Inventory.loadedPart;
             partMachineIDTxt.setText(op.getCompanyName());
             partOutsourcedRBtn.setSelected(true);
             partInHouseRBtn.setDisable(true);
@@ -248,12 +248,12 @@ public class ModifyPartController implements Initializable {
             partMachineIDLbl.setText("Company Name");
         }
 
-        partIDTxt.setText(String.valueOf(loadedPart.getId()));
-        partNameTxt.setText(String.valueOf(loadedPart.getName()));
-        partInvTxt.setText(String.valueOf(loadedPart.getStock()));
-        partPriceCostTxt.setText(String.valueOf(loadedPart.getPrice()));
-        partMaxTxt.setText(String.valueOf(loadedPart.getMax()));
-        partMinTxt.setText(String.valueOf(loadedPart.getMin()));
+        partIDTxt.setText(String.valueOf(Inventory.loadedPart.getId()));
+        partNameTxt.setText(String.valueOf(Inventory.loadedPart.getName()));
+        partInvTxt.setText(String.valueOf(Inventory.loadedPart.getStock()));
+        partPriceCostTxt.setText(String.valueOf(Inventory.loadedPart.getPrice()));
+        partMaxTxt.setText(String.valueOf(Inventory.loadedPart.getMax()));
+        partMinTxt.setText(String.valueOf(Inventory.loadedPart.getMin()));
 
         /*if(loadedPart instanceof InHouse)
              System.out.println("loadedPart is still an InHouse object");
@@ -261,11 +261,5 @@ public class ModifyPartController implements Initializable {
              System.out.println("loadedPart is Outsourced");
           else
              System.out.println("loadedPart is a Part again now");*/
-
-
-
     }
-
-
-
 }

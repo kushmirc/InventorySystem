@@ -12,6 +12,14 @@ import javafx.collections.ObservableList;
  */
 public class Inventory {
 
+    public static Part loadedPart;
+    public static int id;
+
+    int index;
+    public static void updatePart(int index, Part selectedPart) {
+        id = index;
+        loadedPart = selectedPart;
+    }
 
     //Declare and initialize observable list for parts:
     private static ObservableList<Part> allParts = FXCollections.observableArrayList();

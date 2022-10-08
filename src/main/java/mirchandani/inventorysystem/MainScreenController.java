@@ -21,6 +21,8 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.Optional;
 import java.util.ResourceBundle;
+import java.util.ArrayList;
+
 
 /**
  *
@@ -158,9 +160,14 @@ public class MainScreenController implements Initializable {
             partsExLbl.setText("Please select a part");
             return;}
 
-        Part selectedPart = partsTableView.getSelectionModel().getSelectedItem();
+        //Part selectedPart = partsTableView.getSelectionModel().getSelectedItem();
+        Part loadedPart = partsTableView.getSelectionModel().getSelectedItem();
 
-        ModifyPartController.loadPart(selectedPart);
+        ObservableList<Part> allParts = Inventory.getAllParts();
+        int id = allParts.indexOf(loadedPart);
+
+        //ModifyPartController.loadPart(selectedPart);
+        Inventory.updatePart(id, loadedPart);
 
         stage = (Stage)((Button)event.getSource()).getScene().getWindow();
         scene = FXMLLoader.load(getClass().getResource("ModifyPart.fxml"));

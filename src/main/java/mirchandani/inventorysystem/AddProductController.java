@@ -23,17 +23,22 @@ import java.util.ResourceBundle;
 
 
 
-/**
- *
- * @author Kush Mirchandani
- */
+/** Class AddProductController controls AddProduct.fxml. It allows users to create a product name, inventory level,
+ * price, and max & min inventory allowed. The user can add associated parts to the new product using the part, and
+ * associated parts tables and buttons. The product ID is incremented and auto-generated, and cannot be changed by the user.
+ * @author Kush Mirchandani*/
 public class AddProductController implements Initializable {
 
+    /** declares a stage variable */
     Stage stage;
+
+    /** declares a scene variable */
     Parent scene;
 
+    /** declares an id variable so that part IDs can be incremented */
     int id;
 
+    /** declares a product variable so that associated parts can be added when creating a new product */
     Product newProduct;
 
     @FXML
@@ -108,9 +113,16 @@ public class AddProductController implements Initializable {
     @FXML
     private Label productMinExLbl;
 
-
     @FXML
-    void onActionLookUpPart(KeyEvent event) {
+    private Label partExLbl;
+
+
+    /** Searches for matching parts.
+     * Searches through allParts and displays those parts whose ID or Name contains the character(s) keyed in by the user to the search
+     * field in the Parts pane. Displays an error message if the character(s) aren't contained in any parts.
+     * @param event the item on the GUI that triggers the action */
+    @FXML
+    public void onActionLookUpPart(KeyEvent event) {
         partSearchExLbl.setText("");
         ObservableList<Part> searchedParts = FXCollections.observableArrayList(); //= Inventory.lookupPart(partsSearchTxt.getText());
 
@@ -126,21 +138,29 @@ public class AddProductController implements Initializable {
 
         if (searchedParts.size() == 0) {partSearchExLbl.setText("Part not found");}
 
-      /*  if(searchedParts.size() == 0) {
-            int searchedPartId = Integer.parseInt(partsSearchTxt.getText());
-            Part part = Inventory.lookupPart(searchedPartId);
-            searchedParts.add(part);
-        }*/
-
         partsTableView1.setItems(searchedParts);
     }
 
+    /** Add button clicked.
+     * Adds the part selected in the top parts pane to the lower associated parts pane. If no part is selected,
+     * an error message is displayed.
+     * @param event the item on the GUI that triggers the action */
     @FXML
-    void onActionAddPart(ActionEvent event) {
-    addToAssociatedPartsTable((Part) partsTableView1.getSelectionModel().getSelectedItem());
-    }
+    public void onActionAddPart(ActionEvent event) {
+        partExLbl.setText("");
+
+        if(partsTableView1.getSelectionModel().getSelectedItem() == null) {
+            partExLbl.setText("Please select a part");
+        }
+        addToAssociatedPartsTable(partsTableView1.getSelectionModel().getSelectedItem());
+        }
+
+    /** Remove Associated Part button clicked.
+     * Removes the part selected in the lower associated parts pane. If no part is selected, an error message is displayed.
+     * A confirmation dialogue is displayed when the button is clicked.
+     * @param event the item on the GUI that triggers the action */
     @FXML
-    void onActionRemoveAssociatedPart(ActionEvent event) {
+    public void onActionRemoveAssociatedPart(ActionEvent event) {
 
         associatedPartExLbl.setText("");
 
@@ -158,16 +178,25 @@ public class AddProductController implements Initializable {
         }
     }
 
+    /** Cancel button clicked.
+     * Exits the Add Product screen and opens the Main Screen.
+     * @param event the item on the GUI that triggers the action */
     @FXML
-    void onActionDisplayMainScreen(ActionEvent event) throws IOException {
+    public void onActionDisplayMainScreen(ActionEvent event) throws IOException {
         stage = (Stage)((Button)event.getSource()).getScene().getWindow();
         scene = FXMLLoader.load(getClass().getResource("MainScreen.fxml"));
         stage.setScene(new Scene(scene));
         stage.show();
     }
 
+    /** Save button clicked.
+     * Saves the product, by calling the addProduct method in the Inventory class.
+     * Closes the Add Product screen and opens the Main Screen when clicked. Displays error messages and stops running if any
+     * of the input fields are blank when clicked. Displays error messages and stops running if min is greater than max, or
+     * if inventory isn't between min and max.
+     * @param event the item on the GUI that triggers the action */
     @FXML
-    void onActionSaveProduct(ActionEvent event) throws IOException {
+    public void onActionSaveProduct(ActionEvent event) throws IOException {
 
         //Clear exception message fields
         productNameExLbl.setText("");
@@ -247,14 +276,6 @@ public class AddProductController implements Initializable {
         } else if (Integer.parseInt(productInvTxt.getText()) > Integer.parseInt(productMaxTxt.getText()) || Integer.parseInt(productInvTxt.getText()) < Integer.parseInt(productMinTxt.getText())) {
             return; }
 
-
-        //int id = Integer.parseInt(productIDTxt.getText());
-        /*String name = productNameTxt.getText();
-        int stock = Integer.parseInt(productInvTxt.getText());
-        double price = Double.parseDouble(productPriceTxt.getText());
-        int max = Integer.parseInt(productMaxTxt.getText());
-        int min = Integer.parseInt(productMinTxt.getText());*/
-
         //If there are no errors, proceed with adding the product:
         newProduct.setId(id);
         newProduct.setName(productNameTxt.getText());
@@ -263,16 +284,12 @@ public class AddProductController implements Initializable {
         newProduct.setMax(Integer.parseInt(productMaxTxt.getText()));
         newProduct.setMin(Integer.parseInt(productMinTxt.getText()));
 
-        //Product newProduct = new Product(id, name, price, stock, min, max);
-        //newProduct.setAssociatedParts(newProduct.getAssociatedParts());
         Inventory.addProduct(newProduct);
 
         stage = (Stage)((Button)event.getSource()).getScene().getWindow();
         scene = FXMLLoader.load(getClass().getResource("MainScreen.fxml"));
         stage.setScene(new Scene(scene));
         stage.show();
-
-
     }
 
     public void addToAssociatedPartsTable(Part part) {
@@ -289,15 +306,21 @@ public class AddProductController implements Initializable {
         priceCostPerUnitCol2.setCellValueFactory(new PropertyValueFactory<>("price"));
     }
 
-    public void deleteFromAssociatedPartsTable(Part selectedAssociatedPart){
+   /* public void deleteFromAssociatedPartsTable(Part selectedAssociatedPart){
         selectedAssociatedPart = (Part) partsTableView2.getSelectionModel().getSelectedItem();
         if (selectedAssociatedPart == null)
             System.out.println("Please select a part!");
         else
             newProduct.deleteAssociatedPart(selectedAssociatedPart);
-    }
+    }*/
 
 
+    /** This is the initialize method.
+     * This is the first method that gets called when the scene is set to the Add Product Screen.
+     * initializes the id variable and increments it by making it one thousand larger than the number of products in the allProducts list.
+     * initializes the newProduct variable by instantiating a new Product object which can be used for adding associated parts before the product is saved.
+     * @param url the location of AddProduct.fxml
+     * @param resourceBundle the name of AddProduct.fxml*/
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
@@ -310,21 +333,6 @@ public class AddProductController implements Initializable {
         inventoryLevelCol1.setCellValueFactory(new PropertyValueFactory<>("stock"));
         priceCostPerUnitCol1.setCellValueFactory(new PropertyValueFactory<>("price"));
 
-
-        /*partsTableView2.setItems(Product.getAllAssociatedParts());
-
-        partIDCol2.setCellValueFactory(new PropertyValueFactory<>("id"));
-        partNameCol2.setCellValueFactory(new PropertyValueFactory<>("name"));
-        inventoryLevelCol2.setCellValueFactory(new PropertyValueFactory<>("stock"));
-        priceCostPerUnitCol2.setCellValueFactory(new PropertyValueFactory<>("price"));*/
-
         newProduct = new Product(1, "", 1, 1, 1, 1);
-
     }
-
-
-
-
-
-
 }

@@ -106,7 +106,10 @@ public class ModifyProductController implements Initializable {
     private Label productMinExLbl;
 
     @FXML
-    void onActionLookUpPart(KeyEvent event) {
+    private Label partExLbl;
+
+    @FXML
+    public void onActionLookUpPart(KeyEvent event) {
         partSearchExLbl.setText("");
         ObservableList<Part> searchedParts = FXCollections.observableArrayList(); //= Inventory.lookupPart(partsSearchTxt.getText());
 
@@ -132,11 +135,16 @@ public class ModifyProductController implements Initializable {
     }
 
     @FXML
-    void onActionAddPart(ActionEvent event) {
-    addToAssociatedPartsTable((Part) partsTableView1.getSelectionModel().getSelectedItem());
+    public void onActionAddPart(ActionEvent event) {
+        partExLbl.setText("");
+
+        if(partsTableView1.getSelectionModel().getSelectedItem() == null) {
+            partExLbl.setText("Please select a part");
+        }
+    addToAssociatedPartsTable( partsTableView1.getSelectionModel().getSelectedItem());
     }
     @FXML
-    void onActionRemoveAssociatedPart(ActionEvent event) {
+    public void onActionRemoveAssociatedPart(ActionEvent event) {
 
         associatedPartExLbl.setText("");
 
@@ -156,7 +164,7 @@ public class ModifyProductController implements Initializable {
     }
 
     @FXML
-    void onActionDisplayMainScreen(ActionEvent event) throws IOException {
+    public void onActionDisplayMainScreen(ActionEvent event) throws IOException {
         stage = (Stage)((Button)event.getSource()).getScene().getWindow();
         scene = FXMLLoader.load(getClass().getResource("MainScreen.fxml"));
         stage.setScene(new Scene(scene));
@@ -164,7 +172,7 @@ public class ModifyProductController implements Initializable {
     }
 
     @FXML
-    void onActionSaveProduct(ActionEvent event) throws IOException {
+    public void onActionSaveProduct(ActionEvent event) throws IOException {
 
         //Clear exception message fields
         productNameExLbl.setText("");
@@ -305,6 +313,7 @@ public class ModifyProductController implements Initializable {
         inventoryLevelCol1.setCellValueFactory(new PropertyValueFactory<>("stock"));
         priceCostPerUnitCol1.setCellValueFactory(new PropertyValueFactory<>("price"));
 
+        partExLbl.setText("");
 
         partsTableView2.setItems(Inventory.loadedProduct.getAllAssociatedParts());
 
@@ -314,10 +323,5 @@ public class ModifyProductController implements Initializable {
         priceCostPerUnitCol2.setCellValueFactory(new PropertyValueFactory<>("price"));
 
     }
-
-
-
-
-
 
 }

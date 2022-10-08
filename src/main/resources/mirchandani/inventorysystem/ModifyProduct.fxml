@@ -116,6 +116,11 @@
                   </TableView>
                   <HBox alignment="CENTER_RIGHT" prefHeight="60.0" prefWidth="200.0">
                      <children>
+                        <Label fx:id="partExLbl" text="Please select a part">
+                           <HBox.margin>
+                              <Insets right="10.0" />
+                           </HBox.margin>
+                        </Label>
                         <Button mnemonicParsing="false" onAction="#onActionAddPart" text="Add" />
                      </children>
                      <opaqueInsets>

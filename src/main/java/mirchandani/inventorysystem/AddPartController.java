@@ -20,15 +20,20 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-/**
- *
- * @author Kush Mirchandani
- */
+/** Class AddPartController controls AddPart.fxml. The user can select radio buttons
+ * to create an in-house or outsourced part. It allows users to create a part name, inventory level,
+ * price, max & min inventory allowed, and a machine Id or company name depending on the selected part type.
+ * The part ID is incremented and auto-generated, and cannot be changed by the user.
+ * @author Kush Mirchandani*/
 public class AddPartController implements Initializable {
 
+    /** declares a stage variable */
     Stage stage;
+
+    /** declares a scene variable */
     Parent scene;
 
+    /** declares an id variable so that part IDs can be incremented */
     int id;
 
     @FXML
@@ -74,24 +79,40 @@ public class AddPartController implements Initializable {
     @FXML
     private Label partMachineIdExLbl;
 
+
+    /** In-House radio button clicked.
+     * Sets the partMachineIDLbl to "Machine ID" when clicked.
+     * @param actionEvent the item on the GUI that triggers the action */
     public void onInHouse(ActionEvent actionEvent) {
         partMachineIDLbl.setText("Machine ID");
     }
 
+    /** Outsourced radio button clicked.
+     * Sets the partMachineIDLbl to "Company Name" when clicked.
+     * @param actionEvent the item on the GUI that triggers the action */
     public void onOutsourced(ActionEvent actionEvent) {
         partMachineIDLbl.setText("Company Name");
     }
 
+    /** Cancel button clicked.
+     * Exits the Add Part screen and opens the Main Screen.
+     * @param event the item on the GUI that triggers the action */
     @FXML
-    void onActionDisplayMainScreen(ActionEvent event) throws IOException {
+    public void onActionDisplayMainScreen(ActionEvent event) throws IOException {
         stage = (Stage)((Button)event.getSource()).getScene().getWindow();
         scene = FXMLLoader.load(getClass().getResource("MainScreen.fxml"));
         stage.setScene(new Scene(scene));
         stage.show();
     }
 
+    /** Save button clicked.
+     * Saves the new In-House or Outsourced part, by calling the addPart method in the Inventory class.
+     * Closes the Add Part screen and opens the Main Screen when clicked. Displays error messages and stops running if any
+     * of the input fields are blank when clicked. Displays error messages and stops running if min is greater than max, or
+     * if inventory isn't between min and max.
+     * @param event the item on the GUI that triggers the action */
     @FXML
-    void onActionSavePart(ActionEvent event) throws IOException {
+    public void onActionSavePart(ActionEvent event) throws IOException {
 
         //Clear exception message fields
         partNameExLbl.setText("");
@@ -222,30 +243,16 @@ public class AddPartController implements Initializable {
             scene = FXMLLoader.load(getClass().getResource("MainScreen.fxml"));
             stage.setScene(new Scene(scene));
             stage.show();
-
-
-        /*catch(NumberFormatException e) {
-            System.out.println("Please enter valid values in text fields!");
-            System.out.println("Exception: " + e);
-            System.out.println("Exception: " + e.getMessage());
-        }*/
-
         }
 
-
+     /** This is the initialize method.
+     * This is the first method that gets called when the scene is set to the Add Part Screen.
+     * initializes the id variable and increments it by making it one larger than the number of parts in the allParts list.
+     * @param url the location of AddPart.fxml
+     * @param resourceBundle the name of AddPart.fxml*/
         @Override
         public void initialize (URL url, ResourceBundle resourceBundle){
 
             id = Inventory.getAllParts().size() + 1;
-        /*InHouse newPart = new InHouse(1, "coolpart", 1,3,1,4,1);
-        newPart.setId(id++);*/
-            //partIDTxt.setText(String.valueOf(id));
-            //id = id + 1;
-            // System.out.println(id);
-
-
         }
-
-
-
 }

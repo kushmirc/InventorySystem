@@ -30,7 +30,10 @@ import java.util.ArrayList;
  * @author Kush Mirchandani*/
 public class MainScreenController implements Initializable {
 
+    /** declares a stage variable */
     Stage stage;
+
+    /** declares a scene variable */
     Parent scene;
 
     @FXML
@@ -85,7 +88,7 @@ public class MainScreenController implements Initializable {
      * Opens the Add Part window when the Add button is clicked on the Main Screen's Parts pane.
      * @param event the item on the GUI that triggers the action */
     @FXML
-    void onActionAddPart(ActionEvent event) throws IOException {
+   public void onActionAddPart(ActionEvent event) throws IOException {
         //get the stage from the event's source widget
         stage = (Stage)((Button)event.getSource()).getScene().getWindow();
         scene = FXMLLoader.load(getClass().getResource("AddPart.fxml"));
@@ -97,7 +100,7 @@ public class MainScreenController implements Initializable {
      * Opens the Add Product window when the Add button is clicked on the Main Screen's Products pane.
      * @param event the item on the GUI that triggers the action */
     @FXML
-    void onActionAddProduct(ActionEvent event) throws IOException {
+   public void onActionAddProduct(ActionEvent event) throws IOException {
         stage = (Stage)((Button)event.getSource()).getScene().getWindow();
         scene = FXMLLoader.load(getClass().getResource("AddProduct.fxml"));
         stage.setScene(new Scene(scene));
@@ -105,10 +108,11 @@ public class MainScreenController implements Initializable {
     }
 
     /** Delete button clicked in Parts pane.
-     * Deletes the selected part when the Delete button is clicked on the Main Screen's Parts pane.
+     * Deletes the selected part by calling the deletePart method in the Inventory class when the Delete button is clicked on the Main Screen's Parts pane.
+     * Displays an error message if no parts are selected when clicked. Displays a confirmation dialogue box when clicked.
      * @param event the item on the GUI that triggers the action */
     @FXML
-    void onActionDeletePart(ActionEvent event) {
+   public void onActionDeletePart(ActionEvent event) {
 
         partsExLbl.setText("");
 
@@ -132,10 +136,12 @@ public class MainScreenController implements Initializable {
     }
 
     /** Delete button clicked in Products pane.
-     * Deletes the selected product when the Delete button is clicked on the Main Screen's Products pane.
+     * Deletes the selected product by calling the deleteProduct method in the Inventory class when the Delete button is clicked on the Main Screen's Products pane.
+     * Displays an error message if no parts are selected when clicked. Displays a confirmation dialogue box when clicked.
+     * Displays an error message when delete is clicked if the selected product has associated parts.
      * @param event the item on the GUI that triggers the action */
     @FXML
-    void onActionDeleteProduct(ActionEvent event) {
+   public void onActionDeleteProduct(ActionEvent event) {
 
         productsExLbl.setText("");
 
@@ -164,27 +170,26 @@ public class MainScreenController implements Initializable {
      * Closes the stage and exits the program.
      * @param event the item on the GUI that triggers the action */
     @FXML
-    void onActionExit(ActionEvent event) {
+   public void onActionExit(ActionEvent event) {
         System.exit(0);
     }
 
     /** Modify button clicked in Parts pane.
      * Opens the Modify Part window when the Modify button is clicked on the Main Screen's Parts pane.
+     * Displays an error message if no parts are selected when clicked.
      * @param event the item on the GUI that triggers the action */
     @FXML
-    void onActionModifyPart(ActionEvent event) throws IOException {
+   public void onActionModifyPart(ActionEvent event) throws IOException {
 
         if(partsTableView.getSelectionModel().getSelectedItem() == null) {
             partsExLbl.setText("Please select a part");
             return;}
 
-        //Part selectedPart = partsTableView.getSelectionModel().getSelectedItem();
         Part loadedPart = partsTableView.getSelectionModel().getSelectedItem();
 
         ObservableList<Part> allParts = Inventory.getAllParts();
         int partId = allParts.indexOf(loadedPart);
 
-        //ModifyPartController.loadPart(selectedPart);
         Inventory.updatePart(partId, loadedPart);
 
         stage = (Stage)((Button)event.getSource()).getScene().getWindow();
@@ -196,21 +201,20 @@ public class MainScreenController implements Initializable {
 
     /** Modify button clicked in Products pane.
      * Opens the Modify Product window when the Modify button is clicked on the Main Screen's Products pane.
+     * Displays an error message if no products are selected when clicked.
      * @param event the item on the GUI that triggers the action */
     @FXML
-    void onActionModifyProduct(ActionEvent event) throws IOException {
+   public void onActionModifyProduct(ActionEvent event) throws IOException {
 
         if(productsTableView.getSelectionModel().getSelectedItem() == null) {
             productsExLbl.setText("Please select a product");
             return;}
 
-        //Product selectedProduct = productsTableView.getSelectionModel().getSelectedItem();
         Product loadedProduct = productsTableView.getSelectionModel().getSelectedItem();
 
         ObservableList<Product> allProducts = Inventory.getAllProducts();
         int productId = allProducts.indexOf(loadedProduct);
 
-        //ModifyProductController.loadProduct(selectedProduct);
         Inventory.updateProduct(productId, loadedProduct);
 
         stage = (Stage)((Button)event.getSource()).getScene().getWindow();
@@ -220,11 +224,12 @@ public class MainScreenController implements Initializable {
     }
 
     /** Searches for matching parts.
-     * Searches through allParts and displays those parts whose ID or Name contains the character(s) keyed in by the user to the search
-     * field in the Parts pane. Displays an error message if the character(s) aren't contained in any parts.
+     * Searches through allParts by calling the lookupPart methods in the Inventory class, and displays those
+     * parts whose ID or Name contains the character(s) keyed in by the user to the search field in the Parts pane.
+     * Displays an error message if the character(s) aren't contained in any parts.
      * @param event the item on the GUI that triggers the action */
     @FXML
-    void onActionLoopUpPart(KeyEvent event) {
+   public void onActionLoopUpPart(KeyEvent event) {
         partSearchExLbl.setText("");
         ObservableList<Part> searchedParts = FXCollections.observableArrayList(); //= Inventory.lookupPart(partsSearchTxt.getText());
 
@@ -246,11 +251,12 @@ public class MainScreenController implements Initializable {
     }
 
     /** Searches for matching products.
-     * Searches through allProducts and displays those products whose ID or Name contains the character(s) keyed in by the user to the search
-     * field in the Products pane. Displays an error message if the character(s) aren't contained in any products.
+     * Searches through allProducts by calling the lookupPart methods in the Inventory class, and displays those
+     * products whose ID or Name contains the character(s) keyed in by the user to the search field in the Products pane.
+     * Displays an error message if the character(s) aren't contained in any products.
      * @param event the item on the GUI that triggers the action */
     @FXML
-    void onActionLoopUpProduct(KeyEvent event) {
+   public void onActionLoopUpProduct(KeyEvent event) {
         productSearchExLbl.setText("");
         ObservableList<Product> searchedProducts = FXCollections.observableArrayList();
 
@@ -291,33 +297,6 @@ public class MainScreenController implements Initializable {
         productsProductNameCol.setCellValueFactory(new PropertyValueFactory<>("name"));
         productsInventoryLevelCol.setCellValueFactory(new PropertyValueFactory<>("stock"));
         productsPriceCostPerUnitCol.setCellValueFactory(new PropertyValueFactory<>("price"));
-
-        /*if(search(3))
-            System.out.println("Match!");
-        else
-            System.out.println("No match!");
-
-        if (update(3, new InHouse(3, "spinner", 18.00, 7, 2, 20, 4)))
-            System.out.println("Update successful!");
-        else
-            System.out.println("Update failed!");
-
-        if(delete(3))
-            System.out.println("Deleted!");
-        else
-            System.out.println("No match!");*/
-
-        //partsTableView.getSelectionModel().select(selectPart(2));
-
-        //Loading part data
-        //Part selectedPart = (Part) partsTableView.getSelectionModel().getSelectedItem();
-
-        /*int myint = 10;
-        String mystring = String.valueOf(myint);
-        System.out.println(mystring);*/
-
-
-
     }
 
 

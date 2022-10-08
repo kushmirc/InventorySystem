@@ -164,10 +164,10 @@ public class MainScreenController implements Initializable {
         Part loadedPart = partsTableView.getSelectionModel().getSelectedItem();
 
         ObservableList<Part> allParts = Inventory.getAllParts();
-        int id = allParts.indexOf(loadedPart);
+        int partId = allParts.indexOf(loadedPart);
 
         //ModifyPartController.loadPart(selectedPart);
-        Inventory.updatePart(id, loadedPart);
+        Inventory.updatePart(partId, loadedPart);
 
         stage = (Stage)((Button)event.getSource()).getScene().getWindow();
         scene = FXMLLoader.load(getClass().getResource("ModifyPart.fxml"));
@@ -183,9 +183,14 @@ public class MainScreenController implements Initializable {
             productsExLbl.setText("Please select a product");
             return;}
 
-        Product selectedProduct = productsTableView.getSelectionModel().getSelectedItem();
+        //Product selectedProduct = productsTableView.getSelectionModel().getSelectedItem();
+        Product loadedProduct = productsTableView.getSelectionModel().getSelectedItem();
 
-        ModifyProductController.loadProduct(selectedProduct);
+        ObservableList<Product> allProducts = Inventory.getAllProducts();
+        int productId = allProducts.indexOf(loadedProduct);
+
+        //ModifyProductController.loadProduct(selectedProduct);
+        Inventory.updateProduct(productId, loadedProduct);
 
         stage = (Stage)((Button)event.getSource()).getScene().getWindow();
         scene = FXMLLoader.load(getClass().getResource("ModifyProduct.fxml"));

@@ -31,7 +31,7 @@ public class ModifyProductController implements Initializable {
     Stage stage;
     Parent scene;
 
-    private static Product loadedProduct;
+    //private static Product loadedProduct;
 
     @FXML
     private TableColumn<Part, Integer> inventoryLevelCol1;
@@ -132,7 +132,7 @@ public class ModifyProductController implements Initializable {
 
         Optional<ButtonType> result = alert.showAndWait();
         if (result.get() == ButtonType.OK){
-            loadedProduct.deleteAssociatedPart(partsTableView2.getSelectionModel().getSelectedItem());
+            Inventory.loadedProduct.deleteAssociatedPart(partsTableView2.getSelectionModel().getSelectedItem());
             associatedPartExLbl.setText("Associated part removed");
         } else {
             associatedPartExLbl.setText("Associated part not removed");
@@ -151,12 +151,12 @@ public class ModifyProductController implements Initializable {
     @FXML
     void onActionSaveProduct(ActionEvent event) throws IOException {
 
-        loadedProduct.setName(productNameTxt.getText());
-        loadedProduct.setStock(Integer.parseInt(productInvTxt.getText()));
-        loadedProduct.setPrice(Double.parseDouble(productPriceTxt.getText()));
-        loadedProduct.setMax(Integer.parseInt(productMaxTxt.getText()));
-        loadedProduct.setMin(Integer.parseInt(productMinTxt.getText()));
-        loadedProduct.setAssociatedParts(loadedProduct.getAllAssociatedParts());
+        Inventory.loadedProduct.setName(productNameTxt.getText());
+        Inventory.loadedProduct.setStock(Integer.parseInt(productInvTxt.getText()));
+        Inventory.loadedProduct.setPrice(Double.parseDouble(productPriceTxt.getText()));
+        Inventory.loadedProduct.setMax(Integer.parseInt(productMaxTxt.getText()));
+        Inventory.loadedProduct.setMin(Integer.parseInt(productMinTxt.getText()));
+        Inventory.loadedProduct.setAssociatedParts(Inventory.loadedProduct.getAllAssociatedParts());
 
         stage = (Stage)((Button)event.getSource()).getScene().getWindow();
         scene = FXMLLoader.load(getClass().getResource("MainScreen.fxml"));
@@ -169,9 +169,9 @@ public class ModifyProductController implements Initializable {
         if (part == null)
             System.out.println("Please select a part!");
         else
-            loadedProduct.addAssociatedPart(part);
+            Inventory.loadedProduct.addAssociatedPart(part);
 
-        partsTableView2.setItems(loadedProduct.getAllAssociatedParts());
+        partsTableView2.setItems(Inventory.loadedProduct.getAllAssociatedParts());
         partIDCol2.setCellValueFactory(new PropertyValueFactory<>("id"));
         partNameCol2.setCellValueFactory(new PropertyValueFactory<>("name"));
         inventoryLevelCol2.setCellValueFactory(new PropertyValueFactory<>("stock"));
@@ -183,11 +183,11 @@ public class ModifyProductController implements Initializable {
         if (selectedAssociatedPart == null)
             System.out.println("Please select a part!");
         else
-            loadedProduct.deleteAssociatedPart(selectedAssociatedPart);
+            Inventory.loadedProduct.deleteAssociatedPart(selectedAssociatedPart);
     }
 
     public static void loadProduct(Product product){
-        loadedProduct = product;
+        Inventory.loadedProduct = product;
     }
 
     @Override
@@ -195,12 +195,12 @@ public class ModifyProductController implements Initializable {
 
         //id = Inventory.getAllProducts().size() + 1000;
 
-        productIDTxt.setText(String.valueOf(loadedProduct.getId()));
-        productNameTxt.setText(String.valueOf(loadedProduct.getName()));
-        productInvTxt.setText(String.valueOf(loadedProduct.getStock()));
-        productPriceTxt.setText(String.valueOf(loadedProduct.getPrice()));
-        productMaxTxt.setText(String.valueOf(loadedProduct.getMax()));
-        productMinTxt.setText(String.valueOf(loadedProduct.getMin()));
+        productIDTxt.setText(String.valueOf(Inventory.loadedProduct.getId()));
+        productNameTxt.setText(String.valueOf(Inventory.loadedProduct.getName()));
+        productInvTxt.setText(String.valueOf(Inventory.loadedProduct.getStock()));
+        productPriceTxt.setText(String.valueOf(Inventory.loadedProduct.getPrice()));
+        productMaxTxt.setText(String.valueOf(Inventory.loadedProduct.getMax()));
+        productMinTxt.setText(String.valueOf(Inventory.loadedProduct.getMin()));
 
 
         partsTableView1.setItems(Inventory.getAllParts());
@@ -211,7 +211,7 @@ public class ModifyProductController implements Initializable {
         priceCostPerUnitCol1.setCellValueFactory(new PropertyValueFactory<>("price"));
 
 
-        partsTableView2.setItems(loadedProduct.getAllAssociatedParts());
+        partsTableView2.setItems(Inventory.loadedProduct.getAllAssociatedParts());
 
         partIDCol2.setCellValueFactory(new PropertyValueFactory<>("id"));
         partNameCol2.setCellValueFactory(new PropertyValueFactory<>("name"));

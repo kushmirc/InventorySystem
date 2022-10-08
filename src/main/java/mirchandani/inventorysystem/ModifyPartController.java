@@ -225,12 +225,36 @@ public class ModifyPartController implements Initializable {
             if(Inventory.loadedPart instanceof InHouse) {
                 InHouse inh = (InHouse) Inventory.loadedPart;
                 inh.setMachineId(Integer.parseInt(partMachineIDTxt.getText()));
-            /*} else {
-                Inventory.loadedPart.*/
+            } else {
+                Inventory.deletePart(Inventory.loadedPart);
+
+                int id = Integer.parseInt(partIDTxt.getText());
+                String name = partNameTxt.getText();
+                int stock = Integer.parseInt(partInvTxt.getText());
+                double price = Double.parseDouble(partPriceCostTxt.getText());
+                int max = Integer.parseInt(partMaxTxt.getText());
+                int min = Integer.parseInt(partMinTxt.getText());
+                int machineId = Integer.parseInt(partMachineIDTxt.getText());
+                InHouse newpart = new InHouse(id, name, price, stock, min, max, machineId);
+                Inventory.addPart(newpart);
             }
         } else {
-            Outsourced op = (Outsourced) Inventory.loadedPart;
-            op.setCompanyName(partMachineIDTxt.getText());
+            if(Inventory.loadedPart instanceof Outsourced) {
+                Outsourced op = (Outsourced) Inventory.loadedPart;
+                op.setCompanyName(partMachineIDTxt.getText());
+            } else {
+                Inventory.deletePart(Inventory.loadedPart);
+
+                int id = Integer.parseInt(partIDTxt.getText());
+                String name = partNameTxt.getText();
+                int stock = Integer.parseInt(partInvTxt.getText());
+                double price = Double.parseDouble(partPriceCostTxt.getText());
+                int max = Integer.parseInt(partMaxTxt.getText());
+                int min = Integer.parseInt(partMinTxt.getText());
+                String companyName = partMachineIDTxt.getText();
+                Outsourced newpart = new Outsourced(id, name, price, stock, min, max, companyName);
+                Inventory.addPart((newpart));
+            }
         }
 
         stage = (Stage)((Button)event.getSource()).getScene().getWindow();

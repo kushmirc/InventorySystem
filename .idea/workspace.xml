@@ -6,9 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="bf559191-ef79-4b23-850b-633dde92b12f" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mirchandani/inventorysystem/MainScreenController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mirchandani/inventorysystem/MainScreenController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mirchandani/inventorysystem/ModifyProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mirchandani/inventorysystem/ModifyProductController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/Inventory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Inventory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mirchandani/inventorysystem/ModifyPartController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mirchandani/inventorysystem/ModifyPartController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mirchandani/inventorysystem/ModifyPart.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mirchandani/inventorysystem/ModifyPart.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

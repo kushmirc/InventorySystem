@@ -29,11 +29,11 @@
                <children>
                   <HBox prefHeight="100.0" prefWidth="200.0" spacing="60.0" GridPane.columnIndex="1">
                      <children>
-                        <RadioButton fx:id="partInHouseRBtn" mnemonicParsing="false" text="In-House">
+                        <RadioButton fx:id="partInHouseRBtn" mnemonicParsing="false" onAction="#onInHouse" text="In-House">
                            <toggleGroup>
                               <ToggleGroup fx:id="addPartTG" />
                            </toggleGroup></RadioButton>
-                        <RadioButton fx:id="partOutsourcedRBtn" mnemonicParsing="false" text="Outsourced" toggleGroup="$addPartTG" />
+                        <RadioButton fx:id="partOutsourcedRBtn" mnemonicParsing="false" onAction="#onOutsourced" text="Outsourced" toggleGroup="$addPartTG" />
                      </children>
                      <GridPane.margin>
                         <Insets left="30.0" top="5.0" />

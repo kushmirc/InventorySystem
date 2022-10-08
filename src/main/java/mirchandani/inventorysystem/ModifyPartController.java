@@ -78,10 +78,23 @@ public class ModifyPartController implements Initializable {
 
     public void onInHouse(ActionEvent actionEvent) {
         partMachineIDLbl.setText("Machine ID");
+        /*if (Inventory.loadedPart instanceof InHouse) {
+            InHouse in = (InHouse) Inventory.loadedPart;
+            partMachineIDTxt.setText(String.valueOf(in.getMachineId()));
+        } else {
+            Outsourced out = (Outsourced) Inventory.loadedPart;
+            partMachineIDTxt.setText("");}*/
     }
 
     public void onOutsourced(ActionEvent actionEvent) {
         partMachineIDLbl.setText("Company Name");
+        /*if(Inventory.loadedPart instanceof Outsourced) {
+            Outsourced op = (Outsourced) Inventory.loadedPart;
+            partMachineIDTxt.setText(op.getCompanyName());
+            partOutsourcedRBtn.setSelected(true);
+        } else {
+            InHouse in = (InHouse) Inventory.loadedPart;
+            partMachineIDTxt.setText("");}*/
     }
 
     @FXML
@@ -238,8 +251,7 @@ public class ModifyPartController implements Initializable {
             partInHouseRBtn.setDisable(true);
             partOutsourcedRBtn.setDisable(true);
             partMachineIDLbl.setText("Machine ID");
-        }
-        else {
+        } else {
             Outsourced op = (Outsourced) Inventory.loadedPart;
             partMachineIDTxt.setText(op.getCompanyName());
             partOutsourcedRBtn.setSelected(true);

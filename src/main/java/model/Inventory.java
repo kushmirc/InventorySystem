@@ -20,15 +20,7 @@ public class Inventory {
     public static int productId;
 
     //int index;
-    public static void updatePart(int index, Part selectedPart) {
-        partId = index;
-        loadedPart = selectedPart;
-    }
 
-    public static void updateProduct(int index, Product selectedProduct) {
-        productId = index;
-        loadedProduct = selectedProduct;
-    }
 
     //Declare and initialize observable list for parts:
     private static ObservableList<Part> allParts = FXCollections.observableArrayList();
@@ -37,17 +29,6 @@ public class Inventory {
     public static void addPart(Part newPart) {
         allParts.add(newPart);
     }
-
-    //Create getAllParts method to populate all parts into the observable list of parts:
-    public static ObservableList<Part> getAllParts() {
-        return allParts;
-    }
-    //Declare and initialize filtered observable list for parts:
-   /* private static ObservableList<Part> filteredParts = FXCollections.observableArrayList();
-    public static ObservableList<Part> getAllFilteredParts() {
-        return filteredParts;
-    }*/
-
 
     public static ObservableList<Part> lookupPart(String partName) {
         ObservableList<Part> namedParts = FXCollections.observableArrayList();
@@ -69,17 +50,36 @@ public class Inventory {
         return null;
     }
 
+    public static void updatePart(int index, Part selectedPart) {
+        partId = index;
+        loadedPart = selectedPart;
+    }
+
+    public static boolean deletePart(Part selectedPart) {
+        if (selectedPart == null)
+            return false;
+        else
+            return getAllParts().remove(selectedPart);
+    }
+
+
+    //Create getAllParts method to populate all parts into the observable list of parts:
+    public static ObservableList<Part> getAllParts() {
+        return allParts;
+    }
+    //Declare and initialize filtered observable list for parts:
+   /* private static ObservableList<Part> filteredParts = FXCollections.observableArrayList();
+    public static ObservableList<Part> getAllFilteredParts() {
+        return filteredParts;
+    }*/
+
+
     //Declare and initialize observable list for products:
     private static ObservableList<Product> allProducts = FXCollections.observableArrayList();
 
     //Create the addProduct method to add product objects to the product observable list:
     public static void addProduct(Product newProduct) {
         allProducts.add(newProduct);
-    }
-
-    //Create getAllProducts method to populate all products into the observable list of products:
-    public static ObservableList<Product> getAllProducts() {
-        return allProducts;
     }
 
     public static ObservableList<Product> lookupProduct(String productName) {
@@ -99,7 +99,24 @@ public class Inventory {
                 if (product.getId() == productId) {
                     return product;}
             return null;
-
     }
+
+    public static void updateProduct(int index, Product selectedProduct) {
+        productId = index;
+        loadedProduct = selectedProduct;
+    }
+
+    public static boolean deleteProduct(Product selectedProduct) {
+        if (selectedProduct == null)
+            return false;
+        else
+            return Inventory.getAllProducts().remove(selectedProduct);
+    }
+
+    //Create getAllProducts method to populate all products into the observable list of products:
+    public static ObservableList<Product> getAllProducts() {
+        return allProducts;
+    }
+
     }
 

@@ -114,7 +114,7 @@ public class MainScreenController implements Initializable {
 
         Optional<ButtonType> result = alert.showAndWait();
         if (result.get() == ButtonType.OK){
-            deletePart(partsTableView.getSelectionModel().getSelectedItem());
+            Inventory.deletePart(partsTableView.getSelectionModel().getSelectedItem());
             partsExLbl.setText("Part deleted");
         } else {
             partsExLbl.setText("Part not deleted");
@@ -141,7 +141,7 @@ public class MainScreenController implements Initializable {
             if(productsTableView.getSelectionModel().getSelectedItem().getAllAssociatedParts().size() >0 ) {
                 productsExLbl.setText("This product has parts");
                 return;}
-            deleteProduct(productsTableView.getSelectionModel().getSelectedItem());
+            Inventory.deleteProduct(productsTableView.getSelectionModel().getSelectedItem());
             productsExLbl.setText("Product deleted");
         } else {
             productsExLbl.setText("Product not deleted");
@@ -262,21 +262,7 @@ public class MainScreenController implements Initializable {
         return false;
     }*/
 
-    public boolean deletePart(Part selectedPart) {
-        selectedPart = partsTableView.getSelectionModel().getSelectedItem();
-        if (selectedPart == null)
-            return false;
-        else
-            return Inventory.getAllParts().remove(selectedPart);
-    }
 
-    public boolean deleteProduct(Product selectedProduct) {
-        selectedProduct = (Product) productsTableView.getSelectionModel().getSelectedItem();
-        if (selectedProduct == null)
-            return false;
-        else
-            return Inventory.getAllProducts().remove(selectedProduct);
-    }
 
    /* public boolean delete(int id) {
         for(Part part : Inventory.getAllParts()) {

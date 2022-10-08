@@ -81,6 +81,15 @@
                         <Insets left="20.0" right="80.0" top="15.0" />
                      </padding>
                   </GridPane>
+                  <Label fx:id="productNameExLbl">
+                     <VBox.margin>
+                        <Insets top="50.0" />
+                     </VBox.margin>
+                  </Label>
+                  <Label fx:id="productInvExLbl" layoutX="40.0" layoutY="365.0" />
+                  <Label fx:id="productPriceCostExLbl" layoutX="40.0" layoutY="382.0" />
+                  <Label fx:id="productMaxExLbl" layoutX="40.0" layoutY="399.0" />
+                  <Label fx:id="productMinExLbl" layoutX="40.0" layoutY="416.0" />
                </children>
                <padding>
                   <Insets left="30.0" />

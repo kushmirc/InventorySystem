@@ -93,6 +93,21 @@ public class AddProductController implements Initializable {
     @FXML
     private Label associatedPartExLbl;
 
+    @FXML
+    private Label productNameExLbl;
+
+    @FXML
+    private Label productInvExLbl;
+
+    @FXML
+    private Label productPriceCostExLbl;
+
+    @FXML
+    private Label productMaxExLbl;
+
+    @FXML
+    private Label productMinExLbl;
+
 
     @FXML
     void onActionLookUpPart(KeyEvent event) {
@@ -154,6 +169,85 @@ public class AddProductController implements Initializable {
     @FXML
     void onActionSaveProduct(ActionEvent event) throws IOException {
 
+        //Clear exception message fields
+        productNameExLbl.setText("");
+        productInvExLbl.setText("");
+        productPriceCostExLbl.setText("");
+        productMaxExLbl.setText("");
+        productMinExLbl.setText("");
+
+        //Check all input fields for exceptions and print applicable messages:
+        if (productNameTxt.getText() == "") {
+            productNameExLbl.setText("No data in name field");
+        }
+
+        try {
+            Integer.parseInt(productInvTxt.getText());
+        } catch (NumberFormatException e) {
+            productInvExLbl.setText("Inventory is not an integer");
+        }
+
+        try {
+            Double.parseDouble(productPriceTxt.getText());
+        } catch (NumberFormatException e) {
+            productPriceCostExLbl.setText("Price is not a double");
+        }
+
+        try {
+            Integer.parseInt(productMaxTxt.getText());
+        } catch (NumberFormatException e) {
+            productMaxExLbl.setText("Max is not an integer");
+        }
+
+        try {
+            Integer.parseInt(productMinTxt.getText());
+        } catch (NumberFormatException e) {
+            productMinExLbl.setText("Min is not an integer");
+        }
+
+        //After printing applicable error messages, check all input fields for exceptions again and return; out of the method if any exceptions exist so the program doesn't crash:
+        if (productNameTxt.getText() == "") {
+            return;
+        }
+
+        try {
+            Integer.parseInt(productInvTxt.getText());
+        } catch (NumberFormatException e) {
+            return;
+        }
+
+        try {
+            Double.parseDouble(productPriceTxt.getText());
+        } catch (NumberFormatException e) {
+            return;
+        }
+
+        try {
+            Integer.parseInt(productMaxTxt.getText());
+        } catch (NumberFormatException e) {
+            return;
+        }
+
+        try {
+            Integer.parseInt(productMinTxt.getText());
+        } catch (NumberFormatException e) {
+            return;
+        }
+
+        //If there are no errors for blank text fields, then check the logic on the Inv, Max & Min fields:
+        if (Integer.parseInt(productMinTxt.getText()) > Integer.parseInt(productMaxTxt.getText())) {
+            productMinExLbl.setText("Min must be less than Max");
+        } else if (Integer.parseInt(productInvTxt.getText()) > Integer.parseInt(productMaxTxt.getText()) || Integer.parseInt(productInvTxt.getText()) < Integer.parseInt(productMinTxt.getText())) {
+            productInvExLbl.setText("Inv must be between Min and Max");
+        }
+
+        //After printing applicable error messages, check Inventory fields for logical errors again and return; out of the method if any exceptions exist so the program doesn't crash:
+        if (Integer.parseInt(productMinTxt.getText()) > Integer.parseInt(productMaxTxt.getText())) {
+            return;
+        } else if (Integer.parseInt(productInvTxt.getText()) > Integer.parseInt(productMaxTxt.getText()) || Integer.parseInt(productInvTxt.getText()) < Integer.parseInt(productMinTxt.getText())) {
+            return; }
+
+
         //int id = Integer.parseInt(productIDTxt.getText());
         /*String name = productNameTxt.getText();
         int stock = Integer.parseInt(productInvTxt.getText());
@@ -161,6 +255,7 @@ public class AddProductController implements Initializable {
         int max = Integer.parseInt(productMaxTxt.getText());
         int min = Integer.parseInt(productMinTxt.getText());*/
 
+        //If there are no errors, proceed with adding the product   :
         newProduct.setId(id);
         newProduct.setName(productNameTxt.getText());
         newProduct.setStock(Integer.parseInt(productInvTxt.getText()));

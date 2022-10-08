@@ -11,7 +11,18 @@ import model.Product;
 
 import java.io.IOException;
 
+/**
+ * Class Main contains the main method, starts the stage for JavaFX, and initializes JavaFX.
+ * FUTURE ENHANCEMENT: When a part is added to the associatedParts list for a product,
+ * the inventory amount for that part should be reduced by 1. If reducing the inventory
+ * would cause it to go below the Min, then an exception should be thrown, and the addition
+ * of the part should be prevented.
+ * @author Kush Mirchandani
+ */
 public class Main extends Application {
+
+    /** This is the start method for the JavaFX stage.
+     * This starts the JavaFX stage, and sets the first scene to MainScreen.fxml*/
     @Override
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("MainScreen.fxml"));
@@ -21,6 +32,8 @@ public class Main extends Application {
         stage.show();
     }
 
+    /** This is the main method.
+     * This is the first method that gets called when the program runs, and it launches JavaFX.*/
     public static void main(String[] args) {
 
         InHouse part1 = new InHouse(7, "flipper", 8.00, 23, 5, 50, 1);

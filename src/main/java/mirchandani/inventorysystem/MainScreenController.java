@@ -24,10 +24,10 @@ import java.util.ResourceBundle;
 import java.util.ArrayList;
 
 
-/**
- *
- * @author Kush Mirchandani
- */
+/** Class MainScreenController controls MainScreen.fxml.  It's the first Scene that opens
+ * when the program is initialized. It displays table views of all parts and all products,
+ * and allows a user to search for, add, modify, or delete parts or products.
+ * @author Kush Mirchandani*/
 public class MainScreenController implements Initializable {
 
     Stage stage;
@@ -81,6 +81,9 @@ public class MainScreenController implements Initializable {
     @FXML
     private Label productSearchExLbl;
 
+    /** Add button clicked in Parts pane.
+     * Opens the Add Part window when the Add button is clicked on the Main Screen's Parts pane.
+     * @param event the item on the GUI that triggers the action */
     @FXML
     void onActionAddPart(ActionEvent event) throws IOException {
         //get the stage from the event's source widget
@@ -90,6 +93,9 @@ public class MainScreenController implements Initializable {
         stage.show();
     }
 
+    /** Add button clicked in Products pane.
+     * Opens the Add Product window when the Add button is clicked on the Main Screen's Products pane.
+     * @param event the item on the GUI that triggers the action */
     @FXML
     void onActionAddProduct(ActionEvent event) throws IOException {
         stage = (Stage)((Button)event.getSource()).getScene().getWindow();
@@ -98,6 +104,9 @@ public class MainScreenController implements Initializable {
         stage.show();
     }
 
+    /** Delete button clicked in Parts pane.
+     * Deletes the selected part when the Delete button is clicked on the Main Screen's Parts pane.
+     * @param event the item on the GUI that triggers the action */
     @FXML
     void onActionDeletePart(ActionEvent event) {
 
@@ -122,6 +131,9 @@ public class MainScreenController implements Initializable {
 
     }
 
+    /** Delete button clicked in Products pane.
+     * Deletes the selected product when the Delete button is clicked on the Main Screen's Products pane.
+     * @param event the item on the GUI that triggers the action */
     @FXML
     void onActionDeleteProduct(ActionEvent event) {
 
@@ -148,11 +160,17 @@ public class MainScreenController implements Initializable {
         }
     }
 
+    /** Exit button clicked.
+     * Closes the stage and exits the program.
+     * @param event the item on the GUI that triggers the action */
     @FXML
     void onActionExit(ActionEvent event) {
         System.exit(0);
     }
 
+    /** Modify button clicked in Parts pane.
+     * Opens the Modify Part window when the Modify button is clicked on the Main Screen's Parts pane.
+     * @param event the item on the GUI that triggers the action */
     @FXML
     void onActionModifyPart(ActionEvent event) throws IOException {
 
@@ -176,6 +194,9 @@ public class MainScreenController implements Initializable {
 
     }
 
+    /** Modify button clicked in Products pane.
+     * Opens the Modify Product window when the Modify button is clicked on the Main Screen's Products pane.
+     * @param event the item on the GUI that triggers the action */
     @FXML
     void onActionModifyProduct(ActionEvent event) throws IOException {
 
@@ -198,6 +219,10 @@ public class MainScreenController implements Initializable {
         stage.show();
     }
 
+    /** Searches for matching parts.
+     * Searches through allParts and displays those parts whose ID or Name contains the character(s) keyed in by the user to the search
+     * field in the Parts pane. Displays an error message if the character(s) aren't contained in any parts.
+     * @param event the item on the GUI that triggers the action */
     @FXML
     void onActionLoopUpPart(KeyEvent event) {
         partSearchExLbl.setText("");
@@ -220,6 +245,10 @@ public class MainScreenController implements Initializable {
 
     }
 
+    /** Searches for matching products.
+     * Searches through allProducts and displays those products whose ID or Name contains the character(s) keyed in by the user to the search
+     * field in the Products pane. Displays an error message if the character(s) aren't contained in any products.
+     * @param event the item on the GUI that triggers the action */
     @FXML
     void onActionLoopUpProduct(KeyEvent event) {
         productSearchExLbl.setText("");
@@ -239,61 +268,11 @@ public class MainScreenController implements Initializable {
         if (searchedProducts.size() == 0) {productSearchExLbl.setText("Product not found");}
     }
 
- /*   public boolean search(int id) {
 
-        for(Part part : Inventory.getAllParts()) {
-            if (part.getId() == id)
-                return true;
-        }
-        return false;
-    }*/
-
- /*   public boolean update (int id, Part part) {
-        int index = -1;
-
-        for(Part inHouse : Inventory.getAllParts()) {
-            index++;
-
-            if (inHouse.getId() == id) {
-            Inventory.getAllParts().set(index, part);
-            return true;
-            }
-        }
-        return false;
-    }*/
-
-
-
-   /* public boolean delete(int id) {
-        for(Part part : Inventory.getAllParts()) {
-            if (part.getId() == id)
-                return Inventory.getAllParts().remove(part);
-        }
-        return false;
-    }
-
-    public Part selectPart(int id) {
-        for(Part part: Inventory.getAllParts()) {
-            if(part.getId() == id)
-                return part;
-        }
-        return null;
-    }
-
-    public ObservableList<Part> filter(String name) {
-        if(!(Inventory.getAllFilteredParts().isEmpty()))
-            Inventory.getAllFilteredParts().clear();
-
-      for(Part part: Inventory.getAllParts()) {
-          if (part.getName().contains(name))
-              Inventory.getAllFilteredParts().add(part);
-      }
-      if(Inventory.getAllFilteredParts().isEmpty())
-          return Inventory.getAllParts();
-      else
-          return Inventory.getAllFilteredParts();
-    }*/
-
+    /** This is the initialize method.
+     * This is the first method that gets called when the scene is set to the Main Screen.
+     * @param url the location of MainScreen.fxml
+     * @param resourceBundle the name of MainScreen.fxml*/
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 

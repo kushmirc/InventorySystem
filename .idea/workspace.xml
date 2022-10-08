@@ -5,8 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bf559191-ef79-4b23-850b-633dde92b12f" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mirchandani/inventorysystem/MainScreenController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mirchandani/inventorysystem/MainScreenController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -94,13 +96,6 @@
       <workItem from="1664573736750" duration="36840000" />
       <workItem from="1664750608512" duration="8917000" />
       <workItem from="1664820917238" duration="25620000" />
-    </task>
-    <task id="LOCAL-00025" summary="Add Observable list definitions and getters to Product.java and Inventory.java.">
-      <created>1664464088769</created>
-      <option name="number" value="00025" />
-      <option name="presentableId" value="LOCAL-00025" />
-      <option name="project" value="LOCAL" />
-      <updated>1664464088769</updated>
     </task>
     <task id="LOCAL-00026" summary="Specified Part and Product table views in MainScreenController.java.">
       <created>1664466281399</created>
@@ -438,7 +433,14 @@
       <option name="project" value="LOCAL" />
       <updated>1665248426934</updated>
     </task>
-    <option name="localTasksCounter" value="74" />
+    <task id="LOCAL-00074" summary="Add comments.">
+      <created>1665249955694</created>
+      <option name="number" value="00074" />
+      <option name="presentableId" value="LOCAL-00074" />
+      <option name="project" value="LOCAL" />
+      <updated>1665249955694</updated>
+    </task>
+    <option name="localTasksCounter" value="75" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -456,7 +458,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Add lookupPart method to Inventory.java." />
     <MESSAGE value="Add onActionLoopUpPart event handler." />
     <MESSAGE value="Add lookupPart int method for ID search, and Update onActionLoopUpPart event handler." />
     <MESSAGE value="Add onActionLookUpPart event handler." />
@@ -481,7 +482,8 @@
     <MESSAGE value="Move delete part method from MainScreenController.java to Inventory.java." />
     <MESSAGE value="Delete old unused classes." />
     <MESSAGE value="Update save button action handler to include exception handling." />
-    <option name="LAST_COMMIT_MESSAGE" value="Update save button action handler to include exception handling." />
+    <MESSAGE value="Add comments." />
+    <option name="LAST_COMMIT_MESSAGE" value="Add comments." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

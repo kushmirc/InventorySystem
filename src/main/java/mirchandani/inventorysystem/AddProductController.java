@@ -255,7 +255,7 @@ public class AddProductController implements Initializable {
         int max = Integer.parseInt(productMaxTxt.getText());
         int min = Integer.parseInt(productMinTxt.getText());*/
 
-        //If there are no errors, proceed with adding the product   :
+        //If there are no errors, proceed with adding the product:
         newProduct.setId(id);
         newProduct.setName(productNameTxt.getText());
         newProduct.setStock(Integer.parseInt(productInvTxt.getText()));

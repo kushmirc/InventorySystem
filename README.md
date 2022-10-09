@@ -1,6 +1,6 @@
 # InventorySystem
 
-### <em>Video Walkthrough: https://youtu.be/YN203X8kfw0
+### <em>Video Walkthrough: </em>https://youtu.be/YN203X8kfw0
 <a href="https://youtu.be/YN203X8kfw0">
 <img src="https://user-images.githubusercontent.com/107213928/194735379-b3947c38-7895-435b-aca6-f4ef8631c1f3.png" alt="video walkthrough"></a>
 

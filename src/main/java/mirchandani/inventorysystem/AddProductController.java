@@ -24,7 +24,7 @@ import java.util.ResourceBundle;
 
 
 /** Class AddProductController controls AddProduct.fxml. It allows users to create a product name, inventory level,
- * price, and max & min inventory allowed. The user can add associated parts to the new product using the part, and
+ * price, and max and min inventory allowed. The user can add associated parts to the new product using the part, and
  * associated parts tables and buttons. The product ID is incremented and auto-generated, and cannot be changed by the user.
  * @author Kush Mirchandani*/
 public class AddProductController implements Initializable {

@@ -23,7 +23,7 @@ import java.util.ResourceBundle;
 
 
 /** Class ModifyProductController controls ModifyProduct.fxml. It allows users to modify the product name, inventory level,
- * price, and max & min inventory allowed. The user can add associated parts to the product using the part, and
+ * price, and max and min inventory allowed. The user can add associated parts to the product using the part, and
  * associated parts tables and buttons. The product ID cannot be changed by the user.
  * @author Kush Mirchandani*/
 public class ModifyProductController implements Initializable {

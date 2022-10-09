@@ -24,7 +24,7 @@ import java.util.ResourceBundle;
 
 /** Class ModifyPartController controls ModifyPart.fxml. The user can select radio buttons
  * to change the selected part to an in-house or outsourced part. It allows users to modify the part name, inventory level,
- * price, max & min inventory allowed, and enter a machine Id or company name depending on the selected part type.
+ * price, max and min inventory allowed, and enter a machine Id or company name depending on the selected part type.
  * The part ID cannot be changed by the user.
  * @author Kush Mirchandani*/
 public class ModifyPartController implements Initializable {

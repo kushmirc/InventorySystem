@@ -27,6 +27,18 @@ import java.util.ArrayList;
 /** Class MainScreenController controls MainScreen.fxml.  It's the first Scene that opens
  * when the program is initialized. It displays table views of all parts and all products,
  * and allows a user to search for, add, modify, or delete parts or products.
+ *
+ * RUNTIME ERROR: After setting up my Part Observable List, and implementing the PropertyValueFactory
+ * method to populate the partsTableView when this Main Screen is initialized, I got an error that read:
+ * WARNING: Can not retrieve property 'id' in PropertyValueFactory:… module javafx.base cannot access class
+ * model.Part (in module mirchandani.inventorysystem) because module mirchandani.inventorysystem does not open model to javafx.base.
+ * After a couple of hours of rewatching the related webinars and Googling this error, I found the following Stack Overflow page:
+ * https://stackoverflow.com/questions/67372505/java-lang-illegalaccessexception-module-javafx-base-cannot-access-class-sample.
+ * One answer mentioned the module-info.java class, which I found in my mirchandani.inventorysystem folder.
+ * Per the answer, I added the following lines for the model directory:
+ *      opens model to javafx.fxml;
+ *      exports model;
+ * After adding that, it worked!  Whew!  It feels good to resolve a bug!
  * @author Kush Mirchandani*/
 public class MainScreenController implements Initializable {
 

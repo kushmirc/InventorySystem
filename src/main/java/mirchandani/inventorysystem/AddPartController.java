@@ -22,7 +22,7 @@ import java.util.ResourceBundle;
 
 /** Class AddPartController controls AddPart.fxml. The user can select radio buttons
  * to create an in-house or outsourced part. It allows users to create a part name, inventory level,
- * price, max & min inventory allowed, and a machine Id or company name depending on the selected part type.
+ * price, max and min inventory allowed, and a machine Id or company name depending on the selected part type.
  * The part ID is incremented and auto-generated, and cannot be changed by the user.
  * @author Kush Mirchandani*/
 public class AddPartController implements Initializable {

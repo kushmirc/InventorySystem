@@ -22,16 +22,18 @@ import java.util.Optional;
 import java.util.ResourceBundle;
 
 
-/**
- *
- * @author Kush Mirchandani
- */
+/** Class ModifyProductController controls ModifyProduct.fxml. It allows users to modify the product name, inventory level,
+ * price, and max & min inventory allowed. The user can add associated parts to the product using the part, and
+ * associated parts tables and buttons. The product ID cannot be changed by the user.
+ * @author Kush Mirchandani*/
 public class ModifyProductController implements Initializable {
 
+    /** declares a stage variable */
     Stage stage;
+
+    /** declares a scene variable */
     Parent scene;
 
-    //private static Product loadedProduct;
 
     @FXML
     private TableColumn<Part, Integer> inventoryLevelCol1;
@@ -108,6 +110,10 @@ public class ModifyProductController implements Initializable {
     @FXML
     private Label partExLbl;
 
+    /** Searches for matching parts.
+     * Searches through allParts and displays those parts whose ID or Name contains the character(s) keyed in by the user to the search
+     * field in the Parts pane. Displays an error message if the character(s) aren't contained in any parts.
+     * @param event the item on the GUI that triggers the action */
     @FXML
     public void onActionLookUpPart(KeyEvent event) {
         partSearchExLbl.setText("");
@@ -125,15 +131,13 @@ public class ModifyProductController implements Initializable {
 
         if (searchedParts.size() == 0) {partSearchExLbl.setText("Part not found");}
 
-      /*  if(searchedParts.size() == 0) {
-            int searchedPartId = Integer.parseInt(partsSearchTxt.getText());
-            Part part = Inventory.lookupPart(searchedPartId);
-            searchedParts.add(part);
-        }*/
-
         partsTableView1.setItems(searchedParts);
     }
 
+    /** Add button clicked.
+     * Adds the part selected in the top parts pane to the lower associated parts pane by calling the addToAssociatedPartsTable method.
+     * If no part is selected, an error message is displayed.
+     * @param event the item on the GUI that triggers the action */
     @FXML
     public void onActionAddPart(ActionEvent event) {
         partExLbl.setText("");
@@ -143,6 +147,11 @@ public class ModifyProductController implements Initializable {
         }
     addToAssociatedPartsTable( partsTableView1.getSelectionModel().getSelectedItem());
     }
+
+    /** Remove Associated Part button clicked.
+     * Removes the part selected in the lower associated parts pane by calling the deleteAssociatedPart method in the Product class.
+     * If no part is selected, an error message is displayed. A confirmation dialogue is displayed when the button is clicked.
+     * @param event the item on the GUI that triggers the action */
     @FXML
     public void onActionRemoveAssociatedPart(ActionEvent event) {
 
@@ -163,6 +172,9 @@ public class ModifyProductController implements Initializable {
 
     }
 
+    /** Cancel button clicked.
+     * Exits the Add Product screen and opens the Main Screen.
+     * @param event the item on the GUI that triggers the action */
     @FXML
     public void onActionDisplayMainScreen(ActionEvent event) throws IOException {
         stage = (Stage)((Button)event.getSource()).getScene().getWindow();
@@ -171,6 +183,12 @@ public class ModifyProductController implements Initializable {
         stage.show();
     }
 
+    /** Save button clicked.
+     * Saves the modified product information for the product selected in the Main Screen.
+     * Closes the Modify Product screen and opens the Main Screen when clicked. Displays error messages and stops running if any
+     * of the input fields are blank when clicked. Displays error messages and stops running if min is greater than max, or
+     * if inventory isn't between min and max.
+     * @param event the item on the GUI that triggers the action */
     @FXML
     public void onActionSaveProduct(ActionEvent event) throws IOException {
 
@@ -267,6 +285,10 @@ public class ModifyProductController implements Initializable {
         stage.show();
     }
 
+    /** Add a selected part to the Associated Parts (lower) table.
+     * Adds the part selected in the top parts pane to the lower associated parts pane by calling the addAssociatedPart method in the Product class.
+     * If no part is selected, an error message is displayed.
+     * @param part the part to add */
     public void addToAssociatedPartsTable(Part part) {
         part = partsTableView1.getSelectionModel().getSelectedItem();
         if (part == null)
@@ -281,22 +303,14 @@ public class ModifyProductController implements Initializable {
         priceCostPerUnitCol2.setCellValueFactory(new PropertyValueFactory<>("price"));
     }
 
-    public void deleteFromAssociatedPartsTable(Part selectedAssociatedPart){
-        selectedAssociatedPart = (Part) partsTableView2.getSelectionModel().getSelectedItem();
-        if (selectedAssociatedPart == null)
-            System.out.println("Please select a part!");
-        else
-            Inventory.loadedProduct.deleteAssociatedPart(selectedAssociatedPart);
-    }
 
-    public static void loadProduct(Product product){
-        Inventory.loadedProduct = product;
-    }
-
+    /** This is the initialize method.
+     * This is the first method that gets called when the scene is set to the Modify Product Screen.
+     * Populates the text input fields with the values for the product that was selected on the Main Screen.
+     * @param url the location of ModifyProduct.fxml
+     * @param resourceBundle the name of ModifyProduct.fxml*/
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-
-        //id = Inventory.getAllProducts().size() + 1000;
 
         productIDTxt.setText(String.valueOf(Inventory.loadedProduct.getId()));
         productNameTxt.setText(String.valueOf(Inventory.loadedProduct.getName()));

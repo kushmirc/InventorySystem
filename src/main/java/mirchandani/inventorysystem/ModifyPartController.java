@@ -22,16 +22,19 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-/**
- *
- * @author Kush Mirchandani
- */
+/** Class ModifyPartController controls ModifyPart.fxml. The user can select radio buttons
+ * to change the selected part to an in-house or outsourced part. It allows users to modify the part name, inventory level,
+ * price, max & min inventory allowed, and enter a machine Id or company name depending on the selected part type.
+ * The part ID cannot be changed by the user.
+ * @author Kush Mirchandani*/
 public class ModifyPartController implements Initializable {
 
+    /** declares a stage variable */
     Stage stage;
+
+    /** declares a scene variable */
     Parent scene;
 
-    //private static Part loadedPart;
 
     @FXML
     private RadioButton partInHouseRBtn;
@@ -76,36 +79,53 @@ public class ModifyPartController implements Initializable {
     @FXML
     private Label partMachineIdExLbl;
 
+    /** In-House radio button clicked.
+     * Sets the partMachineIDLbl to "Machine ID" when clicked.
+     * If the part being modified is an In-house product, it is casted as In-house so the partMachineIDTxt field can be set.
+     * Otherwise, if the product isn't In-house, it sets the text to blank so that the user can enter a value.
+     * @param actionEvent the item on the GUI that triggers the action */
     public void onInHouse(ActionEvent actionEvent) {
         partMachineIDLbl.setText("Machine ID");
         if (Inventory.loadedPart instanceof InHouse) {
             InHouse in = (InHouse) Inventory.loadedPart;
             partMachineIDTxt.setText(String.valueOf(in.getMachineId()));
         } else {
-            //Outsourced out = (Outsourced) Inventory.loadedPart;
             partMachineIDTxt.setText("");}
     }
 
+    /** Outsourced radio button clicked.
+     * Sets the partMachineIDLbl to "Company Name" when clicked.
+     * If the part being modified is an Outsourced product, it is casted as Outsourced so the partMachineIDTxt field can be set.
+     * Otherwise, if the product isn't Outsourced, it sets the text to blank so that the user can enter a value.
+     * @param actionEvent the item on the GUI that triggers the action */
     public void onOutsourced(ActionEvent actionEvent) {
         partMachineIDLbl.setText("Company Name");
         if(Inventory.loadedPart instanceof Outsourced) {
             Outsourced op = (Outsourced) Inventory.loadedPart;
             partMachineIDTxt.setText(op.getCompanyName());
         } else {
-            //InHouse in = (InHouse) Inventory.loadedPart;
             partMachineIDTxt.setText("");}
     }
 
+    /** Cancel button clicked.
+     * Exits the Modify Part screen and opens the Main Screen.
+     * @param event the item on the GUI that triggers the action */
     @FXML
-    void onActionDisplayMainScreen(ActionEvent event) throws IOException {
+    public void onActionDisplayMainScreen(ActionEvent event) throws IOException {
         stage = (Stage)((Button)event.getSource()).getScene().getWindow();
         scene = FXMLLoader.load(getClass().getResource("MainScreen.fxml"));
         stage.setScene(new Scene(scene));
         stage.show();
     }
 
+    /** Save button clicked.
+     * Saves the modified In-House or Outsourced part, by calling the updatePart method in the Inventory class.
+     * Closes the Modify Part screen and opens the Main Screen when clicked. Displays error messages and stops running if any
+     * of the input fields are blank when clicked. Displays error messages and stops running if min is greater than max, or
+     * if inventory isn't between min and max.
+     * @param event the item on the GUI that triggers the action */
     @FXML
-    void onActionSavePart(ActionEvent event) throws IOException {
+    public void onActionSavePart(ActionEvent event) throws IOException {
 
         //Clear exception message fields
         partNameExLbl.setText("");
@@ -263,10 +283,11 @@ public class ModifyPartController implements Initializable {
         stage.show();
     }
 
-    /*public static void loadPart(Part part) {
-        loadedPart = part;
-    }*/
-
+    /** This is the initialize method.
+     * This is the first method that gets called when the scene is set to the Modify Part Screen.
+     * Populates the text input fields with the values for the part that was selected on the Main Screen.
+     * @param url the location of ModifyPart.fxml
+     * @param resourceBundle the name of ModifyPart.fxml*/
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
@@ -275,15 +296,11 @@ public class ModifyPartController implements Initializable {
             InHouse in = (InHouse) Inventory.loadedPart;
             partMachineIDTxt.setText(String.valueOf(in.getMachineId()));
             partInHouseRBtn.setSelected(true);
-            //partInHouseRBtn.setDisable(true);
-            //partOutsourcedRBtn.setDisable(true);
             partMachineIDLbl.setText("Machine ID");
         } else {
             Outsourced op = (Outsourced) Inventory.loadedPart;
             partMachineIDTxt.setText(op.getCompanyName());
             partOutsourcedRBtn.setSelected(true);
-            //partInHouseRBtn.setDisable(true);
-            //partOutsourcedRBtn.setDisable(true);
             partMachineIDLbl.setText("Company Name");
         }
 
@@ -294,11 +311,5 @@ public class ModifyPartController implements Initializable {
         partMaxTxt.setText(String.valueOf(Inventory.loadedPart.getMax()));
         partMinTxt.setText(String.valueOf(Inventory.loadedPart.getMin()));
 
-        /*if(loadedPart instanceof InHouse)
-             System.out.println("loadedPart is still an InHouse object");
-          else if(loadedPart instanceof Outsourced)
-             System.out.println("loadedPart is Outsourced");
-          else
-             System.out.println("loadedPart is a Part again now");*/
     }
 }

@@ -142,8 +142,8 @@ public class AddProductController implements Initializable {
     }
 
     /** Add button clicked.
-     * Adds the part selected in the top parts pane to the lower associated parts pane. If no part is selected,
-     * an error message is displayed.
+     * Adds the part selected in the top parts pane to the lower associated parts pane by calling the addToAssociatedPartsTable method.
+     * If no part is selected, an error message is displayed.
      * @param event the item on the GUI that triggers the action */
     @FXML
     public void onActionAddPart(ActionEvent event) {
@@ -156,8 +156,8 @@ public class AddProductController implements Initializable {
         }
 
     /** Remove Associated Part button clicked.
-     * Removes the part selected in the lower associated parts pane. If no part is selected, an error message is displayed.
-     * A confirmation dialogue is displayed when the button is clicked.
+     * Removes the part selected in the lower associated parts pane by calling the deleteAssociatedPart method in the Product class.
+     * If no part is selected, an error message is displayed. A confirmation dialogue is displayed when the button is clicked.
      * @param event the item on the GUI that triggers the action */
     @FXML
     public void onActionRemoveAssociatedPart(ActionEvent event) {
@@ -190,7 +190,7 @@ public class AddProductController implements Initializable {
     }
 
     /** Save button clicked.
-     * Saves the product, by calling the addProduct method in the Inventory class.
+     * Saves the product by calling the addProduct method in the Inventory class.
      * Closes the Add Product screen and opens the Main Screen when clicked. Displays error messages and stops running if any
      * of the input fields are blank when clicked. Displays error messages and stops running if min is greater than max, or
      * if inventory isn't between min and max.
@@ -292,6 +292,10 @@ public class AddProductController implements Initializable {
         stage.show();
     }
 
+    /** Add a selected part to the Associated Parts (lower) table.
+     * Adds the part selected in the top parts pane to the lower associated parts pane by calling the addAssociatedPart method in the Product class.
+     * If no part is selected, an error message is displayed.
+     * @param part the part to add */
     public void addToAssociatedPartsTable(Part part) {
         part = partsTableView1.getSelectionModel().getSelectedItem();
         if (part == null)
@@ -305,15 +309,6 @@ public class AddProductController implements Initializable {
         inventoryLevelCol2.setCellValueFactory(new PropertyValueFactory<>("stock"));
         priceCostPerUnitCol2.setCellValueFactory(new PropertyValueFactory<>("price"));
     }
-
-   /* public void deleteFromAssociatedPartsTable(Part selectedAssociatedPart){
-        selectedAssociatedPart = (Part) partsTableView2.getSelectionModel().getSelectedItem();
-        if (selectedAssociatedPart == null)
-            System.out.println("Please select a part!");
-        else
-            newProduct.deleteAssociatedPart(selectedAssociatedPart);
-    }*/
-
 
     /** This is the initialize method.
      * This is the first method that gets called when the scene is set to the Add Product Screen.

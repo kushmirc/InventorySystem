@@ -1,10 +1,10 @@
 package model;
 
 
-/**
- *
- * @author Kush Mirchandani
- */
+/** Class Part is abstract and parent to InHouse and Outsourced.
+ * It is used to declare the instance variables used by the child classes, InHouse and Outsourced.
+ * It includes getters and setters for each of the variables.
+ * @author Kush Mirchandani*/
 public abstract class Part {
     private int id;
     private String name;
@@ -12,6 +12,16 @@ public abstract class Part {
     private int stock;
     private int min;
     private int max;
+
+    /** The constructor method for the Part class.
+     * This constructor is not used to instantiate parts because this class is abstract, rather,
+     * the constructor is called by the child classes as super when instantiating InHouse or Outsourced parts.
+     * @param id the id of the new part
+     * @param name the name of the new  part
+     * @param price the price of the new part
+     * @param stock the stock of the new part
+     * @param min the minimum stock of the new part
+     * @param max the maximum stock of the new part */
     public Part(int id, String name, double price, int stock, int min, int max) {
         this.id = id;
         this.name = name;

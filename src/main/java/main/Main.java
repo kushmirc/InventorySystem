@@ -11,6 +11,8 @@ import model.Product;
 
 import java.io.IOException;
 
+// Javadoc location: InventorySystem/javadoc
+
 /** Class Main contains the main method, starts the stage for JavaFX, and initializes JavaFX.
  * FUTURE ENHANCEMENT: When a part is added to the associatedParts list for a product,
  * the inventory amount for that part should be reduced by 1. If reducing the inventory
